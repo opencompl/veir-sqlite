@@ -4,7 +4,7 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 971 (60.8%) | 1535 (96.1%) | 63 |
+| functions | 1598 | 979 (61.3%) | 1535 (96.1%) | 63 |
 | globals | 195 | 122 (62.6%) | 195 (100.0%) | 0 |
 
 ## What to implement next
@@ -13,15 +13,14 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `op llvm.intr.memset` | 278 | 278 | 0 |
-| `op llvm.intr.memcpy` | 100 | 100 | 0 |
+| `op llvm.intr.memset` | 279 | 279 | 0 |
+| `op llvm.intr.memcpy` | 101 | 101 | 0 |
 | `op llvm.mlir.undef` | 72 | 1 | 71 |
 | `op llvm.inttoptr` | 64 | 62 | 2 |
 | `op llvm.ptrtoint` | 36 | 36 | 0 |
 | `op llvm.fcmp` | 27 | 27 | 0 |
 | `op llvm.intr.vastart` | 17 | 17 | 0 |
 | `op llvm.sitofp` | 11 | 11 | 0 |
-| `op llvm.intr.assume` | 10 | 10 | 0 |
 | `op llvm.intr.memmove` | 6 | 6 | 0 |
 | `op llvm.intr.fabs` | 3 | 3 | 0 |
 | `op llvm.extractvalue` | 3 | 3 | 0 |
@@ -91,9 +90,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`a3abb27405aad3dbd0c177c23abd9d1f640d3e23`](https://github.com/opencompl/veir/commit/a3abb27405aad3dbd0c177c23abd9d1f640d3e23) |
+| veir | [`0a51bfeeda4227da7a34ec22ac806adb8eefd36d`](https://github.com/opencompl/veir/commit/0a51bfeeda4227da7a34ec22ac806adb8eefd36d) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-04 17:21 UTC on Linux x86_64` |
+| scored | `2026-09-04 20:46 UTC on Linux x86_64` |
