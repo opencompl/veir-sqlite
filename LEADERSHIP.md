@@ -4,8 +4,8 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 18 (1.1%) | 863 (54.0%) | 735 |
-| globals | 195 | 93 (47.7%) | 132 (67.7%) | 63 |
+| functions | 1598 | 322 (20.2%) | 863 (54.0%) | 735 |
+| globals | 195 | 114 (58.5%) | 132 (67.7%) | 63 |
 
 ## What to implement next
 
@@ -13,14 +13,16 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `op llvm.mlir.zero` | 304 | 281 | 23 |
-| `attribute #llvm.constant_range` | 246 | 246 | 0 |
-| `attribute #llvm.memory_effects` | 243 | 243 | 0 |
-| `attribute #llvm.tbaa_tag` | 64 | 64 | 0 |
-| `op llvm.mlir.undef` | 16 | 0 | 16 |
-| `op llvm.intr.lifetime.start` | 7 | 7 | 0 |
-| `op llvm.inttoptr` | 3 | 3 | 0 |
-| `op llvm.intr.memset` | 1 | 1 | 0 |
+| `attribute #llvm.memory_effects` | 265 | 265 | 0 |
+| `attribute #llvm.loop_annotation` | 122 | 122 | 0 |
+| `op llvm.intr.memset` | 57 | 57 | 0 |
+| `op llvm.intr.lifetime.start` | 53 | 53 | 0 |
+| `op llvm.intr.memcpy` | 26 | 26 | 0 |
+| `op llvm.mlir.undef` | 18 | 0 | 18 |
+| `op llvm.inttoptr` | 9 | 9 | 0 |
+| `op llvm.ptrtoint` | 7 | 7 | 0 |
+| `op llvm.intr.memmove` | 1 | 1 | 0 |
+| `op llvm.fence` | 1 | 1 | 0 |
 
 ## Detail
 
@@ -88,9 +90,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | `b3e20963e` |
-| veir-opt | `lake exe veir-opt` |
+| veir | `f3e917ee2` |
+| veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | `3530300` |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-04 06:23 BST` |
+| scored | `2026-09-04 09:49 UTC` |
