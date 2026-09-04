@@ -1,0 +1,4 @@
+# bitcode and other large intermediates: every chunk cut from them is committed
+.cache/
+__pycache__/
+*.mlir.tmp

@@ -1,0 +1,42 @@
+{
+  "corpora": {
+    "O0": {
+      "functions": {
+        "count": 2636,
+        "digest": "7e57584b26d2c11f",
+        "skipped": []
+      },
+      "globals": {
+        "count": 226,
+        "digest": "4a265a77f1b0f5a3",
+        "skipped": []
+      }
+    },
+    "O3": {
+      "functions": {
+        "count": 1598,
+        "digest": "48eb87ec9bdfbe00",
+        "skipped": []
+      },
+      "globals": {
+        "count": 195,
+        "digest": "cfb884a94cda5afa",
+        "skipped": []
+      }
+    }
+  },
+  "sqlite": {
+    "sha256": "87497ab605bedd0dbee27a209c1eeff8c89b229b13f921a7efdbb81a13f779fd",
+    "url": "https://sqlite.org/2026/sqlite-amalgamation-3530300.zip",
+    "version": "3530300"
+  },
+  "toolchain": {
+    "clang": "Homebrew clang version 22.1.6",
+    "llvm-extract": "Homebrew LLVM version 22.1.6",
+    "llvm-nm": "Homebrew LLVM version 22.1.6",
+    "mlir-opt": "Homebrew LLVM version 22.1.6",
+    "mlir-translate": "Homebrew LLVM version 22.1.6",
+    "opt": "Homebrew LLVM version 22.1.6",
+    "target": "arm64-apple-darwin23.6.0"
+  }
+}
