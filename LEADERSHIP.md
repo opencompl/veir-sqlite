@@ -4,7 +4,7 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 826 (51.7%) | 1444 (90.4%) | 154 |
+| functions | 1598 | 950 (59.4%) | 1444 (90.4%) | 154 |
 | globals | 195 | 122 (62.6%) | 195 (100.0%) | 0 |
 
 ## What to implement next
@@ -13,20 +13,23 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `op llvm.intr.lifetime.start` | 277 | 277 | 0 |
-| `op llvm.intr.memset` | 144 | 144 | 0 |
+| `op llvm.intr.memset` | 232 | 232 | 0 |
+| `op llvm.intr.memcpy` | 93 | 93 | 0 |
 | `op llvm.mlir.undef` | 71 | 0 | 71 |
-| `op llvm.intr.memcpy` | 68 | 68 | 0 |
 | `op llvm.inttoptr` | 56 | 54 | 2 |
-| `op llvm.ptrtoint` | 25 | 25 | 0 |
-| `op llvm.fcmp` | 19 | 19 | 0 |
+| `op llvm.ptrtoint` | 33 | 33 | 0 |
+| `op llvm.fcmp` | 27 | 27 | 0 |
+| `op llvm.intr.vastart` | 16 | 16 | 0 |
+| `op llvm.sitofp` | 11 | 11 | 0 |
 | `op llvm.intr.assume` | 9 | 9 | 0 |
-| `op llvm.sitofp` | 8 | 8 | 0 |
-| `op llvm.intr.memmove` | 5 | 5 | 0 |
+| `op llvm.intr.memmove` | 6 | 6 | 0 |
 | `op llvm.intr.fabs` | 3 | 3 | 0 |
+| `op llvm.fneg` | 2 | 2 | 0 |
 | `op llvm.extractvalue` | 2 | 2 | 0 |
 | `op llvm.fence` | 2 | 2 | 0 |
-| `op llvm.fneg` | 1 | 1 | 0 |
+| `op llvm.intr.vector.reduce.or` | 1 | 1 | 0 |
+| `op llvm.fptosi` | 1 | 1 | 0 |
+| `op llvm.uitofp` | 1 | 1 | 0 |
 | `attribute #llvm.alias_scope` | 1 | 1 | 0 |
 
 ## Detail
@@ -80,9 +83,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`f82af22992b9a79c1097954ec202158ef35d004d`](https://github.com/opencompl/veir/commit/f82af22992b9a79c1097954ec202158ef35d004d) |
+| veir | [`87b2d1a4781e1d56228536ccb1cb5b581517843a`](https://github.com/opencompl/veir/commit/87b2d1a4781e1d56228536ccb1cb5b581517843a) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-04 16:42 UTC on Linux x86_64` |
+| scored | `2026-09-04 17:07 UTC on Linux x86_64` |
