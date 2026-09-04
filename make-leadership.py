@@ -225,7 +225,7 @@ def provenance(veir_opt: list[str]) -> list[str]:
 
 def describe_veir() -> str:
     out = subprocess.run(["git", "-C", str(VEIR), "describe", "--always", "--dirty",
-                          "--abbrev=9"], capture_output=True, text=True)
+                          "--abbrev=40"], capture_output=True, text=True)
     return out.stdout.strip() or "unknown"
 
 

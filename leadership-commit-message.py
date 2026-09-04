@@ -36,8 +36,15 @@ def blockers(text: str) -> dict[str, int]:
 
 
 def veir_commit(text: str) -> str:
+    """The Provenance row: a full commit, possibly as tag-N-gCOMMIT[-dirty]."""
     m = re.search(r"^\| veir \| `([^`]+)`", text, re.M)
     return m.group(1) if m else "unknown"
+
+
+def short(describe: str) -> str:
+    """The commit in a describe string, cut to 12 characters for a subject."""
+    m = re.search(r"[0-9a-f]{7,40}", describe)
+    return m.group(0)[:12] if m else describe
 
 
 def main() -> None:
@@ -58,7 +65,7 @@ def main() -> None:
             f"{c} {prev[c]} -> {counts[c]}" if c in prev else f"{c} {counts[c]}"
             for c in COLUMNS))
     summary = "; ".join(changes) if changes else "standings unchanged"
-    print(f"leadership: veir {veir_commit(new)} ({summary})\n")
+    print(f"leadership: veir {short(veir_commit(new))} ({summary})\n")
     print("\n".join(body))
 
     old_blockers, new_blockers = blockers(old), blockers(new)
