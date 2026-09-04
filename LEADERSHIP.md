@@ -90,9 +90,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`0a51bfeeda4227da7a34ec22ac806adb8eefd36d`](https://github.com/opencompl/veir/commit/0a51bfeeda4227da7a34ec22ac806adb8eefd36d) |
+| veir | [`33d940892ef9c5d02d4a1f0091384fb435558174`](https://github.com/opencompl/veir/commit/33d940892ef9c5d02d4a1f0091384fb435558174) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-04 20:46 UTC on Linux x86_64` |
+| scored | `2026-09-04 20:56 UTC on Linux x86_64` |
