@@ -67,12 +67,14 @@ def main() -> None:
                   if c in prev and counts[c] != prev[c]]
         if deltas:
             changes.append(f"{board} {', '.join(deltas)}")
-        body.append(f"{board}: " + ", ".join(
-            f"{c} {prev[c]} -> {counts[c]}" if c in prev else f"{c} {counts[c]}"
-            for c in COLUMNS))
+        moved = [f"{c} {prev[c]} -> {counts[c]}" if c in prev else f"{c} {counts[c]}"
+                 for c in COLUMNS if counts[c] != prev.get(c)]
+        if moved:
+            body.append(f"{board}: " + ", ".join(moved))
     summary = "; ".join(changes) if changes else "standings unchanged"
-    print(f"leadership: veir {short(veir_commit(new))} ({summary})\n")
-    print("\n".join(body))
+    print(f"leadership: veir {short(veir_commit(new))} ({summary})")
+    if body:
+        print("\n" + "\n".join(body))
 
     old_blockers, new_blockers = blockers(old), blockers(new)
     cleared = [f"{b} ({n} chunks)" for b, n in old_blockers.items() if b not in new_blockers]
@@ -82,8 +84,11 @@ def main() -> None:
     if appeared:
         print("\nNewly blocking: " + ", ".join(appeared) + ".")
     before_commit, after_commit = veir_commit(old), veir_commit(new)
-    print(f"\nScored from veir {before_commit} to {after_commit}"
-          + (f" by {run_url}" if run_url else "") + ".")
+    by = f" by {run_url}" if run_url else ""
+    if before_commit == after_commit:
+        print(f"\nRescored at veir {after_commit}{by}.")
+        return
+    print(f"\nScored from veir {before_commit} to {after_commit}{by}.")
     repo = veir_repo_url(new)
     if repo and re.fullmatch(r"[0-9a-f]{40}", before_commit) \
             and re.fullmatch(r"[0-9a-f]{40}", after_commit):
