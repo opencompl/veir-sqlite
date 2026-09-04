@@ -4,7 +4,7 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 950 (59.4%) | 1444 (90.4%) | 154 |
+| functions | 1598 | 971 (60.8%) | 1535 (96.1%) | 63 |
 | globals | 195 | 122 (62.6%) | 195 (100.0%) | 0 |
 
 ## What to implement next
@@ -13,34 +13,42 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `op llvm.intr.memset` | 232 | 232 | 0 |
-| `op llvm.intr.memcpy` | 93 | 93 | 0 |
-| `op llvm.mlir.undef` | 71 | 0 | 71 |
-| `op llvm.inttoptr` | 56 | 54 | 2 |
-| `op llvm.ptrtoint` | 33 | 33 | 0 |
+| `op llvm.intr.memset` | 278 | 278 | 0 |
+| `op llvm.intr.memcpy` | 100 | 100 | 0 |
+| `op llvm.mlir.undef` | 72 | 1 | 71 |
+| `op llvm.inttoptr` | 64 | 62 | 2 |
+| `op llvm.ptrtoint` | 36 | 36 | 0 |
 | `op llvm.fcmp` | 27 | 27 | 0 |
-| `op llvm.intr.vastart` | 16 | 16 | 0 |
+| `op llvm.intr.vastart` | 17 | 17 | 0 |
 | `op llvm.sitofp` | 11 | 11 | 0 |
-| `op llvm.intr.assume` | 9 | 9 | 0 |
+| `op llvm.intr.assume` | 10 | 10 | 0 |
 | `op llvm.intr.memmove` | 6 | 6 | 0 |
 | `op llvm.intr.fabs` | 3 | 3 | 0 |
+| `op llvm.extractvalue` | 3 | 3 | 0 |
 | `op llvm.fneg` | 2 | 2 | 0 |
-| `op llvm.extractvalue` | 2 | 2 | 0 |
+| `op llvm.fptosi` | 2 | 2 | 0 |
 | `op llvm.fence` | 2 | 2 | 0 |
+| `op llvm.shufflevector` | 1 | 1 | 0 |
 | `op llvm.intr.vector.reduce.or` | 1 | 1 | 0 |
-| `op llvm.fptosi` | 1 | 1 | 0 |
 | `op llvm.uitofp` | 1 | 1 | 0 |
 | `attribute #llvm.alias_scope` | 1 | 1 | 0 |
 
 ## Detail
 
-<details><summary>Functions failing, by error (3 distinct)</summary>
+<details><summary>Functions failing, by error (10 distinct)</summary>
 
 | chunks | error | e.g. |
 |---:|---|---|
-| 152 | `Error verifying input program: llvm.mlir.constant: Expected array result type for a dense elements constant` | `afpLock` |
+| 37 | `Error verifying input program: llvm.lshr: Expected operand 0 to have integer or byte type` | `allocateBtreePage` |
+| 7 | `Error verifying input program: llvm.add: Expected operand 0 to have integer type` | `afpLock` |
+| 5 | `Error verifying input program: llvm.icmp: Expected operand 0 to have integer or pointer type` | `generateSortTail` |
+| 5 | `Error verifying input program: llvm.and: Expected operand 0 to have integer type` | `sqlite3HexToBlob` |
+| 3 | `Error verifying input program: llvm.zext: Expected operand 0 to have integer type` | `pagerAddPageToRollbackJournal` |
+| 2 | `Error verifying input program: llvm.udiv: Expected operand 0 to have integer type` | `dateFunc` |
 | 1 | `Error verifying input program: llvm.intr.smax: Expected operand 0 to have integer type` | `optimizeAggregateUseOfIndexedExpr` |
 | 1 | `Error verifying input program: llvm.sub: Expected operand 0 to have integer type` | `pcache1Create` |
+| 1 | `Error verifying input program: llvm.sext: Expected operand 0 to have integer type` | `readSuperJournal` |
+| 1 | `Error verifying input program: llvm.intr.smin: Expected operand 0 to have integer type` | `whereLoopAddVirtual` |
 
 </details>
 
@@ -51,14 +59,14 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 | 4+ | 17 | 17 | 100.0% |
 | 8+ | 119 | 119 | 100.0% |
 | 16+ | 97 | 97 | 100.0% |
-| 32+ | 285 | 288 | 99.0% |
-| 64+ | 349 | 368 | 94.8% |
-| 128+ | 311 | 338 | 92.0% |
-| 256+ | 174 | 208 | 83.7% |
-| 512+ | 75 | 107 | 70.1% |
-| 1024+ | 17 | 38 | 44.7% |
-| 2048+ | 0 | 15 | 0.0% |
-| 4096+ | 0 | 2 | 0.0% |
+| 32+ | 288 | 288 | 100.0% |
+| 64+ | 365 | 368 | 99.2% |
+| 128+ | 328 | 338 | 97.0% |
+| 256+ | 194 | 208 | 93.3% |
+| 512+ | 94 | 107 | 87.9% |
+| 1024+ | 25 | 38 | 65.8% |
+| 2048+ | 7 | 15 | 46.7% |
+| 4096+ | 1 | 2 | 50.0% |
 | 8192+ | 0 | 1 | 0.0% |
 
 </details>
@@ -83,9 +91,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`87b2d1a4781e1d56228536ccb1cb5b581517843a`](https://github.com/opencompl/veir/commit/87b2d1a4781e1d56228536ccb1cb5b581517843a) |
+| veir | [`a3abb27405aad3dbd0c177c23abd9d1f640d3e23`](https://github.com/opencompl/veir/commit/a3abb27405aad3dbd0c177c23abd9d1f640d3e23) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-04 17:07 UTC on Linux x86_64` |
+| scored | `2026-09-04 17:21 UTC on Linux x86_64` |
