@@ -20,6 +20,7 @@ implemented next.
   ./make-leadership.py                        # score and write LEADERSHIP.md
   ./make-leadership.py --limit 50             # a quick smoke run
   ./make-leadership.py --veir-opt PATH        # skip lake (about 30x faster)
+  ./make-leadership.py --veir DIR             # a veir checkout elsewhere
 
 `lake exe` re-resolves the workspace on every call, which costs about 0.5s a
 chunk against 0.02s for the binary; it parallelises, so a full run is minutes
@@ -39,7 +40,7 @@ import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent
-VEIR = REPO.parent                      # the veir checkout lake is driven from
+VEIR = REPO.parent                      # the veir checkout lake is driven from (--veir)
 CHUNKS = REPO / "chunks"
 MANIFEST = REPO / "manifest.json"
 DEFAULT_OUT = REPO / "LEADERSHIP.md"
@@ -251,6 +252,8 @@ def parse_args():
                         help="also write the per-chunk verdicts as JSON")
     parser.add_argument("--veir-opt", metavar="PATH",
                         help="run this binary instead of `lake exe veir-opt`")
+    parser.add_argument("--veir", type=Path, default=VEIR, metavar="DIR",
+                        help=f"the veir checkout to score (default: {VEIR})")
     parser.add_argument("--board", action="append", choices=BOARDS, metavar="NAME",
                         help=f"only this board ({', '.join(BOARDS)}); repeatable")
     parser.add_argument("--limit", type=int, metavar="N",
@@ -282,7 +285,9 @@ def resolve_veir_opt(override: str | None) -> list[str]:
 
 
 def main() -> int:
+    global VEIR
     args = parse_args()
+    VEIR = args.veir.resolve()
     veir_opt = resolve_veir_opt(args.veir_opt)
     boards = {board: score_board(veir_opt, board, args) for board in args.board}
     if args.json_out:
