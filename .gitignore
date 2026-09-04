@@ -2,3 +2,6 @@
 .cache/
 __pycache__/
 *.mlir.tmp
+
+# opt-in run artifact of make-leadership.py --json-out
+leadership.json
