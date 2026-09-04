@@ -1,0 +1,106 @@
+name: leadership
+
+# Keeps LEADERSHIP.md current with veir's main branch.
+#
+# GitHub Actions cannot subscribe to another repository, so this polls: every
+# ten minutes it compares veir's main with the commit LEADERSHIP.md was last
+# scored against (the `veir` row of its Provenance table) and stops there, in
+# seconds, if nothing moved. A public repository's minutes are free and the
+# cron floor is five; scheduled runs are low priority for GitHub and can start
+# late under load, so "ten minutes" means "usually within the hour". If veir
+# did move, it checks veir out at that commit, builds veir-opt, scores the
+# committed O3 corpus and commits the new LEADERSHIP.md to main as
+# github-actions[bot]. That push is made with GITHUB_TOKEN, so it triggers no
+# workflow: no loop. A push to main here (new corpus, new scorer) rescores
+# immediately, and the workflow can be run by hand, with `force` to rescore an
+# unchanged veir.
+#
+# A drop in the standings is not a failure: the leaderboard records, it does
+# not gate. The diff of each commit is the record of what moved.
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      force:
+        description: rescore even if veir's main has not moved
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# Two runs at once would race on the push; queue instead.
+concurrency:
+  group: leadership
+  cancel-in-progress: false
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: veir-sqlite
+
+      - name: Has veir moved?
+        id: veir
+        working-directory: veir-sqlite
+        env:
+          FORCE: ${{ github.event_name == 'push' || inputs.force == true }}
+        run: |
+          sha=$(git ls-remote https://github.com/opencompl/veir.git refs/heads/main | cut -f1)
+          # The Provenance row holds `git describe --always --dirty`: a bare
+          # commit, or tag-N-gCOMMIT, possibly with -dirty; keep the commit.
+          scored=$(grep '^| veir |' LEADERSHIP.md | cut -d'|' -f3 | tr -d ' \140' \
+                   | sed 's/-dirty$//; s/.*-g//')
+          echo "veir main: $sha; scored: ${scored:-none}; force: $FORCE"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          if [ -n "$scored" ] && [ "${sha#"$scored"}" != "$sha" ] && [ "$FORCE" != true ]; then
+            echo "LEADERSHIP.md is current; nothing to do."
+            echo "stale=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "stale=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.veir.outputs.stale == 'true'
+        with:
+          repository: opencompl/veir
+          ref: ${{ steps.veir.outputs.sha }}
+          path: veir
+
+      # Only veir-opt is needed; lean-action installs elan and caches .lake.
+      - name: Build veir-opt
+        if: steps.veir.outputs.stale == 'true'
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: veir
+          build-args: "veir-opt"
+          test: false
+
+      - name: Score
+        if: steps.veir.outputs.stale == 'true'
+        working-directory: veir-sqlite
+        run: |
+          ./make-leadership.py --veir ../veir --veir-opt ../veir/.lake/build/bin/veir-opt
+          cat LEADERSHIP.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit
+        if: steps.veir.outputs.stale == 'true'
+        working-directory: veir-sqlite
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          ./leadership-commit-message.py "$RUN_URL" > "$RUNNER_TEMP/message"
+          git add LEADERSHIP.md
+          git commit --quiet -F "$RUNNER_TEMP/message"
+          git show --stat --format=%B HEAD
+          # Someone may have pushed meanwhile; their commits do not touch this file.
+          git pull --quiet --rebase origin main
+          git push --quiet origin HEAD:main

@@ -38,6 +38,17 @@ veir-opt hit in it, ranked by how many chunks each is holding up.
 Only O3 is scored -- it is the harder corpus and the one worth a leaderboard.
 O0 stays in the repository for anyone who wants to compare against it.
 
+## Keeping it current
+
+The `leadership` workflow (`.github/workflows/leadership.yml`) polls veir's
+main every ten minutes. If it has moved since the commit named in the Provenance
+table, the workflow builds `veir-opt` at the new commit, rescores and commits
+`LEADERSHIP.md` as `github-actions[bot]`, with the change in the standings in
+the subject and the blockers that cleared or appeared in the body. Nothing
+turns red: the leaderboard records, it does not gate. A push to main here
+rescores at once, and the workflow can be run by hand from the Actions tab,
+with `force` to rescore an unchanged veir.
+
 ## The corpus is a function of its toolchain
 
 Chunks are not portable between toolchains. The compiler decides what gets
