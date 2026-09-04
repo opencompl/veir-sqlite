@@ -4,7 +4,7 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 453 (28.3%) | 863 (54.0%) | 735 |
+| functions | 1598 | 620 (38.8%) | 863 (54.0%) | 735 |
 | globals | 195 | 114 (58.5%) | 132 (67.7%) | 63 |
 
 ## What to implement next
@@ -13,16 +13,15 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `attribute #llvm.loop_annotation` | 205 | 205 | 0 |
-| `op llvm.intr.lifetime.start` | 78 | 78 | 0 |
-| `op llvm.intr.memset` | 66 | 66 | 0 |
-| `op llvm.intr.memcpy` | 36 | 36 | 0 |
+| `op llvm.intr.lifetime.start` | 83 | 83 | 0 |
+| `op llvm.intr.memset` | 82 | 82 | 0 |
+| `op llvm.intr.memcpy` | 43 | 43 | 0 |
 | `op llvm.mlir.undef` | 18 | 0 | 18 |
+| `op llvm.ptrtoint` | 14 | 14 | 0 |
 | `op llvm.inttoptr` | 11 | 11 | 0 |
-| `op llvm.ptrtoint` | 10 | 10 | 0 |
-| `op llvm.intr.memmove` | 1 | 1 | 0 |
+| `op llvm.intr.assume` | 6 | 6 | 0 |
+| `op llvm.intr.memmove` | 2 | 2 | 0 |
 | `op llvm.sitofp` | 1 | 1 | 0 |
-| `op llvm.intr.assume` | 1 | 1 | 0 |
 | `op llvm.fence` | 1 | 1 | 0 |
 
 ## Detail
@@ -91,9 +90,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`f97dc29592d4936b582b1168fab119da60b79ebc`](https://github.com/opencompl/veir/commit/f97dc29592d4936b582b1168fab119da60b79ebc) |
+| veir | [`467fdad8cdaf54745ea8a6665e69d14fff41d82c`](https://github.com/opencompl/veir/commit/467fdad8cdaf54745ea8a6665e69d14fff41d82c) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-04 13:21 UTC on Linux x86_64` |
+| scored | `2026-09-04 14:27 UTC on Linux x86_64` |
