@@ -53,13 +53,12 @@ jobs:
           FORCE: ${{ github.event_name == 'push' || inputs.force == true }}
         run: |
           sha=$(git ls-remote https://github.com/opencompl/veir.git refs/heads/main | cut -f1)
-          # The Provenance row holds `git describe --always --dirty`: a bare
-          # commit, or tag-N-gCOMMIT, possibly with -dirty; keep the commit.
-          scored=$(grep '^| veir |' LEADERSHIP.md | cut -d'|' -f3 | tr -d ' \140' \
-                   | sed 's/-dirty$//; s/.*-g//')
+          # The Provenance row names the commit veir was scored at (linked,
+          # possibly as tag-N-gCOMMIT); the 40-character hash is the commit.
+          scored=$(grep '^| veir |' LEADERSHIP.md | grep -o '[0-9a-f]\{40\}' | head -1)
           echo "veir main: $sha; scored: ${scored:-none}; force: $FORCE"
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
-          if [ -n "$scored" ] && [ "${sha#"$scored"}" != "$sha" ] && [ "$FORCE" != true ]; then
+          if [ "$sha" = "$scored" ] && [ "$FORCE" != true ]; then
             echo "LEADERSHIP.md is current; nothing to do."
             echo "stale=false" >> "$GITHUB_OUTPUT"
           else

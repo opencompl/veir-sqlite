@@ -33,6 +33,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import json
+import platform
 import re
 import subprocess
 import sys
@@ -210,23 +211,42 @@ def by_size(boards: dict) -> list[str]:
 
 def provenance(veir_opt: list[str]) -> list[str]:
     manifest = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {}
-    rows = [["veir", cell(describe_veir())],
+    sqlite = manifest.get("sqlite", {})
+    rows = [["veir", link(cell(describe_veir()), veir_commit_url())],
             ["veir-opt", cell(" ".join(veir_opt))],
-            ["sqlite3", cell(manifest.get("sqlite", {}).get("version", "?"))],
+            ["sqlite3", link(cell(sqlite.get("version", "?")), sqlite.get("url"))],
             ["corpus", cell(", ".join(
                 f"{b} {manifest.get('corpora', {}).get(CORPUS, {}).get(b, {}).get('digest', '?')}"
                 for b in BOARDS))],
             ["chunks built with", cell(manifest.get("toolchain", {}).get("clang", "?")
                                        + " / " + manifest.get("toolchain", {})
                                        .get("target", "?"))],
-            ["scored", cell(time.strftime("%Y-%m-%d %H:%M %Z"))]]
+            ["scored", cell(time.strftime("%Y-%m-%d %H:%M %Z")
+                            + f" on {platform.system()} {platform.machine()}")]]
     return table(["", "value"], rows)
+
+
+def link(text: str, url: str | None) -> str:
+    return f"[{text}]({url})" if url else text
 
 
 def describe_veir() -> str:
     out = subprocess.run(["git", "-C", str(VEIR), "describe", "--always", "--dirty",
                           "--abbrev=40"], capture_output=True, text=True)
     return out.stdout.strip() or "unknown"
+
+
+def veir_commit_url() -> str | None:
+    """The commit on GitHub, if origin is there and the tree is clean enough
+    to be that commit: a dirty tree is not any commit."""
+    describe = describe_veir()
+    commit = re.search(r"[0-9a-f]{40}", describe)
+    origin = subprocess.run(["git", "-C", str(VEIR), "remote", "get-url", "origin"],
+                            capture_output=True, text=True).stdout.strip()
+    repo = re.search(r"github\.com[:/]([^/\s]+/[^/\s]+?)(?:\.git)?/?$", origin)
+    if not commit or not repo or describe.endswith("-dirty"):
+        return None
+    return f"https://github.com/{repo.group(1)}/commit/{commit.group(0)}"
 
 
 def render(boards: dict, veir_opt: list[str]) -> str:

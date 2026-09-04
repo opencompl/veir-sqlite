@@ -36,9 +36,15 @@ def blockers(text: str) -> dict[str, int]:
 
 
 def veir_commit(text: str) -> str:
-    """The Provenance row: a full commit, possibly as tag-N-gCOMMIT[-dirty]."""
-    m = re.search(r"^\| veir \| `([^`]+)`", text, re.M)
+    """The Provenance row: a full commit, possibly as tag-N-gCOMMIT[-dirty],
+    possibly wrapped in a link to it."""
+    m = re.search(r"^\| veir \| \[?`([^`]+)`", text, re.M)
     return m.group(1) if m else "unknown"
+
+
+def veir_repo_url(text: str) -> str | None:
+    m = re.search(r"^\| veir \| \[`[^`]+`\]\((\S+)/commit/", text, re.M)
+    return m.group(1) if m else None
 
 
 def short(describe: str) -> str:
@@ -75,8 +81,13 @@ def main() -> None:
         print("\nNo longer blocking: " + ", ".join(cleared) + ".")
     if appeared:
         print("\nNewly blocking: " + ", ".join(appeared) + ".")
-    print(f"\nScored from veir {veir_commit(old)} to {veir_commit(new)}"
-          + (f" by {run_url}." if run_url else "."))
+    before_commit, after_commit = veir_commit(old), veir_commit(new)
+    print(f"\nScored from veir {before_commit} to {after_commit}"
+          + (f" by {run_url}" if run_url else "") + ".")
+    repo = veir_repo_url(new)
+    if repo and re.fullmatch(r"[0-9a-f]{40}", before_commit) \
+            and re.fullmatch(r"[0-9a-f]{40}", after_commit):
+        print(f"{repo}/compare/{before_commit}...{after_commit}")
 
 
 if __name__ == "__main__":
