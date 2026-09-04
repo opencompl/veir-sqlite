@@ -4,7 +4,7 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 322 (20.2%) | 863 (54.0%) | 735 |
+| functions | 1598 | 453 (28.3%) | 863 (54.0%) | 735 |
 | globals | 195 | 114 (58.5%) | 132 (67.7%) | 63 |
 
 ## What to implement next
@@ -13,15 +13,16 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `attribute #llvm.memory_effects` | 265 | 265 | 0 |
-| `attribute #llvm.loop_annotation` | 122 | 122 | 0 |
-| `op llvm.intr.memset` | 57 | 57 | 0 |
-| `op llvm.intr.lifetime.start` | 53 | 53 | 0 |
-| `op llvm.intr.memcpy` | 26 | 26 | 0 |
+| `attribute #llvm.loop_annotation` | 205 | 205 | 0 |
+| `op llvm.intr.lifetime.start` | 78 | 78 | 0 |
+| `op llvm.intr.memset` | 66 | 66 | 0 |
+| `op llvm.intr.memcpy` | 36 | 36 | 0 |
 | `op llvm.mlir.undef` | 18 | 0 | 18 |
-| `op llvm.inttoptr` | 9 | 9 | 0 |
-| `op llvm.ptrtoint` | 7 | 7 | 0 |
+| `op llvm.inttoptr` | 11 | 11 | 0 |
+| `op llvm.ptrtoint` | 10 | 10 | 0 |
 | `op llvm.intr.memmove` | 1 | 1 | 0 |
+| `op llvm.sitofp` | 1 | 1 | 0 |
+| `op llvm.intr.assume` | 1 | 1 | 0 |
 | `op llvm.fence` | 1 | 1 | 0 |
 
 ## Detail
@@ -90,9 +91,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`c57455eb63dc5543cd763d8a5b499abaff67fd42`](https://github.com/opencompl/veir/commit/c57455eb63dc5543cd763d8a5b499abaff67fd42) |
+| veir | [`7fe55c8b566e61199ef9fadf1dd9b02628bba8bf`](https://github.com/opencompl/veir/commit/7fe55c8b566e61199ef9fadf1dd9b02628bba8bf) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-04 10:53 UTC on Linux x86_64` |
+| scored | `2026-09-04 12:37 UTC on Linux x86_64` |
