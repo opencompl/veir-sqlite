@@ -4,7 +4,7 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 620 (38.8%) | 863 (54.0%) | 735 |
+| functions | 1598 | 677 (42.4%) | 959 (60.0%) | 639 |
 | globals | 195 | 114 (58.5%) | 132 (67.7%) | 63 |
 
 ## What to implement next
@@ -13,25 +13,25 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `op llvm.intr.lifetime.start` | 83 | 83 | 0 |
-| `op llvm.intr.memset` | 82 | 82 | 0 |
-| `op llvm.intr.memcpy` | 43 | 43 | 0 |
+| `op llvm.intr.lifetime.start` | 107 | 107 | 0 |
+| `op llvm.intr.memset` | 88 | 88 | 0 |
+| `op llvm.intr.memcpy` | 46 | 46 | 0 |
 | `op llvm.mlir.undef` | 18 | 0 | 18 |
-| `op llvm.ptrtoint` | 14 | 14 | 0 |
-| `op llvm.inttoptr` | 11 | 11 | 0 |
+| `op llvm.ptrtoint` | 17 | 17 | 0 |
+| `op llvm.inttoptr` | 12 | 12 | 0 |
 | `op llvm.intr.assume` | 6 | 6 | 0 |
-| `op llvm.intr.memmove` | 2 | 2 | 0 |
+| `op llvm.intr.memmove` | 3 | 3 | 0 |
 | `op llvm.sitofp` | 1 | 1 | 0 |
+| `op llvm.extractvalue` | 1 | 1 | 0 |
 | `op llvm.fence` | 1 | 1 | 0 |
 
 ## Detail
 
-<details><summary>Functions failing, by error (9 distinct)</summary>
+<details><summary>Functions failing, by error (8 distinct)</summary>
 
 | chunks | error | e.g. |
 |---:|---|---|
-| 314 | `Error verifying input program: llvm.mlir.addressof: symbol '<sym>' does not name an llvm.mlir.global` | `accessPayload` |
-| 204 | `Error verifying input program: llvm.func: Expected the last operation of a block to be a terminator` | `afpCheckReservedLock` |
+| 422 | `Error verifying input program: llvm.mlir.addressof: symbol '<sym>' does not name an llvm.mlir.global` | `accessPayload` |
 | 136 | `Error verifying input program: llvm.mlir.constant: Expected array result type for a dense elements constant` | `afpLock` |
 | 41 | `unsupported floating-point literal '<float>', only '<float> : f64' is supported` | `computeYMD_HMS` |
 | 33 | `expected integer literal after '-'` | `absFunc` |
@@ -56,14 +56,14 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 | size | parsed | total | rate |
 |---|---:|---:|---|
 | 4+ | 17 | 17 | 100.0% |
-| 8+ | 113 | 119 | 95.0% |
-| 16+ | 90 | 97 | 92.8% |
-| 32+ | 240 | 288 | 83.3% |
-| 64+ | 217 | 368 | 59.0% |
-| 128+ | 127 | 338 | 37.6% |
-| 256+ | 49 | 208 | 23.6% |
-| 512+ | 9 | 107 | 8.4% |
-| 1024+ | 1 | 38 | 2.6% |
+| 8+ | 114 | 119 | 95.8% |
+| 16+ | 91 | 97 | 93.8% |
+| 32+ | 250 | 288 | 86.8% |
+| 64+ | 238 | 368 | 64.7% |
+| 128+ | 159 | 338 | 47.0% |
+| 256+ | 68 | 208 | 32.7% |
+| 512+ | 18 | 107 | 16.8% |
+| 1024+ | 4 | 38 | 10.5% |
 | 2048+ | 0 | 15 | 0.0% |
 | 4096+ | 0 | 2 | 0.0% |
 | 8192+ | 0 | 1 | 0.0% |
@@ -90,9 +90,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`467fdad8cdaf54745ea8a6665e69d14fff41d82c`](https://github.com/opencompl/veir/commit/467fdad8cdaf54745ea8a6665e69d14fff41d82c) |
+| veir | [`64f19d05cbdb1e4c5353a61946b3053392062690`](https://github.com/opencompl/veir/commit/64f19d05cbdb1e4c5353a61946b3053392062690) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-04 14:27 UTC on Linux x86_64` |
+| scored | `2026-09-04 15:57 UTC on Linux x86_64` |
