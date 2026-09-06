@@ -4,7 +4,7 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 979 (61.3%) | 1535 (96.1%) | 63 |
+| functions | 1598 | 1034 (64.7%) | 1535 (96.1%) | 63 |
 | globals | 195 | 122 (62.6%) | 195 (100.0%) | 0 |
 
 ## What to implement next
@@ -13,16 +13,14 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `op llvm.intr.memset` | 280 | 280 | 0 |
-| `op llvm.intr.memcpy` | 101 | 101 | 0 |
-| `op llvm.insertvalue` | 71 | 0 | 71 |
-| `op llvm.inttoptr` | 64 | 62 | 2 |
-| `op llvm.ptrtoint` | 36 | 36 | 0 |
-| `op llvm.fcmp` | 27 | 27 | 0 |
-| `op llvm.intr.vastart` | 17 | 17 | 0 |
-| `op llvm.sitofp` | 11 | 11 | 0 |
-| `op llvm.intr.memmove` | 6 | 6 | 0 |
-| `op llvm.intr.fabs` | 3 | 3 | 0 |
+| `op llvm.intr.memset` | 291 | 291 | 0 |
+| `op llvm.intr.memcpy` | 115 | 115 | 0 |
+| `op llvm.insertvalue` | 74 | 1 | 73 |
+| `op llvm.fcmp` | 34 | 34 | 0 |
+| `op llvm.intr.vastart` | 18 | 18 | 0 |
+| `op llvm.sitofp` | 15 | 15 | 0 |
+| `op llvm.intr.memmove` | 9 | 9 | 0 |
+| `op llvm.intr.fabs` | 5 | 5 | 0 |
 | `op llvm.extractvalue` | 3 | 3 | 0 |
 | `op llvm.fneg` | 2 | 2 | 0 |
 | `op llvm.fptosi` | 2 | 2 | 0 |
@@ -90,9 +88,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`80564f4e57fe5fac00ee4025b694dc610ec7e4aa`](https://github.com/opencompl/veir/commit/80564f4e57fe5fac00ee4025b694dc610ec7e4aa) |
+| veir | [`231670c6f7a44c0450ad1ddbcfda91d2f8a208c6`](https://github.com/opencompl/veir/commit/231670c6f7a44c0450ad1ddbcfda91d2f8a208c6) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-06 12:45 UTC on Linux x86_64` |
+| scored | `2026-09-06 21:00 UTC on Linux x86_64` |
