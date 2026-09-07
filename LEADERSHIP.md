@@ -5,7 +5,7 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
 | functions | 1598 | 1577 (98.7%) | 1598 (100.0%) | 0 |
-| globals | 187 | 114 (61.0%) | 187 (100.0%) | 0 |
+| globals | 187 | 187 (100.0%) | 187 (100.0%) | 0 |
 
 ## What to implement next
 
@@ -13,7 +13,6 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `op llvm.insertvalue` | 73 | 0 | 73 |
 | `op llvm.intr.vastart` | 20 | 20 | 0 |
 | `op llvm.va_arg` | 1 | 1 | 0 |
 
@@ -58,9 +57,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`5c27695828f4e0002d60ec1b6d2f5b024295024d`](https://github.com/opencompl/veir/commit/5c27695828f4e0002d60ec1b6d2f5b024295024d) |
+| veir | [`f9bcd138e812464fa0767fc02f275dd42e8bce7f`](https://github.com/opencompl/veir/commit/f9bcd138e812464fa0767fc02f275dd42e8bce7f) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 555d7fc86ca60e9b, globals dd786b49d0043337` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-07 22:44 UTC on Linux x86_64` |
+| scored | `2026-09-07 23:00 UTC on Linux x86_64` |
