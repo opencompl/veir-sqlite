@@ -1,5 +1,5 @@
 "builtin.module"() ({
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 1 : i64, constant, dso_local, global_type = !llvm.struct<packed (array<14 x i8>, array<18 x i8>)>, linkage = #llvm.linkage<external>, sym_name = "jsonAppendControlChar.aSpecial", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 1 : i64, constant, dso_local, global_type = !llvm.struct<packed (array<14 x i8>, array<18 x i8>)>, linkage = #llvm.linkage<external>, sym_name = "jsonAppendControlChar.aSpecial", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
     %0 = "llvm.mlir.constant"() <{value = 0 : i8}> : () -> i8
     %1 = "llvm.mlir.constant"() <{value = dense<0> : tensor<18xi8>}> : () -> !llvm.array<18 x i8>
     %2 = "llvm.mlir.constant"() <{value = "\00\00\00\00\00\00\00\00btn\00fr"}> : () -> !llvm.array<14 x i8>

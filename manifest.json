@@ -14,13 +14,13 @@
     },
     "O3": {
       "functions": {
-        "count": 1598,
-        "digest": "48eb87ec9bdfbe00",
+        "count": 2636,
+        "digest": "555d7fc86ca60e9b",
         "skipped": []
       },
       "globals": {
-        "count": 195,
-        "digest": "cfb884a94cda5afa",
+        "count": 226,
+        "digest": "dd786b49d0043337",
         "skipped": []
       }
     }

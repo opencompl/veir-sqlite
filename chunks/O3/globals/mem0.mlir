@@ -1,5 +1,5 @@
 "builtin.module"() ({
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 8 : i64, dso_local, global_type = !llvm.struct<(ptr, i64, i64, i32, array<4 x i8>)>, linkage = #llvm.linkage<external>, sym_name = "mem0", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 8 : i64, dso_local, global_type = !llvm.struct<(ptr, i64, i64, i32, array<4 x i8>)>, linkage = #llvm.linkage<external>, sym_name = "mem0", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
     %0 = "llvm.mlir.constant"() <{value = 0 : i8}> : () -> i8
     %1 = "llvm.mlir.constant"() <{value = dense<0> : tensor<4xi8>}> : () -> !llvm.array<4 x i8>
     %2 = "llvm.mlir.constant"() <{value = 0 : i32}> : () -> i32

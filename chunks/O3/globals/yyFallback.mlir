@@ -1,5 +1,5 @@
 "builtin.module"() ({
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 2 : i64, constant, dso_local, global_type = !llvm.struct<packed (array<102 x i16>, array<85 x i16>)>, linkage = #llvm.linkage<external>, sym_name = "yyFallback", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 2 : i64, constant, dso_local, global_type = !llvm.struct<packed (array<102 x i16>, array<85 x i16>)>, linkage = #llvm.linkage<external>, sym_name = "yyFallback", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
     %0 = "llvm.mlir.constant"() <{value = 0 : i16}> : () -> i16
     %1 = "llvm.mlir.constant"() <{value = dense<0> : tensor<85xi16>}> : () -> !llvm.array<85 x i16>
     %2 = "llvm.mlir.constant"() <{value = dense<"0x000000003C003C003C003C0000003C003C003C0000003C003C003C003C000000000000003C00000000003C0000000000000000003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C0000000000000000003C003C000000000000000000000000000000000000000000000000003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C003C00"> : tensor<102xi16>}> : () -> !llvm.array<102 x i16>

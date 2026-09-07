@@ -1,5 +1,5 @@
 "builtin.module"() ({
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 8 : i64, constant, dso_local, global_type = !llvm.array<4 x ptr>, linkage = #llvm.linkage<external>, sym_name = "sqlite3VdbeExec.azType", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 8 : i64, constant, dso_local, global_type = !llvm.array<4 x ptr>, linkage = #llvm.linkage<external>, sym_name = "sqlite3VdbeExec.azType", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
     %0 = "llvm.mlir.addressof"() <{global_name = @".str.376"}> : () -> !llvm.ptr
     %1 = "llvm.mlir.addressof"() <{global_name = @".str.375"}> : () -> !llvm.ptr
     %2 = "llvm.mlir.addressof"() <{global_name = @".str.374"}> : () -> !llvm.ptr

@@ -1,5 +1,5 @@
 "builtin.module"() ({
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 1 : i64, constant, dso_local, global_type = !llvm.array<7 x struct<"struct.anon.42", (i8, i8, i8)>>, linkage = #llvm.linkage<external>, sym_name = "sqlite3JoinType.aKeyword", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 1 : i64, constant, dso_local, global_type = !llvm.array<7 x struct<"struct.anon.42", (i8, i8, i8)>>, linkage = #llvm.linkage<external>, sym_name = "sqlite3JoinType.aKeyword", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
     %0 = "llvm.mlir.constant"() <{value = 3 : i8}> : () -> i8
     %1 = "llvm.mlir.constant"() <{value = 5 : i8}> : () -> i8
     %2 = "llvm.mlir.constant"() <{value = 28 : i8}> : () -> i8

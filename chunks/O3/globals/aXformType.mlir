@@ -1,5 +1,5 @@
 "builtin.module"() ({
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 4 : i64, constant, dso_local, global_type = !llvm.array<6 x struct<"struct.anon.48", (i8, array<7 x i8>, f32, f32)>>, linkage = #llvm.linkage<external>, sym_name = "aXformType", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 4 : i64, constant, dso_local, global_type = !llvm.array<6 x struct<"struct.anon.48", (i8, array<7 x i8>, f32, f32)>>, linkage = #llvm.linkage<external>, sym_name = "aXformType", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
     %0 = "llvm.mlir.constant"() <{value = 3.153600e+07 : f32}> : () -> f32
     %1 = "llvm.mlir.constant"() <{value = 1.471300e+04 : f32}> : () -> f32
     %2 = "llvm.mlir.constant"() <{value = "year\00\00\00"}> : () -> !llvm.array<7 x i8>

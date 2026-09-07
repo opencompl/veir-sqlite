@@ -1,5 +1,5 @@
 "builtin.module"() ({
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 8 : i64, dso_local, global_type = !llvm.struct<"struct.FuncDefHash", (array<23 x ptr>)>, linkage = #llvm.linkage<external>, sym_name = "sqlite3BuiltinFunctions", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 8 : i64, dso_local, global_type = !llvm.struct<"struct.FuncDefHash", (array<23 x ptr>)>, linkage = #llvm.linkage<external>, sym_name = "sqlite3BuiltinFunctions", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
     %0 = "llvm.mlir.zero"() : () -> !llvm.ptr
     %1 = "llvm.mlir.zero"() : () -> !llvm.array<23 x ptr>
     %2 = "llvm.mlir.zero"() : () -> !llvm.struct<"struct.FuncDefHash", (array<23 x ptr>)>

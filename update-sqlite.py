@@ -203,7 +203,7 @@ def compile_module(src: Path, corpus: str, tools: dict[str, str]) -> Path:
              *cflags, str(src), "-o", str(raw)])
         run([tools["opt"], "-passes=sroa", str(raw), "-o", str(bc)])
     else:
-        run([tools["clang"], "-O3", "-c", "-emit-llvm", *cflags, str(src), "-o", str(bc)])
+        run([tools["clang"], "-o3", "-fno-vectorize", "-fno-slp-vectorize", "-c", "-emit-llvm", *cflags, str(src), "-o", str(bc)])
     return bc
 
 

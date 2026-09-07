@@ -11,7 +11,7 @@
   }) : () -> ()
   "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 1 : i64, constant, dso_local, global_type = !llvm.array<6 x i8>, linkage = #llvm.linkage<external>, sym_name = ".str.647", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
   }) : () -> ()
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 8 : i64, constant, dso_local, global_type = !llvm.array<17 x ptr>, linkage = #llvm.linkage<external>, sym_name = "jsonbType", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 8 : i64, constant, dso_local, global_type = !llvm.array<17 x ptr>, linkage = #llvm.linkage<external>, sym_name = "jsonbType", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
     %0 = "llvm.mlir.addressof"() <{global_name = @".str.4"}> : () -> !llvm.ptr
     %1 = "llvm.mlir.addressof"() <{global_name = @".str.673"}> : () -> !llvm.ptr
     %2 = "llvm.mlir.addressof"() <{global_name = @".str.672"}> : () -> !llvm.ptr

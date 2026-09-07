@@ -1,5 +1,5 @@
 "builtin.module"() ({
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 4 : i64, dso_local, global_type = !llvm.struct<"struct.sqlite3PrngType", (array<16 x i32>, array<64 x i8>, i8)>, linkage = #llvm.linkage<external>, sym_name = "sqlite3SavedPrng", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 4 : i64, dso_local, global_type = !llvm.struct<"struct.sqlite3PrngType", (array<16 x i32>, array<64 x i8>, i8)>, linkage = #llvm.linkage<external>, sym_name = "sqlite3SavedPrng", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
     %0 = "llvm.mlir.constant"() <{value = 0 : i8}> : () -> i8
     %1 = "llvm.mlir.constant"() <{value = dense<0> : tensor<64xi8>}> : () -> !llvm.array<64 x i8>
     %2 = "llvm.mlir.constant"() <{value = 0 : i32}> : () -> i32
