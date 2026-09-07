@@ -4,7 +4,7 @@ How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts t
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 1034 (64.7%) | 1535 (96.1%) | 63 |
+| functions | 1598 | 1435 (89.8%) | 1535 (96.1%) | 63 |
 | globals | 195 | 122 (62.6%) | 195 (100.0%) | 0 |
 
 ## What to implement next
@@ -13,21 +13,19 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 | blocked on | chunks | functions | globals |
 |---|---:|---:|---:|
-| `op llvm.intr.memset` | 291 | 291 | 0 |
-| `op llvm.intr.memcpy` | 115 | 115 | 0 |
 | `op llvm.insertvalue` | 74 | 1 | 73 |
-| `op llvm.fcmp` | 34 | 34 | 0 |
-| `op llvm.intr.vastart` | 18 | 18 | 0 |
-| `op llvm.sitofp` | 15 | 15 | 0 |
-| `op llvm.intr.memmove` | 9 | 9 | 0 |
+| `op llvm.fcmp` | 36 | 36 | 0 |
+| `op llvm.intr.vastart` | 20 | 20 | 0 |
+| `op llvm.sitofp` | 16 | 16 | 0 |
 | `op llvm.intr.fabs` | 5 | 5 | 0 |
+| `op llvm.shufflevector` | 4 | 4 | 0 |
+| `op llvm.uitofp` | 3 | 3 | 0 |
+| `op llvm.fptosi` | 3 | 3 | 0 |
 | `op llvm.extractvalue` | 3 | 3 | 0 |
+| `op llvm.fence` | 3 | 3 | 0 |
 | `op llvm.fneg` | 2 | 2 | 0 |
-| `op llvm.fptosi` | 2 | 2 | 0 |
-| `op llvm.fence` | 2 | 2 | 0 |
-| `op llvm.shufflevector` | 1 | 1 | 0 |
-| `op llvm.intr.vector.reduce.or` | 1 | 1 | 0 |
-| `op llvm.uitofp` | 1 | 1 | 0 |
+| `op llvm.intr.vector.reduce.or` | 2 | 2 | 0 |
+| `op llvm.insertelement` | 1 | 1 | 0 |
 | `attribute #llvm.alias_scope` | 1 | 1 | 0 |
 
 ## Detail
@@ -88,9 +86,9 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 
 |  | value |
 |---|---|
-| veir | [`9a6d586b06272677953e179033682e137824e731`](https://github.com/opencompl/veir/commit/9a6d586b06272677953e179033682e137824e731) |
+| veir | [`6604b8b343e5c2c16bb4bc0d0f3f5add53e658ad`](https://github.com/opencompl/veir/commit/6604b8b343e5c2c16bb4bc0d0f3f5add53e658ad) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 48eb87ec9bdfbe00, globals cfb884a94cda5afa` |
 | chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-07 01:36 UTC on Linux x86_64` |
+| scored | `2026-09-07 04:14 UTC on Linux x86_64` |
