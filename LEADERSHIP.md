@@ -26,8 +26,8 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 | 8+ | 50 | 50 | 100.0% |
 | 16+ | 222 | 222 | 100.0% |
 | 32+ | 309 | 309 | 100.0% |
-| 64+ | 416 | 416 | 100.0% |
-| 128+ | 337 | 337 | 100.0% |
+| 64+ | 417 | 417 | 100.0% |
+| 128+ | 336 | 336 | 100.0% |
 | 256+ | 165 | 165 | 100.0% |
 | 512+ | 62 | 62 | 100.0% |
 | 1024+ | 17 | 17 | 100.0% |
@@ -60,6 +60,6 @@ Each row is the *first* unregistered thing veir-opt hits in a chunk, so implemen
 | veir | [`c617802c73c71b6e9b2ad318d7395f656ac13146`](https://github.com/opencompl/veir/commit/c617802c73c71b6e9b2ad318d7395f656ac13146) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
-| corpus | `functions 555d7fc86ca60e9b, globals dd786b49d0043337` |
-| chunks built with | `Homebrew clang version 22.1.6 / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-07 23:57 UTC on Linux x86_64` |
+| corpus | `functions b31991197ea30afe, globals a2fa311606b8e8a0` |
+| chunks built with | `clang version 23.1.0-rc3 (git@github.com:llvm/llvm-project.git 4e60bd7a63b0d1a8407efb1702b53faec44e2980) / arm64-apple-darwin23.6.0` |
+| scored | `2026-09-08 05:47 UTC on Linux x86_64` |
