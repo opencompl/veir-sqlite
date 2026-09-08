@@ -27,34 +27,34 @@
   }) : () -> ()
   "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 1 : i64, constant, dso_local, global_type = !llvm.array<16 x i8>, linkage = #llvm.linkage<external>, sym_name = ".str.1116", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
   }) : () -> ()
-  "llvm.module_flags"() <{flags = [#llvm.mlir.module_flag<error, "wchar_size", 4 : i32>, #llvm.mlir.module_flag<min, "PIC Level", 2 : i32>, #llvm.mlir.module_flag<max, "uwtable", 1 : i32>, #llvm.mlir.module_flag<max, "frame-pointer", 4 : i32>]}> : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3_vfs_find", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 0 : i64}> ({
+  "llvm.module_flags"() <{flags = [#llvm.mlir.module_flag<min, "PIC Level", 2 : i32>, #llvm.mlir.module_flag<max, "uwtable", 1 : i32>, #llvm.mlir.module_flag<max, "frame-pointer", 4 : i32>]}> : () -> ()
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3_vfs_find", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 0 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (i64)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3_malloc64", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 0 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (i64)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3_malloc64", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 0 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<i64 (ptr)>, linkage = #llvm.linkage<external>, no_unwind, passthrough = [["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "strlen", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, visibility_ = 0 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<i64 (ptr)>, linkage = #llvm.linkage<external>, no_unwind, passthrough = [["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "strlen", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, visibility_ = 0 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (ptr, i32, i64, i64)>, linkage = #llvm.linkage<external>, no_unwind, passthrough = [["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "__memset_chk", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, visibility_ = 0 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (ptr, i32, i64, i64)>, linkage = #llvm.linkage<external>, no_unwind, passthrough = [["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "__memset_chk", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, visibility_ = 0 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, function_type = !llvm.func<i64 (ptr, i1, i1, i1)>, linkage = #llvm.linkage<external>, memory_effects = #llvm.memory_effects<other = none, argMem = none, inaccessibleMem = none, errnoMem = none, targetMem0 = none, targetMem1 = none>, no_unwind, passthrough = ["nocallback", "nofree", "nosync", "speculatable"], sym_name = "llvm.objectsize.i64.p0", unnamed_addr = 0 : i64, visibility_ = 0 : i64, will_return}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, function_type = !llvm.func<i64 (ptr, i1, i1, i1)>, linkage = #llvm.linkage<external>, memory_effects = #llvm.memory_effects<other = none, argMem = none, inaccessibleMem = none, errnoMem = none, targetMem0 = none, targetMem1 = none>, no_unwind, nocallback, passthrough = ["nofree", "nosync", "speculatable"], sym_name = "llvm.objectsize.i64.p0", unnamed_addr = 0 : i64, visibility_ = 0 : i64, will_return}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (ptr, ptr, i64, i64)>, linkage = #llvm.linkage<external>, no_unwind, passthrough = [["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "__memcpy_chk", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, visibility_ = 0 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (ptr, ptr, i64, i64)>, linkage = #llvm.linkage<external>, no_unwind, passthrough = [["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "__memcpy_chk", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, visibility_ = 0 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (ptr, ...)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3_mprintf", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 0 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<ptr (ptr, ...)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3_mprintf", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 0 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<void (ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3_free_filename", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 0 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<void (ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3_free_filename", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 0 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<i32 (ptr, ptr, i64)>, linkage = #llvm.linkage<external>, passthrough = [["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "memcmp", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, visibility_ = 0 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<i32 (ptr, ptr, i64)>, linkage = #llvm.linkage<external>, passthrough = [["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "memcmp", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, visibility_ = 0 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<i8 (i32)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], res_attrs = [{llvm.zeroext}], sym_name = "sqlite3HexToInt", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 1 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<i8 (i32)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], res_attrs = [{llvm.zeroext}], sym_name = "sqlite3HexToInt", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 1 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<i32 (ptr, ptr, ptr, ptr, ptr, ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3ParseUri", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 1 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<i32 (ptr, ptr, ptr, ptr, ptr, ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3ParseUri", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 1 : i64}> ({
   ^bb0(%arg0: !llvm.ptr, %arg1: !llvm.ptr, %arg2: !llvm.ptr, %arg3: !llvm.ptr, %arg4: !llvm.ptr, %arg5: !llvm.ptr):
     %0 = "llvm.mlir.constant"() <{value = 64 : i32}> : () -> i32
     %1 = "llvm.mlir.constant"() <{value = 0 : i32}> : () -> i32
-    %2 = "llvm.mlir.constant"() <{value = 3 : i32}> : () -> i32
+    %2 = "llvm.mlir.constant"() <{value = 6 : i64}> : () -> i64
     %3 = "llvm.mlir.addressof"() <{global_name = @sqlite3Config}> : () -> !llvm.ptr
-    %4 = "llvm.getelementptr"(%3, %1) <{elem_type = !llvm.struct<"struct.Sqlite3Config", (i32, i8, i8, i8, i8, i8, i8, i32, i32, i32, i32, i32, struct<"struct.sqlite3_mem_methods", (ptr, ptr, ptr, ptr, ptr, ptr, ptr, ptr)>, struct<"struct.sqlite3_mutex_methods", (ptr, ptr, ptr, ptr, ptr, ptr, ptr, ptr, ptr)>, struct<"struct.sqlite3_pcache_methods2", (i32, ptr, ptr, ptr, ptr, ptr, ptr, ptr, ptr, ptr, ptr, ptr, ptr)>, ptr, i32, i32, i32, i64, i64, ptr, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, ptr, ptr, ptr, i64, ptr, i32, ptr, i32, i32, i32)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 3>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %4 = "llvm.getelementptr"(%3, %2) <{elem_type = i8, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %5 = "llvm.mlir.constant"() <{value = 5 : i64}> : () -> i64
     %6 = "llvm.mlir.addressof"() <{global_name = @".str.1103"}> : () -> !llvm.ptr
     %7 = "llvm.mlir.constant"() <{value = 8 : i64}> : () -> i64
@@ -66,28 +66,28 @@
     %13 = "llvm.mlir.constant"() <{value = 0 : i64}> : () -> i64
     %14 = "llvm.mlir.constant"() <{value = -65 : i32}> : () -> i32
     %15 = "llvm.mlir.constant"() <{value = 47 : i32}> : () -> i32
-    %16 = "llvm.mlir.constant"() <{value = 6 : i64}> : () -> i64
-    %17 = "llvm.mlir.constant"() <{value = 7 : i64}> : () -> i64
-    %18 = "llvm.mlir.constant"() <{value = 16 : i64}> : () -> i64
-    %19 = "llvm.mlir.addressof"() <{global_name = @".str.1104"}> : () -> !llvm.ptr
-    %20 = "llvm.mlir.constant"() <{value = 9 : i64}> : () -> i64
-    %21 = "llvm.mlir.constant"() <{value = 35 : i32}> : () -> i32
-    %22 = "llvm.mlir.constant"() <{value = 1 : i32}> : () -> i32
-    %23 = "llvm.mlir.constant"() <{value = 1 : i64}> : () -> i64
-    %24 = "llvm.mlir.constant"() <{value = 0 : i8}> : () -> i8
-    %25 = "llvm.mlir.addressof"() <{global_name = @".str.1116"}> : () -> !llvm.ptr
-    %26 = "llvm.mlir.constant"() <{value = 3 : i64}> : () -> i64
-    %27 = "llvm.mlir.addressof"() <{global_name = @".str.1106"}> : () -> !llvm.ptr
-    %28 = "llvm.mlir.addressof"() <{global_name = @".str.1107"}> : () -> !llvm.ptr
-    %29 = "llvm.mlir.addressof"() <{global_name = @sqlite3ParseUri.aCacheMode}> : () -> !llvm.ptr
-    %30 = "llvm.mlir.constant"() <{value = 393216 : i32}> : () -> i32
-    %31 = "llvm.mlir.addressof"() <{global_name = @".str.1110"}> : () -> !llvm.ptr
-    %32 = "llvm.mlir.constant"() <{value = 135 : i32}> : () -> i32
-    %33 = "llvm.mlir.addressof"() <{global_name = @sqlite3ParseUri.aOpenMode}> : () -> !llvm.ptr
-    %34 = "llvm.mlir.addressof"() <{global_name = @".str.102"}> : () -> !llvm.ptr
-    %35 = "llvm.mlir.constant"() <{value = -129 : i32}> : () -> i32
-    %36 = "llvm.mlir.constant"() <{value = -1 : i32}> : () -> i32
-    %37 = "llvm.mlir.addressof"() <{global_name = @".str.1115"}> : () -> !llvm.ptr
+    %16 = "llvm.mlir.constant"() <{value = 7 : i64}> : () -> i64
+    %17 = "llvm.mlir.constant"() <{value = 16 : i64}> : () -> i64
+    %18 = "llvm.mlir.addressof"() <{global_name = @".str.1104"}> : () -> !llvm.ptr
+    %19 = "llvm.mlir.constant"() <{value = 9 : i64}> : () -> i64
+    %20 = "llvm.mlir.constant"() <{value = 35 : i32}> : () -> i32
+    %21 = "llvm.mlir.constant"() <{value = 1 : i32}> : () -> i32
+    %22 = "llvm.mlir.constant"() <{value = 1 : i64}> : () -> i64
+    %23 = "llvm.mlir.constant"() <{value = 0 : i8}> : () -> i8
+    %24 = "llvm.mlir.addressof"() <{global_name = @".str.1116"}> : () -> !llvm.ptr
+    %25 = "llvm.mlir.constant"() <{value = 3 : i64}> : () -> i64
+    %26 = "llvm.mlir.addressof"() <{global_name = @".str.1106"}> : () -> !llvm.ptr
+    %27 = "llvm.mlir.addressof"() <{global_name = @".str.1107"}> : () -> !llvm.ptr
+    %28 = "llvm.mlir.addressof"() <{global_name = @sqlite3ParseUri.aCacheMode}> : () -> !llvm.ptr
+    %29 = "llvm.mlir.constant"() <{value = 393216 : i32}> : () -> i32
+    %30 = "llvm.mlir.addressof"() <{global_name = @".str.1110"}> : () -> !llvm.ptr
+    %31 = "llvm.mlir.constant"() <{value = 135 : i32}> : () -> i32
+    %32 = "llvm.mlir.addressof"() <{global_name = @sqlite3ParseUri.aOpenMode}> : () -> !llvm.ptr
+    %33 = "llvm.mlir.addressof"() <{global_name = @".str.102"}> : () -> !llvm.ptr
+    %34 = "llvm.mlir.constant"() <{value = -129 : i32}> : () -> i32
+    %35 = "llvm.mlir.constant"() <{value = -1 : i32}> : () -> i32
+    %36 = "llvm.mlir.addressof"() <{global_name = @".str.1115"}> : () -> !llvm.ptr
+    %37 = "llvm.mlir.constant"() <{value = 3 : i32}> : () -> i32
     %38 = "llvm.mlir.addressof"() <{global_name = @".str.1114"}> : () -> !llvm.ptr
     %39 = "llvm.mlir.constant"() <{value = 37 : i32}> : () -> i32
     %40 = "llvm.mlir.addressof"() <{global_name = @sqlite3CtypeMap}> : () -> !llvm.ptr
@@ -132,7 +132,7 @@
     %69 = "llvm.add"(%61, %68) <{overflowFlags = 0 : i32}> : (i64, i64) -> i64
     "llvm.br"()[^bb7] : () -> ()
   ^bb7:  // pred: ^bb6
-    %70 = "llvm.add"(%60, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %70 = "llvm.add"(%60, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     "llvm.br"(%70, %69)[^bb5] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (i64, i64) -> ()
   ^bb8:  // pred: ^bb5
     %71 = "llvm.call"(%61) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}], callee = @sqlite3_malloc64, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 1, 0>}> : (i64) -> !llvm.ptr
@@ -150,13 +150,13 @@
     %79 = "llvm.icmp"(%78, %15) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%79, %5)[^bb11, ^bb22] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i64) -> ()
   ^bb11:  // pred: ^bb10
-    %80 = "llvm.getelementptr"(%arg1, %16) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
+    %80 = "llvm.getelementptr"(%arg1, %2) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %81 = "llvm.load"(%80) <{alignment = 1 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i8
     %82 = "llvm.sext"(%81) : (i8) -> i32
     %83 = "llvm.icmp"(%82, %15) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%83, %5)[^bb12, ^bb22] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i64) -> ()
   ^bb12:  // pred: ^bb11
-    "llvm.br"(%17)[^bb13] : (i64) -> ()
+    "llvm.br"(%16)[^bb13] : (i64) -> ()
   ^bb13(%84: i64):  // 2 preds: ^bb12, ^bb16
     %85 = "llvm.getelementptr"(%arg1, %84) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %86 = "llvm.load"(%85) <{alignment = 1 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i8
@@ -172,26 +172,26 @@
   ^bb15(%93: i1):  // 2 preds: ^bb13, ^bb14
     "llvm.cond_br"(%93)[^bb16, ^bb17] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb16:  // pred: ^bb15
-    %94 = "llvm.add"(%84, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %94 = "llvm.add"(%84, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     "llvm.br"(%94)[^bb13] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (i64) -> ()
   ^bb17:  // pred: ^bb15
-    %95 = "llvm.icmp"(%84, %17) <{predicate = 1 : i64}> : (i64, i64) -> i1
+    %95 = "llvm.icmp"(%84, %16) <{predicate = 1 : i64}> : (i64, i64) -> i1
     "llvm.cond_br"(%95)[^bb18, ^bb21] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb18:  // pred: ^bb17
-    %96 = "llvm.icmp"(%84, %18) <{predicate = 1 : i64}> : (i64, i64) -> i1
+    %96 = "llvm.icmp"(%84, %17) <{predicate = 1 : i64}> : (i64, i64) -> i1
     "llvm.cond_br"(%96)[^bb20, ^bb19] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb19:  // pred: ^bb18
-    %97 = "llvm.getelementptr"(%arg1, %17) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
-    %98 = "llvm.call"(%19, %97, %20) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @memcmp, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>}> : (!llvm.ptr, !llvm.ptr, i64) -> i32
+    %97 = "llvm.getelementptr"(%arg1, %16) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
+    %98 = "llvm.call"(%18, %97, %19) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @memcmp, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>}> : (!llvm.ptr, !llvm.ptr, i64) -> i32
     %99 = "llvm.icmp"(%98, %1) <{predicate = 1 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%99)[^bb20, ^bb21] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb20:  // 2 preds: ^bb18, ^bb19
-    %100 = "llvm.sub"(%84, %17) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %100 = "llvm.sub"(%84, %16) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %101 = "llvm.trunc"(%100) <{overflowFlags = 0 : i32}> : (i64) -> i32
-    %102 = "llvm.getelementptr"(%arg1, %17) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
+    %102 = "llvm.getelementptr"(%arg1, %16) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %103 = "llvm.call"(%47, %101, %102) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @sqlite3_mprintf, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>, var_callee_type = !llvm.func<ptr (ptr, ...)>}> : (!llvm.ptr, i32, !llvm.ptr) -> !llvm.ptr
     "llvm.store"(%103, %arg5) <{alignment = 8 : i64, ordering = 0 : i64}> : (!llvm.ptr, !llvm.ptr) -> ()
-    "llvm.br"(%75, %59, %22)[^bb105] : (!llvm.ptr, i32, i32) -> ()
+    "llvm.br"(%75, %59, %21)[^bb105] : (!llvm.ptr, i32, i32) -> ()
   ^bb21:  // 2 preds: ^bb17, ^bb19
     "llvm.br"(%84)[^bb22] : (i64) -> ()
   ^bb22(%104: i64):  // 3 preds: ^bb10, ^bb11, ^bb21
@@ -204,12 +204,12 @@
     "llvm.cond_br"(%111, %10)[^bb24, ^bb25] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i1) -> ()
   ^bb24:  // pred: ^bb23
     %112 = "llvm.sext"(%109) : (i8) -> i32
-    %113 = "llvm.icmp"(%112, %21) <{predicate = 1 : i64}> : (i32, i32) -> i1
+    %113 = "llvm.icmp"(%112, %20) <{predicate = 1 : i64}> : (i32, i32) -> i1
     "llvm.br"(%113)[^bb25] : (i1) -> ()
   ^bb25(%114: i1):  // 2 preds: ^bb23, ^bb24
     "llvm.cond_br"(%114)[^bb26, ^bb68] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb26:  // pred: ^bb25
-    %115 = "llvm.add"(%106, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %115 = "llvm.add"(%106, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %116 = "llvm.sext"(%109) : (i8) -> i32
     %117 = "llvm.icmp"(%116, %39) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%117)[^bb27, ^bb45] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
@@ -224,7 +224,7 @@
     %125 = "llvm.icmp"(%124, %1) <{predicate = 1 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%125)[^bb28, ^bb45] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb28:  // pred: ^bb27
-    %126 = "llvm.add"(%115, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %126 = "llvm.add"(%115, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %127 = "llvm.getelementptr"(%arg1, %126) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %128 = "llvm.load"(%127) <{alignment = 1 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i8
     %129 = "llvm.zext"(%128) : (i8) -> i64
@@ -235,14 +235,14 @@
     %134 = "llvm.icmp"(%133, %1) <{predicate = 1 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%134)[^bb29, ^bb45] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb29:  // pred: ^bb28
-    %135 = "llvm.add"(%115, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %135 = "llvm.add"(%115, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %136 = "llvm.getelementptr"(%arg1, %115) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %137 = "llvm.load"(%136) <{alignment = 1 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i8
     %138 = "llvm.sext"(%137) : (i8) -> i32
     %139 = "llvm.call"(%138) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}], callee = @sqlite3HexToInt, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 1, 0>, res_attrs = [{llvm.zeroext}]}> : (i32) -> i8
     %140 = "llvm.zext"(%139) : (i8) -> i32
     %141 = "llvm.shl"(%140, %46) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %142 = "llvm.add"(%135, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %142 = "llvm.add"(%135, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %143 = "llvm.getelementptr"(%arg1, %135) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %144 = "llvm.load"(%143) <{alignment = 1 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i8
     %145 = "llvm.sext"(%144) : (i8) -> i32
@@ -261,7 +261,7 @@
     "llvm.cond_br"(%154, %10)[^bb32, ^bb41] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i1) -> ()
   ^bb32:  // pred: ^bb31
     %155 = "llvm.sext"(%152) : (i8) -> i32
-    %156 = "llvm.icmp"(%155, %21) <{predicate = 1 : i64}> : (i32, i32) -> i1
+    %156 = "llvm.icmp"(%155, %20) <{predicate = 1 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%156, %10)[^bb33, ^bb41] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i1) -> ()
   ^bb33:  // pred: ^bb32
     %157 = "llvm.icmp"(%105, %1) <{predicate = 1 : i64}> : (i32, i32) -> i1
@@ -271,7 +271,7 @@
     %159 = "llvm.icmp"(%158, %44) <{predicate = 1 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%159, %10)[^bb35, ^bb41] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i1) -> ()
   ^bb35:  // 2 preds: ^bb33, ^bb34
-    %160 = "llvm.icmp"(%105, %22) <{predicate = 1 : i64}> : (i32, i32) -> i1
+    %160 = "llvm.icmp"(%105, %21) <{predicate = 1 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%160)[^bb38, ^bb36] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb36:  // pred: ^bb35
     %161 = "llvm.sext"(%152) : (i8) -> i32
@@ -293,7 +293,7 @@
   ^bb41(%169: i1):  // 6 preds: ^bb31, ^bb32, ^bb34, ^bb36, ^bb37, ^bb40
     "llvm.cond_br"(%169)[^bb42, ^bb43] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb42:  // pred: ^bb41
-    %170 = "llvm.add"(%150, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %170 = "llvm.add"(%150, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     "llvm.br"(%170)[^bb31] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (i64) -> ()
   ^bb43:  // pred: ^bb41
     "llvm.br"(%105, %150, %107)[^bb23] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (i32, i64, i64) -> ()
@@ -301,7 +301,7 @@
     %171 = "llvm.trunc"(%148) <{overflowFlags = 0 : i32}> : (i32) -> i8
     "llvm.br"(%171, %105, %142, %107)[^bb67] : (i8, i32, i64, i64) -> ()
   ^bb45:  // 3 preds: ^bb26, ^bb27, ^bb28
-    %172 = "llvm.icmp"(%105, %22) <{predicate = 0 : i64}> : (i32, i32) -> i1
+    %172 = "llvm.icmp"(%105, %21) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%172)[^bb46, ^bb60] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb46:  // pred: ^bb45
     %173 = "llvm.sext"(%109) : (i8) -> i32
@@ -312,7 +312,7 @@
     %176 = "llvm.icmp"(%175, %43) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%176)[^bb48, ^bb60] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb48:  // 2 preds: ^bb46, ^bb47
-    %177 = "llvm.sub"(%107, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %177 = "llvm.sub"(%107, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %178 = "llvm.getelementptr"(%75, %177) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %179 = "llvm.load"(%178) <{alignment = 1 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i8
     %180 = "llvm.sext"(%179) : (i8) -> i32
@@ -330,10 +330,10 @@
     %187 = "llvm.getelementptr"(%arg1, %182) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %188 = "llvm.load"(%187) <{alignment = 1 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i8
     %189 = "llvm.sext"(%188) : (i8) -> i32
-    %190 = "llvm.icmp"(%189, %21) <{predicate = 1 : i64}> : (i32, i32) -> i1
+    %190 = "llvm.icmp"(%189, %20) <{predicate = 1 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%190, %10)[^bb52, ^bb53] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i1) -> ()
   ^bb52:  // pred: ^bb51
-    %191 = "llvm.sub"(%182, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %191 = "llvm.sub"(%182, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %192 = "llvm.getelementptr"(%arg1, %191) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %193 = "llvm.load"(%192) <{alignment = 1 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i8
     %194 = "llvm.sext"(%193) : (i8) -> i32
@@ -342,7 +342,7 @@
   ^bb53(%196: i1):  // 3 preds: ^bb50, ^bb51, ^bb52
     "llvm.cond_br"(%196)[^bb54, ^bb55] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb54:  // pred: ^bb53
-    %197 = "llvm.add"(%182, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %197 = "llvm.add"(%182, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     "llvm.br"(%197)[^bb50] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (i64) -> ()
   ^bb55:  // pred: ^bb53
     "llvm.br"(%105, %182, %107)[^bb23] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (i32, i64, i64) -> ()
@@ -351,14 +351,14 @@
     %199 = "llvm.icmp"(%198, %42) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%199)[^bb57, ^bb58] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb57:  // pred: ^bb56
-    %200 = "llvm.add"(%107, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %200 = "llvm.add"(%107, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %201 = "llvm.getelementptr"(%75, %107) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
-    "llvm.store"(%24, %201) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
+    "llvm.store"(%23, %201) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
     "llvm.br"(%105, %200)[^bb59] : (i32, i64) -> ()
   ^bb58:  // pred: ^bb56
     "llvm.br"(%45, %107)[^bb59] : (i32, i64) -> ()
   ^bb59(%202: i32, %203: i64):  // 2 preds: ^bb57, ^bb58
-    "llvm.br"(%24, %202, %203)[^bb66] : (i8, i32, i64) -> ()
+    "llvm.br"(%23, %202, %203)[^bb66] : (i8, i32, i64) -> ()
   ^bb60:  // 2 preds: ^bb45, ^bb47
     %204 = "llvm.icmp"(%105, %1) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%204)[^bb61, ^bb62] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
@@ -374,23 +374,23 @@
     %209 = "llvm.icmp"(%208, %42) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%209, %109, %105)[^bb64, ^bb65] <{operandSegmentSizes = array<i32: 1, 0, 2>}> : (i1, i8, i32) -> ()
   ^bb64:  // 2 preds: ^bb61, ^bb63
-    "llvm.br"(%24, %22)[^bb65] : (i8, i32) -> ()
+    "llvm.br"(%23, %21)[^bb65] : (i8, i32) -> ()
   ^bb65(%210: i8, %211: i32):  // 3 preds: ^bb62, ^bb63, ^bb64
     "llvm.br"(%210, %211, %107)[^bb66] : (i8, i32, i64) -> ()
   ^bb66(%212: i8, %213: i32, %214: i64):  // 2 preds: ^bb59, ^bb65
     "llvm.br"(%212, %213, %115, %214)[^bb67] : (i8, i32, i64, i64) -> ()
   ^bb67(%215: i8, %216: i32, %217: i64, %218: i64):  // 2 preds: ^bb44, ^bb66
-    %219 = "llvm.add"(%218, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %219 = "llvm.add"(%218, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %220 = "llvm.getelementptr"(%75, %218) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     "llvm.store"(%215, %220) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
     "llvm.br"(%216, %217, %219)[^bb23] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (i32, i64, i64) -> ()
   ^bb68:  // pred: ^bb25
-    %221 = "llvm.icmp"(%105, %22) <{predicate = 0 : i64}> : (i32, i32) -> i1
+    %221 = "llvm.icmp"(%105, %21) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%221, %107)[^bb69, ^bb70] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i64) -> ()
   ^bb69:  // pred: ^bb68
-    %222 = "llvm.add"(%107, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %222 = "llvm.add"(%107, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %223 = "llvm.getelementptr"(%75, %107) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
-    "llvm.store"(%24, %223) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
+    "llvm.store"(%23, %223) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
     "llvm.br"(%222)[^bb70] : (i64) -> ()
   ^bb70(%224: i64):  // 2 preds: ^bb68, ^bb69
     %225 = "llvm.getelementptr"(%75, %224) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
@@ -398,23 +398,23 @@
     %227 = "llvm.call_intrinsic"(%226, %10, %11, %10) <{fastmathFlags = #llvm.fastmath<none>, intrin = "llvm.objectsize.i64.p0", op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 4, 0>}> : (!llvm.ptr, i1, i1, i1) -> i64
     %228 = "llvm.call"(%225, %1, %12, %227) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @__memset_chk, fastmathFlags = #llvm.fastmath<none>, no_unwind, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 4, 0>}> : (!llvm.ptr, i32, i64, i64) -> !llvm.ptr
     %229 = "llvm.call"(%75) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}], callee = @strlen, fastmathFlags = #llvm.fastmath<none>, no_unwind, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 1, 0>}> : (!llvm.ptr) -> i64
-    %230 = "llvm.add"(%229, %23) <{overflowFlags = 0 : i32}> : (i64, i64) -> i64
+    %230 = "llvm.add"(%229, %22) <{overflowFlags = 0 : i32}> : (i64, i64) -> i64
     %231 = "llvm.getelementptr"(%75, %230) <{elem_type = i8, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     "llvm.br"(%231, %arg0, %59)[^bb71] : (!llvm.ptr, !llvm.ptr, i32) -> ()
   ^bb71(%232: !llvm.ptr, %233: !llvm.ptr, %234: i32):  // 2 preds: ^bb70, ^bb95
     %235 = "llvm.getelementptr"(%232, %13) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %236 = "llvm.load"(%235) <{alignment = 1 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i8
-    %237 = "llvm.icmp"(%236, %24) <{predicate = 1 : i64}> : (i8, i8) -> i1
+    %237 = "llvm.icmp"(%236, %23) <{predicate = 1 : i64}> : (i8, i8) -> i1
     "llvm.cond_br"(%237)[^bb72, ^bb96] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb72:  // pred: ^bb71
     %238 = "llvm.call"(%232) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}], callee = @strlen, fastmathFlags = #llvm.fastmath<none>, no_unwind, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 1, 0>}> : (!llvm.ptr) -> i64
-    %239 = "llvm.add"(%238, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %239 = "llvm.add"(%238, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %240 = "llvm.getelementptr"(%232, %239) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     %241 = "llvm.call"(%240) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}], callee = @strlen, fastmathFlags = #llvm.fastmath<none>, no_unwind, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 1, 0>}> : (!llvm.ptr) -> i64
-    %242 = "llvm.icmp"(%238, %26) <{predicate = 0 : i64}> : (i64, i64) -> i1
+    %242 = "llvm.icmp"(%238, %25) <{predicate = 0 : i64}> : (i64, i64) -> i1
     "llvm.cond_br"(%242)[^bb73, ^bb75] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb73:  // pred: ^bb72
-    %243 = "llvm.call"(%27, %232, %26) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @memcmp, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>}> : (!llvm.ptr, !llvm.ptr, i64) -> i32
+    %243 = "llvm.call"(%26, %232, %25) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @memcmp, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>}> : (!llvm.ptr, !llvm.ptr, i64) -> i32
     %244 = "llvm.icmp"(%243, %1) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%244)[^bb74, ^bb75] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb74:  // pred: ^bb73
@@ -423,21 +423,21 @@
     %245 = "llvm.icmp"(%238, %5) <{predicate = 0 : i64}> : (i64, i64) -> i1
     "llvm.cond_br"(%245, %8, %8, %1, %1)[^bb76, ^bb78] <{operandSegmentSizes = array<i32: 1, 0, 4>}> : (i1, !llvm.ptr, !llvm.ptr, i32, i32) -> ()
   ^bb76:  // pred: ^bb75
-    %246 = "llvm.call"(%28, %232, %5) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @memcmp, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>}> : (!llvm.ptr, !llvm.ptr, i64) -> i32
+    %246 = "llvm.call"(%27, %232, %5) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @memcmp, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>}> : (!llvm.ptr, !llvm.ptr, i64) -> i32
     %247 = "llvm.icmp"(%246, %1) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%247, %8, %8, %1, %1)[^bb77, ^bb78] <{operandSegmentSizes = array<i32: 1, 0, 4>}> : (i1, !llvm.ptr, !llvm.ptr, i32, i32) -> ()
   ^bb77:  // pred: ^bb76
-    "llvm.br"(%29, %28, %30, %30)[^bb78] : (!llvm.ptr, !llvm.ptr, i32, i32) -> ()
+    "llvm.br"(%28, %27, %29, %29)[^bb78] : (!llvm.ptr, !llvm.ptr, i32, i32) -> ()
   ^bb78(%248: !llvm.ptr, %249: !llvm.ptr, %250: i32, %251: i32):  // 3 preds: ^bb75, ^bb76, ^bb77
     %252 = "llvm.icmp"(%238, %12) <{predicate = 0 : i64}> : (i64, i64) -> i1
     "llvm.cond_br"(%252, %248, %249, %250, %251)[^bb79, ^bb81] <{operandSegmentSizes = array<i32: 1, 0, 4>}> : (i1, !llvm.ptr, !llvm.ptr, i32, i32) -> ()
   ^bb79:  // pred: ^bb78
-    %253 = "llvm.call"(%31, %232, %12) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @memcmp, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>}> : (!llvm.ptr, !llvm.ptr, i64) -> i32
+    %253 = "llvm.call"(%30, %232, %12) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @memcmp, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>}> : (!llvm.ptr, !llvm.ptr, i64) -> i32
     %254 = "llvm.icmp"(%253, %1) <{predicate = 0 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%254, %248, %249, %250, %251)[^bb80, ^bb81] <{operandSegmentSizes = array<i32: 1, 0, 4>}> : (i1, !llvm.ptr, !llvm.ptr, i32, i32) -> ()
   ^bb80:  // pred: ^bb79
-    %255 = "llvm.and"(%32, %234) : (i32, i32) -> i32
-    "llvm.br"(%33, %34, %32, %255)[^bb81] : (!llvm.ptr, !llvm.ptr, i32, i32) -> ()
+    %255 = "llvm.and"(%31, %234) : (i32, i32) -> i32
+    "llvm.br"(%32, %33, %31, %255)[^bb81] : (!llvm.ptr, !llvm.ptr, i32, i32) -> ()
   ^bb81(%256: !llvm.ptr, %257: !llvm.ptr, %258: i32, %259: i32):  // 3 preds: ^bb78, ^bb79, ^bb80
     %260 = "llvm.icmp"(%256, %8) <{predicate = 1 : i64}> : (!llvm.ptr, !llvm.ptr) -> i1
     "llvm.cond_br"(%260, %234)[^bb82, ^bb94] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i32) -> ()
@@ -471,7 +471,7 @@
   ^bb87:  // 2 preds: ^bb84, ^bb85
     "llvm.br"()[^bb88] : () -> ()
   ^bb88:  // pred: ^bb87
-    %279 = "llvm.add"(%261, %22) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
+    %279 = "llvm.add"(%261, %21) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
     "llvm.br"(%279)[^bb83] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (i32) -> ()
   ^bb89(%280: i32):  // 2 preds: ^bb83, ^bb86
     %281 = "llvm.icmp"(%280, %1) <{predicate = 0 : i64}> : (i32, i32) -> i1
@@ -479,24 +479,24 @@
   ^bb90:  // pred: ^bb89
     %282 = "llvm.call"(%38, %257, %240) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @sqlite3_mprintf, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>, var_callee_type = !llvm.func<ptr (ptr, ...)>}> : (!llvm.ptr, !llvm.ptr, !llvm.ptr) -> !llvm.ptr
     "llvm.store"(%282, %arg5) <{alignment = 8 : i64, ordering = 0 : i64}> : (!llvm.ptr, !llvm.ptr) -> ()
-    "llvm.br"(%75, %234, %22)[^bb105] : (!llvm.ptr, i32, i32) -> ()
+    "llvm.br"(%75, %234, %21)[^bb105] : (!llvm.ptr, i32, i32) -> ()
   ^bb91:  // pred: ^bb89
-    %283 = "llvm.and"(%280, %35) : (i32, i32) -> i32
+    %283 = "llvm.and"(%280, %34) : (i32, i32) -> i32
     %284 = "llvm.icmp"(%283, %259) <{predicate = 4 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%284)[^bb92, ^bb93] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb92:  // pred: ^bb91
-    %285 = "llvm.call"(%37, %257, %240) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @sqlite3_mprintf, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>, var_callee_type = !llvm.func<ptr (ptr, ...)>}> : (!llvm.ptr, !llvm.ptr, !llvm.ptr) -> !llvm.ptr
+    %285 = "llvm.call"(%36, %257, %240) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @sqlite3_mprintf, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 3, 0>, var_callee_type = !llvm.func<ptr (ptr, ...)>}> : (!llvm.ptr, !llvm.ptr, !llvm.ptr) -> !llvm.ptr
     "llvm.store"(%285, %arg5) <{alignment = 8 : i64, ordering = 0 : i64}> : (!llvm.ptr, !llvm.ptr) -> ()
-    "llvm.br"(%75, %234, %2)[^bb105] : (!llvm.ptr, i32, i32) -> ()
+    "llvm.br"(%75, %234, %37)[^bb105] : (!llvm.ptr, i32, i32) -> ()
   ^bb93:  // pred: ^bb91
-    %286 = "llvm.xor"(%258, %36) : (i32, i32) -> i32
+    %286 = "llvm.xor"(%258, %35) : (i32, i32) -> i32
     %287 = "llvm.and"(%234, %286) : (i32, i32) -> i32
     %288 = "llvm.or"(%287, %280) : (i32, i32) -> i32
     "llvm.br"(%288)[^bb94] : (i32) -> ()
   ^bb94(%289: i32):  // 2 preds: ^bb81, ^bb93
     "llvm.br"(%233, %289)[^bb95] : (!llvm.ptr, i32) -> ()
   ^bb95(%290: !llvm.ptr, %291: i32):  // 2 preds: ^bb74, ^bb94
-    %292 = "llvm.add"(%241, %23) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
+    %292 = "llvm.add"(%241, %22) <{overflowFlags = 1 : i32}> : (i64, i64) -> i64
     %293 = "llvm.getelementptr"(%240, %292) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     "llvm.br"(%293, %290, %291)[^bb71] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (!llvm.ptr, !llvm.ptr, i32) -> ()
   ^bb96:  // pred: ^bb71
@@ -532,9 +532,9 @@
     %313 = "llvm.icmp"(%312, %8) <{predicate = 0 : i64}> : (!llvm.ptr, !llvm.ptr) -> i1
     "llvm.cond_br"(%313, %1)[^bb103, ^bb104] <{operandSegmentSizes = array<i32: 1, 0, 1>}> : (i1, i32) -> ()
   ^bb103:  // pred: ^bb102
-    %314 = "llvm.call"(%25, %309) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}], callee = @sqlite3_mprintf, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 2, 0>, var_callee_type = !llvm.func<ptr (ptr, ...)>}> : (!llvm.ptr, !llvm.ptr) -> !llvm.ptr
+    %314 = "llvm.call"(%24, %309) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}], callee = @sqlite3_mprintf, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 2, 0>, var_callee_type = !llvm.func<ptr (ptr, ...)>}> : (!llvm.ptr, !llvm.ptr) -> !llvm.ptr
     "llvm.store"(%314, %arg5) <{alignment = 8 : i64, ordering = 0 : i64}> : (!llvm.ptr, !llvm.ptr) -> ()
-    "llvm.br"(%22)[^bb104] : (i32) -> ()
+    "llvm.br"(%21)[^bb104] : (i32) -> ()
   ^bb104(%315: i32):  // 2 preds: ^bb102, ^bb103
     "llvm.br"(%308, %310, %315)[^bb105] : (!llvm.ptr, i32, i32) -> ()
   ^bb105(%316: !llvm.ptr, %317: i32, %318: i32):  // 4 preds: ^bb20, ^bb90, ^bb92, ^bb104
@@ -550,4 +550,4 @@
   ^bb108(%321: i32):  // 3 preds: ^bb9, ^bb98, ^bb107
     "llvm.return"(%321) : (i32) -> ()
   }) : () -> ()
-}) {dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<270> = dense<32> : vector<4xi64>, !llvm.ptr<271> = dense<32> : vector<4xi64>, !llvm.ptr<272> = dense<64> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.mangling_mode" = "o", "dlti.legal_int_widths" = array<i32: 32, 64>, "dlti.stack_alignment" = 128 : i64, "dlti.function_pointer_alignment" = #dlti.function_pointer_alignment<32, function_dependent = true>>, llvm.ident = "Homebrew clang version 22.1.6", llvm.module_asm = [], llvm.target_triple = "arm64-apple-macosx14.0.0"} : () -> ()
+}) {dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<270> = dense<32> : vector<4xi64>, !llvm.ptr<271> = dense<32> : vector<4xi64>, !llvm.ptr<272> = dense<64> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.mangling_mode" = "o", "dlti.legal_int_widths" = array<i32: 32, 64>, "dlti.stack_alignment" = 128 : i64, "dlti.function_pointer_alignment" = #dlti.function_pointer_alignment<32, function_dependent = true>>, llvm.ident = "clang version 23.1.0-rc3 (git@github.com:llvm/llvm-project.git 4e60bd7a63b0d1a8407efb1702b53faec44e2980)", llvm.module_asm = [], llvm.target_triple = "arm64-apple-macosx14.0.0"} : () -> ()

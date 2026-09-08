@@ -3,24 +3,24 @@
     "O0": {
       "functions": {
         "count": 2636,
-        "digest": "7e57584b26d2c11f",
+        "digest": "93ee40536ae31c57",
         "skipped": []
       },
       "globals": {
         "count": 226,
-        "digest": "4a265a77f1b0f5a3",
+        "digest": "aaa7bd2878936050",
         "skipped": []
       }
     },
     "O3": {
       "functions": {
         "count": 2636,
-        "digest": "555d7fc86ca60e9b",
+        "digest": "b31991197ea30afe",
         "skipped": []
       },
       "globals": {
         "count": 226,
-        "digest": "dd786b49d0043337",
+        "digest": "a2fa311606b8e8a0",
         "skipped": []
       }
     }
@@ -31,12 +31,12 @@
     "version": "3530300"
   },
   "toolchain": {
-    "clang": "Homebrew clang version 22.1.6",
-    "llvm-extract": "Homebrew LLVM version 22.1.6",
-    "llvm-nm": "Homebrew LLVM version 22.1.6",
-    "mlir-opt": "Homebrew LLVM version 22.1.6",
-    "mlir-translate": "Homebrew LLVM version 22.1.6",
-    "opt": "Homebrew LLVM version 22.1.6",
+    "clang": "clang version 23.1.0-rc3 (git@github.com:llvm/llvm-project.git 4e60bd7a63b0d1a8407efb1702b53faec44e2980)",
+    "llvm-extract": "LLVM version 23.1.0-rc3",
+    "llvm-nm": "LLVM version 23.1.0-rc3",
+    "mlir-opt": "LLVM version 23.1.0-rc3",
+    "mlir-translate": "LLVM version 23.1.0-rc3",
+    "opt": "LLVM version 23.1.0-rc3",
     "target": "arm64-apple-darwin23.6.0"
   }
 }
