@@ -1,5 +1,9 @@
 # veir-sqlite-leadership
 
+Vectorized input is tracked separately in [VECTORS.md](VECTORS.md), using small
+SQLite-derived operation cases. See [the vector tracker](vectors/README.md)
+for its scope and reproduction commands.
+
 A cached corpus of sqlite3 as generic MLIR, one module per function and per
 defined global, and a leaderboard of what [veir](https://github.com/opencompl/veir)
 makes of it. The chunks are committed, so scoring veir needs no LLVM/MLIR
