@@ -1,0 +1,2763 @@
+{
+  "case_count": 147,
+  "cases": [
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-add-09bdb1a9888a.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.add",
+      "inputs": [
+        "vector<4xi8>",
+        "vector<4xi8>"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.add",
+      "result": "vector<4xi8>",
+      "sha256": "1595ab00e5f574bc290c9dd0172ac09a9710e146aec6be92e4ab3f64566fc8ab"
+    },
+    {
+      "example_function": "whereLoopAddBtreeIndex",
+      "file": "llvm-add-208ec09fda44.mlir",
+      "functions": [
+        "whereLoopAddBtreeIndex",
+        "whereLoopAddOr"
+      ],
+      "group": "llvm.add",
+      "inputs": [
+        "vector<2xi16>",
+        "vector<2xi16>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.add",
+      "result": "vector<2xi16>",
+      "sha256": "252f38dbe0280dd754475ac19694893f2874343d1c954493df4cb61c2816bb84"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-add-640f6811bccb.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.add",
+      "inputs": [
+        "vector<16xi8>",
+        "vector<16xi8>"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.add",
+      "result": "vector<16xi8>",
+      "sha256": "7496cc815da7f6f21d4e797f9e3470da47501b536672cfabeab774f1a9f8d844"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-add-7b41ccb8e0ac.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate",
+        "sqlite3WalCheckpoint"
+      ],
+      "group": "llvm.add",
+      "inputs": [
+        "vector<4xi16>",
+        "vector<4xi16>"
+      ],
+      "occurrences": 20,
+      "operation": "llvm.add",
+      "result": "vector<4xi16>",
+      "sha256": "f5f493cc02ccfa8f97bddf9b7e893b0ee14b743a2a239db112f8e81ec0eb55bf"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-add-9f571b266ca2.mlir",
+      "functions": [
+        "constructAutomaticIndex",
+        "generateSortTail",
+        "readSuperJournal",
+        "selectInnerLoop",
+        "sqlite3FindInIndex",
+        "sqlite3Insert",
+        "sqlite3Pragma",
+        "sqlite3_str_vappendf",
+        "toLocaltime"
+      ],
+      "group": "llvm.add",
+      "inputs": [
+        "vector<4xi32>",
+        "vector<4xi32>"
+      ],
+      "occurrences": 36,
+      "operation": "llvm.add",
+      "result": "vector<4xi32>",
+      "sha256": "fc938360e289922e287586f305307c8f58b25e23d745c2c22cb2cba7ea1c4b99"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-add-ad1e29bae3a7.mlir",
+      "functions": [
+        "jsonHexToInt4"
+      ],
+      "group": "llvm.add",
+      "inputs": [
+        "vector<2xi8>",
+        "vector<2xi8>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.add",
+      "result": "vector<2xi8>",
+      "sha256": "ba23ad2c5116cdee2af2e31229a38b7a496ce1ea743be227e38ecc0c275c5c8f"
+    },
+    {
+      "example_function": "pcache1FetchStage2",
+      "file": "llvm-add-cb90783f7b72.mlir",
+      "functions": [
+        "pcache1FetchStage2",
+        "unixLock"
+      ],
+      "group": "llvm.add",
+      "inputs": [
+        "vector<2xi32>",
+        "vector<2xi32>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.add",
+      "result": "vector<2xi32>",
+      "sha256": "1045423d811c40a168d1517f3b34e3b391bfd3348e537ab5fa79720f33bcf6e4"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-add-e84d89a25c48.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate",
+        "sqlite3WalCheckpoint"
+      ],
+      "group": "llvm.add",
+      "inputs": [
+        "vector<8xi16>",
+        "vector<8xi16>"
+      ],
+      "occurrences": 59,
+      "operation": "llvm.add",
+      "result": "vector<8xi16>",
+      "sha256": "8f67e7b10f1bbacd2331f351d843347e96cac5f7314d5383a1732aff55a0df1d"
+    },
+    {
+      "example_function": "sqlite3ParseUri",
+      "file": "llvm-add-ff23a31d0534.mlir",
+      "functions": [
+        "sqlite3ParseUri",
+        "sqlite3VdbeExec",
+        "sqlite3_str_vappendf",
+        "statPush"
+      ],
+      "group": "llvm.add",
+      "inputs": [
+        "vector<2xi64>",
+        "vector<2xi64>"
+      ],
+      "occurrences": 14,
+      "operation": "llvm.add",
+      "result": "vector<2xi64>",
+      "sha256": "98127380485177723744b3ef299f52031b5698891c058e0b180f1acf66ffbdcc"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-and-009320073f42.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.and",
+      "inputs": [
+        "vector<8xi16>",
+        "vector<8xi16>"
+      ],
+      "occurrences": 39,
+      "operation": "llvm.and",
+      "result": "vector<8xi16>",
+      "sha256": "e44788793ef1fc05b5fa8dd2ef41e7d1dd0364c0f1c317e4897c6d0ae01fd6fa"
+    },
+    {
+      "example_function": "unixShmLock",
+      "file": "llvm-and-419a24306a1b.mlir",
+      "functions": [
+        "unixShmLock"
+      ],
+      "group": "llvm.and",
+      "inputs": [
+        "vector<2xi16>",
+        "vector<2xi16>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.and",
+      "result": "vector<2xi16>",
+      "sha256": "5fdd638b9ce22423be7240fb724ebbfd26993d8fb41bd7cb7575fb7013607cb0"
+    },
+    {
+      "example_function": "whereLoopAddVirtual",
+      "file": "llvm-and-7ee746cd2aee.mlir",
+      "functions": [
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.and",
+      "inputs": [
+        "vector<2xi64>",
+        "vector<2xi64>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.and",
+      "result": "vector<2xi64>",
+      "sha256": "851fde9a07112f82f7103d812f9d2b3e20530a7de455c45dda64b1d50e9fb116"
+    },
+    {
+      "example_function": "charFunc",
+      "file": "llvm-and-8b89cdca765d.mlir",
+      "functions": [
+        "charFunc",
+        "sqlite3HexToBlob",
+        "sqlite3VdbeMemTranslate",
+        "sqlite3_str_vappendf",
+        "unistrFunc",
+        "valueFromExpr",
+        "walIndexReadHdr"
+      ],
+      "group": "llvm.and",
+      "inputs": [
+        "vector<4xi8>",
+        "vector<4xi8>"
+      ],
+      "occurrences": 13,
+      "operation": "llvm.and",
+      "result": "vector<4xi8>",
+      "sha256": "6fba07acd9386b0eb95c0dd3bb2644f9be375a8ebfd925816e420d5fba4cf810"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-and-959067652241.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.and",
+      "inputs": [
+        "vector<16xi8>",
+        "vector<16xi8>"
+      ],
+      "occurrences": 6,
+      "operation": "llvm.and",
+      "result": "vector<16xi8>",
+      "sha256": "7060f20b34101db64526eae51058f8bf93bbf56f8c590b826717e5b86217bbf7"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-and-b6b6b797cc9a.mlir",
+      "functions": [
+        "jsonHexToInt4"
+      ],
+      "group": "llvm.and",
+      "inputs": [
+        "vector<2xi8>",
+        "vector<2xi8>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.and",
+      "result": "vector<2xi8>",
+      "sha256": "55c63223451b010af3a4e5f37c86a545c8ce6e5c95f264f3d1195a8c43fa8ebf"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-and-de43627c2a8f.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3Insert",
+        "sqlite3Pragma",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.and",
+      "inputs": [
+        "vector<4xi16>",
+        "vector<4xi16>"
+      ],
+      "occurrences": 25,
+      "operation": "llvm.and",
+      "result": "vector<4xi16>",
+      "sha256": "75e46ea7cc1a37d75b740d78b7be69d789a02513287c183abcbbdd994946d05d"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-and-f97c65f8e131.mlir",
+      "functions": [
+        "constructAutomaticIndex"
+      ],
+      "group": "llvm.and",
+      "inputs": [
+        "vector<4xi32>",
+        "vector<4xi32>"
+      ],
+      "occurrences": 14,
+      "operation": "llvm.and",
+      "result": "vector<4xi32>",
+      "sha256": "83937eaeacdda6251189fef8ccb092abbf66c9a8f33c35a3f35bb43f567ef304"
+    },
+    {
+      "example_function": "selectInnerLoop",
+      "file": "llvm-bitcast-08b3a4b36791.mlir",
+      "functions": [
+        "selectInnerLoop",
+        "sqlite3WindowCodeStep"
+      ],
+      "group": "llvm.bitcast",
+      "inputs": [
+        "vector<4xi1>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.bitcast",
+      "result": "i4",
+      "sha256": "73122c17bfb98df15586564fe4413050b492394c8c0cef5e1acce2a295e9f416"
+    },
+    {
+      "example_function": "sqlite3InitOne",
+      "file": "llvm-bitcast-1dfeea0d8dd2.mlir",
+      "functions": [
+        "sqlite3InitOne",
+        "walIndexReadHdr"
+      ],
+      "group": "llvm.bitcast",
+      "inputs": [
+        "vector<4xi8>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.bitcast",
+      "result": "i32",
+      "sha256": "9f21e0bc7be687467aa52f1d60770036b6d71addba3b63973e2b169b45d079b2"
+    },
+    {
+      "example_function": "whereLoopAddBtreeIndex",
+      "file": "llvm-extractelement-45d1eeac5214.mlir",
+      "functions": [
+        "whereLoopAddBtreeIndex"
+      ],
+      "group": "llvm.extractelement",
+      "inputs": [
+        "vector<4xi16>",
+        "i64"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.extractelement",
+      "result": "i16",
+      "sha256": "a3b9c66f21510fba155c6ac844b0ed8f652fb2d814241720a467b5a41baf04ee"
+    },
+    {
+      "example_function": "walIndexReadHdr",
+      "file": "llvm-extractelement-550d774bf1fb.mlir",
+      "functions": [
+        "walIndexReadHdr"
+      ],
+      "group": "llvm.extractelement",
+      "inputs": [
+        "vector<2xi32>",
+        "i64"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.extractelement",
+      "result": "i32",
+      "sha256": "bec372fcb7cbe5a9d07656613a2e6872fd2e947207e35f79bae6398406d33d2e"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-extractelement-81752d3b068e.mlir",
+      "functions": [
+        "jsonHexToInt4"
+      ],
+      "group": "llvm.extractelement",
+      "inputs": [
+        "vector<2xi16>",
+        "i64"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.extractelement",
+      "result": "i16",
+      "sha256": "3ad175cafbb544f4e4fdf927f8f96f0156f4a408fe16af491f44a245181d69e9"
+    },
+    {
+      "example_function": "sqlite3InitOne",
+      "file": "llvm-extractelement-9c82c7e74f4a.mlir",
+      "functions": [
+        "sqlite3InitOne"
+      ],
+      "group": "llvm.extractelement",
+      "inputs": [
+        "vector<4xi8>",
+        "i64"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.extractelement",
+      "result": "i8",
+      "sha256": "aec087dfc7e2ab23a1081b8d24c24e81de128fa69f68b9e25e3ed89fbdc74c9c"
+    },
+    {
+      "example_function": "sqlite3ComputeGeneratedColumns",
+      "file": "llvm-extractelement-b99e17ad26bd.mlir",
+      "functions": [
+        "sqlite3ComputeGeneratedColumns"
+      ],
+      "group": "llvm.extractelement",
+      "inputs": [
+        "vector<8xi1>",
+        "i64"
+      ],
+      "occurrences": 8,
+      "operation": "llvm.extractelement",
+      "result": "i1",
+      "sha256": "55323dfe627b08578fe441a4c06c92dd8ccba20d7afde65e377a3c43adc30a2e"
+    },
+    {
+      "example_function": "selectInnerLoop",
+      "file": "llvm-freeze-28894525729e.mlir",
+      "functions": [
+        "selectInnerLoop"
+      ],
+      "group": "llvm.freeze",
+      "inputs": [
+        "vector<4xi1>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.freeze",
+      "result": "vector<4xi1>",
+      "sha256": "1954170ab64c9c782c91cc0cf9b1996d966dfad4d46dab10fbcfa4054a7d3fc7"
+    },
+    {
+      "example_function": "sqlite3VdbeExec",
+      "file": "llvm-getelementptr-7d06260ec6cf.mlir",
+      "functions": [
+        "sqlite3VdbeExec"
+      ],
+      "group": "llvm.getelementptr",
+      "inputs": [
+        "vector<2x!llvm.ptr>",
+        "i64"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.getelementptr",
+      "result": "vector<2x!llvm.ptr>",
+      "sha256": "8e7204d5863c929e0d60a3502d2b7c3cce45523ba2e870972e2f968414c94f14"
+    },
+    {
+      "example_function": "sqlite3VdbeExec",
+      "file": "llvm-getelementptr-88fd5159e515.mlir",
+      "functions": [
+        "sqlite3VdbeExec"
+      ],
+      "group": "llvm.getelementptr",
+      "inputs": [
+        "!llvm.ptr",
+        "vector<2xi64>"
+      ],
+      "occurrences": 3,
+      "operation": "llvm.getelementptr",
+      "result": "vector<2x!llvm.ptr>",
+      "sha256": "4fedbf28a6a5abab9325871d0c9175d4081f5840f446dcd0c537eca8f7fca5e8"
+    },
+    {
+      "example_function": "generateSortTail",
+      "file": "llvm-icmp-86f5b4687823.mlir",
+      "functions": [
+        "generateSortTail",
+        "selectInnerLoop",
+        "sqlite3Insert",
+        "sqlite3Pragma"
+      ],
+      "group": "llvm.icmp",
+      "inputs": [
+        "vector<4xi16>",
+        "vector<4xi16>"
+      ],
+      "occurrences": 10,
+      "operation": "llvm.icmp",
+      "result": "vector<4xi1>",
+      "sha256": "8d997af94a46e3b64c7d40d2f48315f753331a44e6d9eaad1e4c86f36d300f59"
+    },
+    {
+      "example_function": "sqlite3ComputeGeneratedColumns",
+      "file": "llvm-icmp-8ceab1ef6198.mlir",
+      "functions": [
+        "sqlite3ComputeGeneratedColumns"
+      ],
+      "group": "llvm.icmp",
+      "inputs": [
+        "vector<8xi16>",
+        "vector<8xi16>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.icmp",
+      "result": "vector<8xi1>",
+      "sha256": "5b73e623f2f6b510807558aaa46cefe72acac96d3f8a015ff49987b405e67618"
+    },
+    {
+      "example_function": "sqlite3WindowCodeStep",
+      "file": "llvm-icmp-9dc90f662ffe.mlir",
+      "functions": [
+        "sqlite3WindowCodeStep"
+      ],
+      "group": "llvm.icmp",
+      "inputs": [
+        "vector<4x!llvm.ptr>",
+        "vector<4x!llvm.ptr>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.icmp",
+      "result": "vector<4xi1>",
+      "sha256": "617c7202e5dff10be649a294b878585659699ab2af833030400eb4bf1d2a526d"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-icmp-b87ca7785cb7.mlir",
+      "functions": [
+        "jsonHexToInt4",
+        "sqlite3ParseUri",
+        "sqlite3_str_vappendf"
+      ],
+      "group": "llvm.icmp",
+      "inputs": [
+        "vector<2xi8>",
+        "vector<2xi8>"
+      ],
+      "occurrences": 7,
+      "operation": "llvm.icmp",
+      "result": "vector<2xi1>",
+      "sha256": "e3b3d73f52d89c9683ff69223696defba8abf413963bcad6f7787924be7c5492"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-icmp-c933be16bfed.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "sqlite3_str_vappendf",
+        "valueFromExpr"
+      ],
+      "group": "llvm.icmp",
+      "inputs": [
+        "vector<4xi8>",
+        "vector<4xi8>"
+      ],
+      "occurrences": 6,
+      "operation": "llvm.icmp",
+      "result": "vector<4xi1>",
+      "sha256": "2883713307fd7962f0d41ab2f35dbedde9ce28eb5de1cb5e98e2b7a3ae6285e3"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-icmp-ed8ea052ae9b.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.icmp",
+      "inputs": [
+        "vector<16xi8>",
+        "vector<16xi8>"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.icmp",
+      "result": "vector<16xi1>",
+      "sha256": "3d106c3403d708a5bab45008cd6f28c4a188fcda0e3b6ce8cde5e291ec199c05"
+    },
+    {
+      "example_function": "unixShmLock",
+      "file": "llvm-insertelement-09da3c8b2f4d.mlir",
+      "functions": [
+        "unixShmLock"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<2xi16>",
+        "i16",
+        "i64"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.insertelement",
+      "result": "vector<2xi16>",
+      "sha256": "677746975ef9f31319355d96767eb2d2a5ff30874528c1c4201052c707177e23"
+    },
+    {
+      "example_function": "charFunc",
+      "file": "llvm-insertelement-3315e8eeea86.mlir",
+      "functions": [
+        "charFunc",
+        "sqlite3HexToBlob",
+        "sqlite3VdbeMemTranslate",
+        "sqlite3_str_vappendf",
+        "unistrFunc",
+        "valueFromExpr"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<4xi8>",
+        "i8",
+        "i64"
+      ],
+      "occurrences": 40,
+      "operation": "llvm.insertelement",
+      "result": "vector<4xi8>",
+      "sha256": "6413780b51617253566e0454c0eec4ceca1335196d022694dcec6152ac63a38f"
+    },
+    {
+      "example_function": "sqlite3WindowCodeStep",
+      "file": "llvm-insertelement-62ccf0c3dcc4.mlir",
+      "functions": [
+        "sqlite3WindowCodeStep"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<4x!llvm.ptr>",
+        "!llvm.ptr",
+        "i32"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.insertelement",
+      "result": "vector<4x!llvm.ptr>",
+      "sha256": "16b2226b0c0d8433b996e7e7bfa3dd9657b4fbd3a2ae9d7b2b22d6abb7dca46f"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-insertelement-63ffbeec1d69.mlir",
+      "functions": [
+        "constructAutomaticIndex",
+        "generateSortTail",
+        "readSuperJournal",
+        "selectInnerLoop",
+        "sqlite3Insert",
+        "sqlite3_str_vappendf",
+        "toLocaltime"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<4xi32>",
+        "i32",
+        "i32"
+      ],
+      "occurrences": 28,
+      "operation": "llvm.insertelement",
+      "result": "vector<4xi32>",
+      "sha256": "7a2fe26faeeea495156699a73ba8005538b24c00d0f0707d47245d387c0aa56a"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-insertelement-7f888bb5b45b.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "generateSortTail",
+        "resolveExprStep",
+        "selectInnerLoop",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3Insert",
+        "sqlite3Pragma",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate",
+        "sqlite3WalCheckpoint"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<4xi16>",
+        "i16",
+        "i64"
+      ],
+      "occurrences": 136,
+      "operation": "llvm.insertelement",
+      "result": "vector<4xi16>",
+      "sha256": "207973029c0fffd5e88d00bf740e06d916140c69d06ed94c6c92471dc94b40e7"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-insertelement-85f2da9d60fa.mlir",
+      "functions": [
+        "constructAutomaticIndex",
+        "dateFunc",
+        "datetimeFunc",
+        "generateSortTail",
+        "groupConcatStep",
+        "readSuperJournal",
+        "selectInnerLoop",
+        "sqlite3FkLocateIndex",
+        "sqlite3Insert",
+        "sqlite3_str_vappendf",
+        "toLocaltime"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<4xi32>",
+        "i32",
+        "i64"
+      ],
+      "occurrences": 24,
+      "operation": "llvm.insertelement",
+      "result": "vector<4xi32>",
+      "sha256": "41f41a0dfb49885f0a4e8947e656a7a338739434d8850a5101db6a25ef3d71de"
+    },
+    {
+      "example_function": "sqlite3ParseUri",
+      "file": "llvm-insertelement-9caf305b8496.mlir",
+      "functions": [
+        "sqlite3ParseUri",
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<2xi64>",
+        "i64",
+        "i64"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.insertelement",
+      "result": "vector<2xi64>",
+      "sha256": "258b0722d860059de4dc8505fc9952455701bee58993d0bdfe21efd2ed56cf2f"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-insertelement-a8a79c9641a3.mlir",
+      "functions": [
+        "constructAutomaticIndex"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<4xi64>",
+        "i64",
+        "i64"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.insertelement",
+      "result": "vector<4xi64>",
+      "sha256": "3eeb6953539065c198b2ac0b7693e870ebf2ec93f3d8b15703c9fe13d62af11c"
+    },
+    {
+      "example_function": "sqlite3WindowCodeStep",
+      "file": "llvm-insertelement-af7d86b0809e.mlir",
+      "functions": [
+        "sqlite3WindowCodeStep"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<4x!llvm.ptr>",
+        "!llvm.ptr",
+        "i64"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.insertelement",
+      "result": "vector<4x!llvm.ptr>",
+      "sha256": "d515c11051e67da9c53f406b5402271d76ae85713a7d39337fb1b17476c96347"
+    },
+    {
+      "example_function": "sqlite3ParseUri",
+      "file": "llvm-insertelement-cb2fee4592e8.mlir",
+      "functions": [
+        "sqlite3ParseUri",
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<2xi64>",
+        "i64",
+        "i32"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.insertelement",
+      "result": "vector<2xi64>",
+      "sha256": "11abd460e4b1d351d9cda0aa3cc2ae4553560750e29e803e5ccab63f56462feb"
+    },
+    {
+      "example_function": "analyzeAggFuncArgs",
+      "file": "llvm-insertelement-e0f2381a10d7.mlir",
+      "functions": [
+        "analyzeAggFuncArgs",
+        "balance",
+        "constructAutomaticIndex",
+        "exprCodeVector",
+        "exprMightBeIndexed2",
+        "propagateConstants",
+        "resolveExprStep",
+        "resolveSelectStep",
+        "sqlite3CodeRhsOfIN",
+        "sqlite3ConstructBloomFilter",
+        "sqlite3ExprAnalyzeAggList",
+        "sqlite3ExprCodeExprList",
+        "sqlite3ExprCodeTarget",
+        "sqlite3MultiValues",
+        "sqlite3Select",
+        "sqlite3SelectDup",
+        "sqlite3WhereBegin",
+        "whereAddIndexedExpr",
+        "whereLoopAddVirtual",
+        "whereLoopOutputAdjust",
+        "wherePathSatisfiesOrderBy"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<2x!llvm.ptr>",
+        "!llvm.ptr",
+        "i32"
+      ],
+      "occurrences": 50,
+      "operation": "llvm.insertelement",
+      "result": "vector<2x!llvm.ptr>",
+      "sha256": "8a043f558ff5400df41232c087795b32183929cdc8dc624a22fcbf3bfcf332af"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-insertelement-f05a942278cb.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<16xi8>",
+        "i8",
+        "i64"
+      ],
+      "occurrences": 64,
+      "operation": "llvm.insertelement",
+      "result": "vector<16xi8>",
+      "sha256": "44accb9f6498ed178d9ddff3f7ab3c2c7e255c470a647c4fb1b3783cb1fc8a9e"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-insertelement-faceaef44436.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<4xi16>",
+        "i16",
+        "i32"
+      ],
+      "occurrences": 48,
+      "operation": "llvm.insertelement",
+      "result": "vector<4xi16>",
+      "sha256": "bb1e74a70e6c378bb157730b8cace06ee67858a590cecc740c68f4f3d0ea0aa4"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-insertelement-fe12f51e9b8a.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.insertelement",
+      "inputs": [
+        "vector<8xi16>",
+        "i16",
+        "i64"
+      ],
+      "occurrences": 312,
+      "operation": "llvm.insertelement",
+      "result": "vector<8xi16>",
+      "sha256": "4ce0568744d1f78f2d82b7b607e67833b20b9780ec34a45ce7d142820385b45e"
+    },
+    {
+      "example_function": "whereLoopAddVirtual",
+      "file": "llvm-intr-smin-e901fb58ada0.mlir",
+      "functions": [
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.intr.smin",
+      "inputs": [
+        "vector<2xi16>",
+        "vector<2xi16>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.intr.smin",
+      "result": "vector<2xi16>",
+      "sha256": "128dcf33ff17e2e742b1208c803fa738459503163fd9687c1c33d26bb0a6bf82"
+    },
+    {
+      "example_function": "sqlite3VdbeExec",
+      "file": "llvm-intr-umax-1390772ad56f.mlir",
+      "functions": [
+        "sqlite3VdbeExec"
+      ],
+      "group": "llvm.intr.umax",
+      "inputs": [
+        "vector<4xi32>",
+        "vector<4xi32>"
+      ],
+      "occurrences": 3,
+      "operation": "llvm.intr.umax",
+      "result": "vector<4xi32>",
+      "sha256": "5d926089babe578cf549e2fd383886d8f46f25f290a367ef57fae760b049741a"
+    },
+    {
+      "example_function": "sqlite3ParseUri",
+      "file": "llvm-intr-vector-reduce-add-05e628a5258f.mlir",
+      "functions": [
+        "sqlite3ParseUri",
+        "sqlite3_str_vappendf"
+      ],
+      "group": "llvm.intr.vector.reduce.add",
+      "inputs": [
+        "vector<2xi64>"
+      ],
+      "occurrences": 3,
+      "operation": "llvm.intr.vector.reduce.add",
+      "result": "i64",
+      "sha256": "fa4a6d42e79a20087b8bf76c9d12a4aff4325e443928e6d2d7a0833d206bf8b8"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-intr-vector-reduce-add-63e1f0e6468d.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.intr.vector.reduce.add",
+      "inputs": [
+        "vector<4xi16>"
+      ],
+      "occurrences": 19,
+      "operation": "llvm.intr.vector.reduce.add",
+      "result": "i16",
+      "sha256": "6a32ba2a4cae0633255dceeb93e12707e62c4abbd33f816d516c56dc92471459"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-intr-vector-reduce-add-6938c9cfe663.mlir",
+      "functions": [
+        "constructAutomaticIndex",
+        "generateSortTail",
+        "readSuperJournal",
+        "selectInnerLoop",
+        "sqlite3Insert",
+        "sqlite3Pragma",
+        "sqlite3_str_vappendf"
+      ],
+      "group": "llvm.intr.vector.reduce.add",
+      "inputs": [
+        "vector<4xi32>"
+      ],
+      "occurrences": 8,
+      "operation": "llvm.intr.vector.reduce.add",
+      "result": "i32",
+      "sha256": "e481bfd5732a16ee4e3cf5248a0780c210022fc287e186fe7968839cd7ec3334"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-intr-vector-reduce-add-f0711a4051ea.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.intr.vector.reduce.add",
+      "inputs": [
+        "vector<8xi16>"
+      ],
+      "occurrences": 19,
+      "operation": "llvm.intr.vector.reduce.add",
+      "result": "i16",
+      "sha256": "306f647ed3b1bac780a3b48339930e7124b34c0e6716138c9cf5b7aafdd8d2ba"
+    },
+    {
+      "example_function": "whereLoopAddVirtual",
+      "file": "llvm-intr-vector-reduce-or-cb098b32ea05.mlir",
+      "functions": [
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.intr.vector.reduce.or",
+      "inputs": [
+        "vector<2xi64>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.intr.vector.reduce.or",
+      "result": "i64",
+      "sha256": "501b6c7046007c8939976b725b1623ea11bd4d927a182f87e35c128cbe842109"
+    },
+    {
+      "example_function": "sqlite3VdbeExec",
+      "file": "llvm-intr-vector-reduce-umax-929ab3e64231.mlir",
+      "functions": [
+        "sqlite3VdbeExec"
+      ],
+      "group": "llvm.intr.vector.reduce.umax",
+      "inputs": [
+        "vector<4xi32>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.intr.vector.reduce.umax",
+      "result": "i32",
+      "sha256": "6ec4d5aeeaf603e24784055df6413321cd2315f4d473dfeacbe47a88ae60f01e"
+    },
+    {
+      "example_function": "sqlite3FkLocateIndex",
+      "file": "llvm-load-0704c1bdc82b.mlir",
+      "functions": [
+        "sqlite3FkLocateIndex"
+      ],
+      "group": "#llvm.alias_scope",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 8,
+      "operation": "llvm.load",
+      "result": "i32",
+      "sha256": "cbf9c99ea511c5c0b09792eb7fed26ecb377057b952cae10398c06bc786747db"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-load-1b5640d74f22.mlir",
+      "functions": [
+        "jsonHexToInt4",
+        "sqlite3ParseUri",
+        "sqlite3_str_vappendf"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 5,
+      "operation": "llvm.load",
+      "result": "vector<2xi8>",
+      "sha256": "0bc8118688b0e6f9bce619a3d5213b742e4e26e1916a82f09c5b5810d714d453"
+    },
+    {
+      "example_function": "putVarint64",
+      "file": "llvm-load-228dbf56e6c0.mlir",
+      "functions": [
+        "putVarint64",
+        "vtabCallConstructor"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.load",
+      "result": "vector<16xi8>",
+      "sha256": "43d6233109b077a86b43d32633823fdca26f11b9f6b855ff7e02fa01aa622e2c"
+    },
+    {
+      "example_function": "sqlite3VdbeExec",
+      "file": "llvm-load-37cb892b5b56.mlir",
+      "functions": [
+        "sqlite3VdbeExec",
+        "toLocaltime"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 3,
+      "operation": "llvm.load",
+      "result": "vector<4xi32>",
+      "sha256": "bafbb55c95b58a1d27a5c932e1565d4f3dadfb2365fb91a3e1e8528797758c01"
+    },
+    {
+      "example_function": "whereLoopAddBtreeIndex",
+      "file": "llvm-load-56e4c13e7273.mlir",
+      "functions": [
+        "whereLoopAddBtreeIndex"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.load",
+      "result": "vector<4xi16>",
+      "sha256": "a4e89b2054929c06a5a3647675273be5548ec86593ce06c4e9801c8f909888d3"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-load-57ce554a9867.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "#llvm.alias_scope",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 80,
+      "operation": "llvm.load",
+      "result": "i8",
+      "sha256": "1dd6ff1c9d6d8cac5d0428d5491c322c1683749a0588dff92b473f608df59259"
+    },
+    {
+      "example_function": "balance",
+      "file": "llvm-load-752d8e07859e.mlir",
+      "functions": [
+        "balance",
+        "decodeFlags",
+        "newDatabase",
+        "unixShmLock",
+        "whereLoopAddBtreeIndex",
+        "whereLoopAddOr",
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 11,
+      "operation": "llvm.load",
+      "result": "vector<2xi16>",
+      "sha256": "a9ca36a1e6a5a2c47a95ebbdf190376db805165ccffbb8a68e26cf1b8388dd0a"
+    },
+    {
+      "example_function": "readSuperJournal",
+      "file": "llvm-load-8b3403824ca8.mlir",
+      "functions": [
+        "readSuperJournal",
+        "sqlite3InitOne",
+        "sqlite3_str_vappendf",
+        "walIndexReadHdr"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 8,
+      "operation": "llvm.load",
+      "result": "vector<4xi8>",
+      "sha256": "508c778b9ea631388819ea95fd322bd41461fcb0775c5da9db86884805757506"
+    },
+    {
+      "example_function": "sqlite3RunVacuum",
+      "file": "llvm-load-c81074339ed2.mlir",
+      "functions": [
+        "sqlite3RunVacuum",
+        "sqlite3VdbeExec",
+        "statPush",
+        "unixOpen",
+        "vdbeCloseStatement"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 8,
+      "operation": "llvm.load",
+      "result": "vector<2xi64>",
+      "sha256": "7f0247f8a8648ea10e0869291124c0e0df187f55780debb62aa2a049c2c61d17"
+    },
+    {
+      "example_function": "balance",
+      "file": "llvm-load-cfe18d1fc775.mlir",
+      "functions": [
+        "balance",
+        "exprAnalyze",
+        "sqlite3ConstructBloomFilter",
+        "sqlite3Reprepare"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 6,
+      "operation": "llvm.load",
+      "result": "vector<2x!llvm.ptr>",
+      "sha256": "25e5d8f6baeb60c8951d21440ce6c83ce1fb177e6f26fffecdc8683ff8ac4ee3"
+    },
+    {
+      "example_function": "pagerWalFrames",
+      "file": "llvm-load-e1e7ad6de07b.mlir",
+      "functions": [
+        "pagerWalFrames",
+        "putVarint64",
+        "vtabCallConstructor"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 3,
+      "operation": "llvm.load",
+      "result": "vector<8xi8>",
+      "sha256": "e2dbe70695bbbf292b3b28995cc96abb02d61b764442b1e8a62d2624d3c9acdb"
+    },
+    {
+      "example_function": "checkTreePage",
+      "file": "llvm-load-ed080db217e6.mlir",
+      "functions": [
+        "checkTreePage",
+        "codeRowTrigger",
+        "exprAnalyze",
+        "memjrnlWrite",
+        "multiSelectByMerge",
+        "pcache1FetchStage2",
+        "sqlite3Select",
+        "sqlite3WindowDup",
+        "unixLock",
+        "walIndexReadHdr",
+        "walTryBeginRead"
+      ],
+      "group": "llvm.load",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 14,
+      "operation": "llvm.load",
+      "result": "vector<2xi32>",
+      "sha256": "1fc220767d4b555fa9deef15d160afce3015782549f5151d0962d3fdc8bdb922"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-lshr-238bad80387d.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.lshr",
+      "inputs": [
+        "vector<4xi16>",
+        "vector<4xi16>"
+      ],
+      "occurrences": 19,
+      "operation": "llvm.lshr",
+      "result": "vector<4xi16>",
+      "sha256": "c07e618292c3f49a8a853fc30a3e189e60da37c346e614538d7daf3e4ab8b91b"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-lshr-9089e56f16ec.mlir",
+      "functions": [
+        "constructAutomaticIndex"
+      ],
+      "group": "llvm.lshr",
+      "inputs": [
+        "vector<4xi64>",
+        "vector<4xi64>"
+      ],
+      "occurrences": 14,
+      "operation": "llvm.lshr",
+      "result": "vector<4xi64>",
+      "sha256": "bcc7ed8c98797053044c49a53ad8ce1deacf0fc58cbb04b1feb9f695378f75b8"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-lshr-f5f33168e11b.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.lshr",
+      "inputs": [
+        "vector<8xi16>",
+        "vector<8xi16>"
+      ],
+      "occurrences": 38,
+      "operation": "llvm.lshr",
+      "result": "vector<8xi16>",
+      "sha256": "cd06def3bd8ec1e5ef7387f9e507fd5f652c6a952a3f7041a7f5df089de515c3"
+    },
+    {
+      "example_function": "pagerWalFrames",
+      "file": "llvm-mlir-constant-36868f78a19d.mlir",
+      "functions": [
+        "pagerWalFrames"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 1,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<8xi8>",
+      "sha256": "a315ba40e3d1d74fd959c35e968e0cb9c0180b06cd199740d62b94970626e9f5"
+    },
+    {
+      "example_function": "charFunc",
+      "file": "llvm-mlir-constant-5c561d6867e4.mlir",
+      "functions": [
+        "charFunc",
+        "dateFunc",
+        "datetimeFunc",
+        "pagerWalFrames",
+        "pager_incr_changecounter",
+        "pager_write_pagelist",
+        "sqlite3HexToBlob",
+        "sqlite3VdbeMemTranslate",
+        "sqlite3_str_vappendf",
+        "unistrFunc",
+        "valueFromExpr",
+        "walIndexReadHdr"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 26,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<4xi8>",
+      "sha256": "86f9794542f137f7d86091ce832267e56f46011ae6f9d021098147bf66fc13d9"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-mlir-constant-84562252675d.mlir",
+      "functions": [
+        "jsonHexToInt4",
+        "sqlite3ParseUri",
+        "sqlite3_str_vappendf"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 7,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<2xi8>",
+      "sha256": "d1e6c0fbfb87e35b5ffa6bfa5fe0a687567b97895cc34f9f04dc85fb4e3f0d84"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-mlir-constant-8fddb445a4a4.mlir",
+      "functions": [
+        "jsonHexToInt4",
+        "whereLoopAddBtreeIndex",
+        "whereLoopAddOr",
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 4,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<2xi16>",
+      "sha256": "2ef5b969b1b2cde1c201ccf9cd4a6b7d3907ae151f5cf6fd3d2b805354798c64"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-mlir-constant-9197c8253c57.mlir",
+      "functions": [
+        "constructAutomaticIndex",
+        "dateFunc",
+        "datetimeFunc",
+        "generateSortTail",
+        "readSuperJournal",
+        "selectInnerLoop",
+        "sqlite3BtreeOpen",
+        "sqlite3FindInIndex",
+        "sqlite3Insert",
+        "sqlite3Pragma",
+        "sqlite3VdbeExec",
+        "sqlite3_get_table",
+        "sqlite3_str_vappendf"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 16,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<4xi32>",
+      "sha256": "45542d674b957f9a56c1cb0fd770d695a7d30f1c6608699b755ed03a88761467"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-mlir-constant-b21da6a62e75.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 10,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<16xi8>",
+      "sha256": "403d3bdd157e4e69e2071623d1e8ea53789bcaba1b549c707a87ea03e07cd998"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-mlir-constant-b62f062397da.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "generateSortTail",
+        "resolveExprStep",
+        "selectInnerLoop",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3Insert",
+        "sqlite3Pragma",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate",
+        "sqlite3WalCheckpoint"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 33,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<4xi16>",
+      "sha256": "f9c7ed837ba389bf13d9563f04119a12857bf9eefa1cc256a33b7e2070c91d45"
+    },
+    {
+      "example_function": "pcache1FetchStage2",
+      "file": "llvm-mlir-constant-bb6afc6e4923.mlir",
+      "functions": [
+        "pcache1FetchStage2",
+        "unixLock",
+        "walIndexReadHdr"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 3,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<2xi32>",
+      "sha256": "9d3c0ba3f477ef48f69826027424f9af44ad8c1fee19812f5cb58988d1cd963b"
+    },
+    {
+      "example_function": "selectInnerLoop",
+      "file": "llvm-mlir-constant-c6fa55d9db72.mlir",
+      "functions": [
+        "selectInnerLoop"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 1,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<4xi1>",
+      "sha256": "bc034a7056406ba724b6040fa7f0fd96853728dab71afb7a29b5d6856be4a5f4"
+    },
+    {
+      "example_function": "sqlite3ParseUri",
+      "file": "llvm-mlir-constant-cedee835bb18.mlir",
+      "functions": [
+        "sqlite3ParseUri",
+        "sqlite3VdbeExec",
+        "sqlite3_str_vappendf",
+        "statPush",
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 11,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<2xi64>",
+      "sha256": "e3e32640df8ff06173b04024aeb2e32b1048b0c8a77bffe8a426368525e28ff2"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-mlir-constant-d8b6e7200f7c.mlir",
+      "functions": [
+        "constructAutomaticIndex"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 14,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<4xi64>",
+      "sha256": "30f9293945fec4fd698fb44d33f8b973b6c5a91db0a904dca257472360653bc2"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-mlir-constant-e236dab113af.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate",
+        "sqlite3WalCheckpoint"
+      ],
+      "group": "llvm.mlir.constant",
+      "inputs": [],
+      "occurrences": 40,
+      "operation": "llvm.mlir.constant",
+      "result": "vector<8xi16>",
+      "sha256": "53936af9f637368b9c565aa5312b37bb3e94ea53425909ae9d730ce780d47915"
+    },
+    {
+      "example_function": "unixShmLock",
+      "file": "llvm-mlir-poison-09d4d535aee5.mlir",
+      "functions": [
+        "unixShmLock"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 1,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<2xi16>",
+      "sha256": "984e3fbb0293ef90900162cd6d94a23fdf394d47fa0fcdaf29246e209240d2a6"
+    },
+    {
+      "example_function": "charFunc",
+      "file": "llvm-mlir-poison-1594b2ddf415.mlir",
+      "functions": [
+        "charFunc",
+        "sqlite3HexToBlob",
+        "sqlite3VdbeMemTranslate",
+        "sqlite3_str_vappendf",
+        "unistrFunc",
+        "valueFromExpr"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 6,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<4xi8>",
+      "sha256": "5556cd5569480c495eb63fe2012bd75edd695f4ea2434fb1d5f28bc1429fac7e"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-mlir-poison-4c8f1da18b4a.mlir",
+      "functions": [
+        "constructAutomaticIndex"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 1,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<4xi64>",
+      "sha256": "e58c2860a6220548a7083471c35f3a750d6e8a5d7b7dfa458d97fded7412cdb4"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-mlir-poison-7f4fbf316dad.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "generateSortTail",
+        "resolveExprStep",
+        "selectInnerLoop",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3Insert",
+        "sqlite3Pragma",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate",
+        "sqlite3WalCheckpoint",
+        "whereLoopAddBtreeIndex"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 18,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<4xi16>",
+      "sha256": "22ed137fc307621fefc59aa48f560dfd36fa0aad8b3664444f20684f658f7394"
+    },
+    {
+      "example_function": "putVarint64",
+      "file": "llvm-mlir-poison-80080cee79cc.mlir",
+      "functions": [
+        "putVarint64"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 1,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<8xi8>",
+      "sha256": "2ce7b17f23e769d50bc64d52fae02078320ebd014f9b04f204ff42af175baf86"
+    },
+    {
+      "example_function": "putVarint64",
+      "file": "llvm-mlir-poison-893849a2ffd4.mlir",
+      "functions": [
+        "putVarint64",
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 3,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<16xi8>",
+      "sha256": "0cb7079c0c53f3f31f0c2b324b8f5eba30106466425473f57d4f49d5b974fb1d"
+    },
+    {
+      "example_function": "sqlite3WindowCodeStep",
+      "file": "llvm-mlir-poison-923644b5498d.mlir",
+      "functions": [
+        "sqlite3WindowCodeStep"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 1,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<4x!llvm.ptr>",
+      "sha256": "a43622e08db9083ede1323e5cdbd3ea254812c7f157a157b5d65ddc31170205e"
+    },
+    {
+      "example_function": "exprAnalyze",
+      "file": "llvm-mlir-poison-c369e3b6e106.mlir",
+      "functions": [
+        "exprAnalyze"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 1,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<2x!llvm.ptr>",
+      "sha256": "1703f6f2a22ef7c095720bff185648e2d0ca33c3de6f80b99f0c0dc80ac07c67"
+    },
+    {
+      "example_function": "dateFunc",
+      "file": "llvm-mlir-poison-d468040e67b3.mlir",
+      "functions": [
+        "dateFunc",
+        "datetimeFunc",
+        "groupConcatStep",
+        "sqlite3FkLocateIndex",
+        "toLocaltime"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 5,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<4xi32>",
+      "sha256": "096c32dfd8bf138eab24b17d24c65d65e8f108dabc8c763ea45f0c3b7b878989"
+    },
+    {
+      "example_function": "codeRowTrigger",
+      "file": "llvm-mlir-poison-dad87319fdcb.mlir",
+      "functions": [
+        "codeRowTrigger"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 1,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<2xi32>",
+      "sha256": "86d610aacd10b95a5f59ff5a41d0f8fd82b8da3af371efd08b738295d0a035ca"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-mlir-poison-f2deb47e8cdf.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.mlir.poison",
+      "inputs": [],
+      "occurrences": 12,
+      "operation": "llvm.mlir.poison",
+      "result": "vector<8xi16>",
+      "sha256": "706f45df7bb283fd55c9cc601ec07f07a3351940553659e15cd54f6e9efc00b7"
+    },
+    {
+      "example_function": "sqlite3WindowCodeStep",
+      "file": "llvm-mlir-undef-7f07cf7a0e81.mlir",
+      "functions": [
+        "sqlite3WindowCodeStep"
+      ],
+      "group": "llvm.mlir.undef",
+      "inputs": [],
+      "occurrences": 1,
+      "operation": "llvm.mlir.undef",
+      "result": "vector<4x!llvm.ptr>",
+      "sha256": "80c0923f7003c5954c8fd80c0f7a3b0167af1921e881237d9c71500bc8e1e2b9"
+    },
+    {
+      "example_function": "sqlite3ParseUri",
+      "file": "llvm-mlir-undef-88c88bf351f1.mlir",
+      "functions": [
+        "sqlite3ParseUri",
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.mlir.undef",
+      "inputs": [],
+      "occurrences": 2,
+      "operation": "llvm.mlir.undef",
+      "result": "vector<2xi64>",
+      "sha256": "97db9610590bcfdf62f8f7886bf38afd6bb2f74e1fa51f8b938cd573327a6724"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-mlir-undef-a5218a2461ee.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.mlir.undef",
+      "inputs": [],
+      "occurrences": 12,
+      "operation": "llvm.mlir.undef",
+      "result": "vector<4xi16>",
+      "sha256": "a41fc4cfdbb29ad543184539b3779424e1a4b2d07c3cc6c91939619b9f5252b5"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-mlir-undef-d247676d3c56.mlir",
+      "functions": [
+        "constructAutomaticIndex",
+        "generateSortTail",
+        "readSuperJournal",
+        "selectInnerLoop",
+        "sqlite3Insert",
+        "sqlite3_str_vappendf",
+        "toLocaltime"
+      ],
+      "group": "llvm.mlir.undef",
+      "inputs": [],
+      "occurrences": 7,
+      "operation": "llvm.mlir.undef",
+      "result": "vector<4xi32>",
+      "sha256": "b9579bf6c2ef632084f356227184875579534f1f1705312db86f32308cfc4ebd"
+    },
+    {
+      "example_function": "analyzeAggFuncArgs",
+      "file": "llvm-mlir-undef-efc1890b7dda.mlir",
+      "functions": [
+        "analyzeAggFuncArgs",
+        "balance",
+        "constructAutomaticIndex",
+        "exprCodeVector",
+        "exprMightBeIndexed2",
+        "propagateConstants",
+        "resolveExprStep",
+        "resolveSelectStep",
+        "sqlite3CodeRhsOfIN",
+        "sqlite3ConstructBloomFilter",
+        "sqlite3ExprAnalyzeAggList",
+        "sqlite3ExprCodeExprList",
+        "sqlite3ExprCodeTarget",
+        "sqlite3MultiValues",
+        "sqlite3Select",
+        "sqlite3SelectDup",
+        "sqlite3WhereBegin",
+        "whereAddIndexedExpr",
+        "whereLoopAddVirtual",
+        "whereLoopOutputAdjust",
+        "wherePathSatisfiesOrderBy"
+      ],
+      "group": "llvm.mlir.undef",
+      "inputs": [],
+      "occurrences": 25,
+      "operation": "llvm.mlir.undef",
+      "result": "vector<2x!llvm.ptr>",
+      "sha256": "be632e7161af73a66809ec561c0a4ccc4a0bd493133c0f56414746e26ca28aa5"
+    },
+    {
+      "example_function": "selectInnerLoop",
+      "file": "llvm-or-6fee6b174ba5.mlir",
+      "functions": [
+        "selectInnerLoop"
+      ],
+      "group": "llvm.or",
+      "inputs": [
+        "vector<4xi1>",
+        "vector<4xi1>"
+      ],
+      "occurrences": 3,
+      "operation": "llvm.or",
+      "result": "vector<4xi1>",
+      "sha256": "8fa5187c67709f9454b1296de429e086c1b3ec5ce8756bf1e08ec16b0945c7c9"
+    },
+    {
+      "example_function": "sqlite3WalCheckpoint",
+      "file": "llvm-or-8a2ed35b35d4.mlir",
+      "functions": [
+        "sqlite3WalCheckpoint"
+      ],
+      "group": "llvm.or",
+      "inputs": [
+        "vector<4xi16>",
+        "vector<4xi16>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.or",
+      "result": "vector<4xi16>",
+      "sha256": "1280b3a1eb67e2082d73e2c764ff7b4e949944db1d5f772d9582d08a9bc59c92"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-or-9e5368dba128.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.or",
+      "inputs": [
+        "vector<16xi8>",
+        "vector<16xi8>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.or",
+      "result": "vector<16xi8>",
+      "sha256": "15e10d2787cabc4637be361b59b84084094a7ea2073ea634843c5aa6bacffb83"
+    },
+    {
+      "example_function": "charFunc",
+      "file": "llvm-or-b7fa58a2447e.mlir",
+      "functions": [
+        "charFunc",
+        "dateFunc",
+        "datetimeFunc",
+        "sqlite3HexToBlob",
+        "sqlite3VdbeMemTranslate",
+        "sqlite3_str_vappendf",
+        "unistrFunc",
+        "valueFromExpr"
+      ],
+      "group": "llvm.or",
+      "inputs": [
+        "vector<4xi8>",
+        "vector<4xi8>"
+      ],
+      "occurrences": 10,
+      "operation": "llvm.or",
+      "result": "vector<4xi8>",
+      "sha256": "e441c1f1eeada6b5cb41663eabfb8c7e49a1012f75209322bc67956a6f82e9be"
+    },
+    {
+      "example_function": "whereLoopAddVirtual",
+      "file": "llvm-or-c5a8f3e77e06.mlir",
+      "functions": [
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.or",
+      "inputs": [
+        "vector<2xi64>",
+        "vector<2xi64>"
+      ],
+      "occurrences": 3,
+      "operation": "llvm.or",
+      "result": "vector<2xi64>",
+      "sha256": "49ecf09abbabd471a66a9a1fff4f8df83f9814ac29e072f2b7f493a4eb834dbb"
+    },
+    {
+      "example_function": "balance",
+      "file": "llvm-ptrtoaddr-292b0dd21832.mlir",
+      "functions": [
+        "balance"
+      ],
+      "group": "llvm.ptrtoaddr",
+      "inputs": [
+        "!llvm.ptr"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.ptrtoaddr",
+      "result": "i64",
+      "sha256": "44699ce9f73351aa87b7be0493fd95873ca9282efe3e6e30f9b547778433fb36"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-select-519f15a45659.mlir",
+      "functions": [
+        "jsonHexToInt4"
+      ],
+      "group": "llvm.select",
+      "inputs": [
+        "vector<2xi1>",
+        "vector<2xi8>",
+        "vector<2xi8>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.select",
+      "result": "vector<2xi8>",
+      "sha256": "9935ca97fd6f92cac04143e9c19650d4a61fb72e28a06fef8d243a4153e9c987"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-select-94e91ee1299d.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.select",
+      "inputs": [
+        "vector<4xi1>",
+        "vector<4xi8>",
+        "vector<4xi8>"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.select",
+      "result": "vector<4xi8>",
+      "sha256": "9f2f299dfe546869936017ef31a916a3490f42bd03d6335bdfe2b85f9b4d830d"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-select-9c098f655e26.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.select",
+      "inputs": [
+        "vector<16xi1>",
+        "vector<16xi8>",
+        "vector<16xi8>"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.select",
+      "result": "vector<16xi8>",
+      "sha256": "4d09730ea23c713d570e87632c6d9e57641f98c964a3ed171d09b5e4b10526c2"
+    },
+    {
+      "example_function": "readSuperJournal",
+      "file": "llvm-sext-cd48a952681f.mlir",
+      "functions": [
+        "readSuperJournal"
+      ],
+      "group": "llvm.sext",
+      "inputs": [
+        "vector<4xi8>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.sext",
+      "result": "vector<4xi32>",
+      "sha256": "cf179cf130c7856a9d4ba0b9ceed0e87aef1eda2492f08de931a3320c1422df0"
+    },
+    {
+      "example_function": "selectInnerLoop",
+      "file": "llvm-sext-cfd25dfc998e.mlir",
+      "functions": [
+        "selectInnerLoop",
+        "sqlite3Insert"
+      ],
+      "group": "llvm.sext",
+      "inputs": [
+        "vector<4xi1>"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.sext",
+      "result": "vector<4xi32>",
+      "sha256": "36e3c34d5d229d6355fb12c982be07ff39602c13af8deb5ba920237aecefbecb"
+    },
+    {
+      "example_function": "whereLoopAddVirtual",
+      "file": "llvm-sext-d90ed5ed0774.mlir",
+      "functions": [
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.sext",
+      "inputs": [
+        "vector<2xi16>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.sext",
+      "result": "vector<2xi64>",
+      "sha256": "9880714b36a3dcbebdc870e7dd90763a6e031d1d0c8dd5a3cbb4c129e5db93ea"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-shl-820bd93dc03a.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.shl",
+      "inputs": [
+        "vector<4xi8>",
+        "vector<4xi8>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.shl",
+      "result": "vector<4xi8>",
+      "sha256": "1e22017773d1d1de682dc648fb36cc815a53c1c0b4f82c12b06714480547eb60"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-shl-8cfb2f795897.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "llvm.shl",
+      "inputs": [
+        "vector<16xi8>",
+        "vector<16xi8>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.shl",
+      "result": "vector<16xi8>",
+      "sha256": "356fe725f8ecbbf3fc18f58cd139e60c64f91c847f154eb555236d033e19be54"
+    },
+    {
+      "example_function": "whereLoopAddVirtual",
+      "file": "llvm-shl-998bad46ab2e.mlir",
+      "functions": [
+        "whereLoopAddVirtual"
+      ],
+      "group": "llvm.shl",
+      "inputs": [
+        "vector<2xi64>",
+        "vector<2xi64>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.shl",
+      "result": "vector<2xi64>",
+      "sha256": "33055b752aa98221709e1f296f1514704f880dca1c605b2a83d036e989ff7a17"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-shl-c6befe8b7bb2.mlir",
+      "functions": [
+        "jsonHexToInt4"
+      ],
+      "group": "llvm.shl",
+      "inputs": [
+        "vector<2xi16>",
+        "vector<2xi16>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.shl",
+      "result": "vector<2xi16>",
+      "sha256": "b131cf03b2e5c2ca789df8bbcccc227221dc31e7297d24752bb236a0207e9ee7"
+    },
+    {
+      "example_function": "unixShmLock",
+      "file": "llvm-shufflevector-411e61966a23.mlir",
+      "functions": [
+        "unixShmLock"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<2xi16>",
+        "vector<2xi16>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.shufflevector",
+      "result": "vector<2xi16>",
+      "sha256": "ab1b2a622453304269e2b023bbfdf40866c4a0b39d8fcc84e4ebdb26287c5010"
+    },
+    {
+      "example_function": "putVarint64",
+      "file": "llvm-shufflevector-4e2a716a2c71.mlir",
+      "functions": [
+        "putVarint64"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<8xi8>",
+        "vector<8xi8>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.shufflevector",
+      "result": "vector<8xi8>",
+      "sha256": "347f5d5c6041bf5c859afbfae34bc67155fe43d96ab24a9193e97a3d476b9ffd"
+    },
+    {
+      "example_function": "codeRowTrigger",
+      "file": "llvm-shufflevector-5c4317b73060.mlir",
+      "functions": [
+        "codeRowTrigger"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<2xi32>",
+        "vector<2xi32>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.shufflevector",
+      "result": "vector<2xi32>",
+      "sha256": "af23f65a5935c47137040ea40dedb886f09636cdda18b6a488f8c3a1f4211d13"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-shufflevector-5ebfee07c653.mlir",
+      "functions": [
+        "constructAutomaticIndex"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<4xi64>",
+        "vector<4xi64>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.shufflevector",
+      "result": "vector<4xi64>",
+      "sha256": "951d9d645cc6f80ed6ec6fd8b71684050c425a3ce3285ac084ff6570f9ed2efa"
+    },
+    {
+      "example_function": "sqlite3_str_vappendf",
+      "file": "llvm-shufflevector-650b3e9c4599.mlir",
+      "functions": [
+        "sqlite3_str_vappendf"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<4xi8>",
+        "vector<4xi8>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.shufflevector",
+      "result": "vector<4xi8>",
+      "sha256": "1e8abfef104f38775942a2e55962e8ca83da2569fc56c28e91d6cdc1befdf952"
+    },
+    {
+      "example_function": "sqlite3WalCheckpoint",
+      "file": "llvm-shufflevector-98ad19a75ab5.mlir",
+      "functions": [
+        "sqlite3WalCheckpoint"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<4xi16>",
+        "vector<4xi16>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.shufflevector",
+      "result": "vector<4xi16>",
+      "sha256": "4eb2e454ae400fc57f06623df01eb2c5e39a609424c6770dd420bd15a8a2ce35"
+    },
+    {
+      "example_function": "exprAnalyze",
+      "file": "llvm-shufflevector-b0d0492eb2ff.mlir",
+      "functions": [
+        "exprAnalyze"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<2x!llvm.ptr>",
+        "vector<2x!llvm.ptr>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.shufflevector",
+      "result": "vector<2x!llvm.ptr>",
+      "sha256": "18ab1fbad02131a7c4bc20624078e9672fbf1858adce8f8b3413b32e7d30c678"
+    },
+    {
+      "example_function": "putVarint64",
+      "file": "llvm-shufflevector-b596a624c980.mlir",
+      "functions": [
+        "putVarint64"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<16xi8>",
+        "vector<16xi8>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.shufflevector",
+      "result": "vector<16xi8>",
+      "sha256": "e02012529951be682d284fd1a14704cbcb5e76a0abb6438fa1bdfaeb2cbf97f3"
+    },
+    {
+      "example_function": "sqlite3WindowCodeStep",
+      "file": "llvm-shufflevector-e01bd2f5f9d4.mlir",
+      "functions": [
+        "sqlite3WindowCodeStep"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<4x!llvm.ptr>",
+        "vector<4x!llvm.ptr>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.shufflevector",
+      "result": "vector<4x!llvm.ptr>",
+      "sha256": "2458be036b9b3983bdeb6ad77f7479934942377da700699fe2888a148e3f741f"
+    },
+    {
+      "example_function": "whereLoopAddBtreeIndex",
+      "file": "llvm-shufflevector-e1d4b8d2849d.mlir",
+      "functions": [
+        "whereLoopAddBtreeIndex"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<4xi16>",
+        "vector<4xi16>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.shufflevector",
+      "result": "vector<2xi16>",
+      "sha256": "ff1b73bd1d188d133a9eb5d55decf6abe7db57e50c0b617670deca809689490f"
+    },
+    {
+      "example_function": "groupConcatStep",
+      "file": "llvm-shufflevector-f4cd6265a347.mlir",
+      "functions": [
+        "groupConcatStep",
+        "toLocaltime"
+      ],
+      "group": "llvm.shufflevector",
+      "inputs": [
+        "vector<4xi32>",
+        "vector<4xi32>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.shufflevector",
+      "result": "vector<4xi32>",
+      "sha256": "14a8a0f0a0aeb872150fe571208813019f7072321c55edb1365207daf8c724ce"
+    },
+    {
+      "example_function": "pagerWalFrames",
+      "file": "llvm-store-122b9c6edddd.mlir",
+      "functions": [
+        "pagerWalFrames",
+        "putVarint64",
+        "vtabCallConstructor"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<8xi8>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "9c83ef83515bdbdb79507fc5911bf243e76ac831cfaf437d78da0f128cd0f283"
+    },
+    {
+      "example_function": "checkTreePage",
+      "file": "llvm-store-17c9d367d96b.mlir",
+      "functions": [
+        "checkTreePage",
+        "codeRowTrigger",
+        "exprAnalyze",
+        "memjrnlWrite",
+        "multiSelectByMerge",
+        "pcache1FetchStage2",
+        "sqlite3Select",
+        "sqlite3WindowDup",
+        "unixLock",
+        "walIndexReadHdr",
+        "walTryBeginRead"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<2xi32>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 14,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "66a9d83eae61638618526e9837cf16fecc90472f48ec495c772636ab1d4bbb19"
+    },
+    {
+      "example_function": "analyzeAggFuncArgs",
+      "file": "llvm-store-38504df9caf1.mlir",
+      "functions": [
+        "analyzeAggFuncArgs",
+        "balance",
+        "constructAutomaticIndex",
+        "exprAnalyze",
+        "exprCodeVector",
+        "exprMightBeIndexed2",
+        "propagateConstants",
+        "resolveExprStep",
+        "resolveSelectStep",
+        "sqlite3CodeRhsOfIN",
+        "sqlite3ConstructBloomFilter",
+        "sqlite3ExprAnalyzeAggList",
+        "sqlite3ExprCodeExprList",
+        "sqlite3ExprCodeTarget",
+        "sqlite3MultiValues",
+        "sqlite3Reprepare",
+        "sqlite3Select",
+        "sqlite3SelectDup",
+        "sqlite3VdbeExec",
+        "sqlite3WhereBegin",
+        "whereAddIndexedExpr",
+        "whereLoopAddVirtual",
+        "whereLoopOutputAdjust",
+        "wherePathSatisfiesOrderBy"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<2x!llvm.ptr>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 41,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "eb6d41c605eb19e8abd14979aa6a4ca84a41369a472ae698ca48beedc3213e97"
+    },
+    {
+      "example_function": "sqlite3RunVacuum",
+      "file": "llvm-store-6c9296ff7a43.mlir",
+      "functions": [
+        "sqlite3RunVacuum",
+        "sqlite3VdbeExec",
+        "statPush",
+        "unixOpen",
+        "vdbeCloseStatement"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<2xi64>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 8,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "1603deac109123dd2073c219998118537770f9d959b16e05ad189060f4c98d8d"
+    },
+    {
+      "example_function": "balance",
+      "file": "llvm-store-7690e748441f.mlir",
+      "functions": [
+        "balance",
+        "decodeFlags",
+        "newDatabase",
+        "unixShmLock",
+        "whereLoopAddBtreeIndex",
+        "whereLoopAddOr"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<2xi16>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 10,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "1055295509a34302a1575c5ccb6bd0e49c3f72e94416c32132fdb3ca01e56056"
+    },
+    {
+      "example_function": "groupConcatStep",
+      "file": "llvm-store-89813de416bf.mlir",
+      "functions": [
+        "groupConcatStep",
+        "sqlite3BtreeOpen",
+        "sqlite3FindInIndex",
+        "sqlite3_get_table",
+        "toLocaltime"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<4xi32>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 7,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "115b13ec4c379d2d8d7d62b23107f2a9d8bd45ec0523046a68f2e5d0dc0e25f1"
+    },
+    {
+      "example_function": "sqlite3FkLocateIndex",
+      "file": "llvm-store-a21b253e3cac.mlir",
+      "functions": [
+        "sqlite3FkLocateIndex"
+      ],
+      "group": "#llvm.alias_scope",
+      "inputs": [
+        "vector<4xi32>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "01ef8ecf7ae137a679c373ef99dacb9d3b53a1b4f99be7354b5c27aa47a6370e"
+    },
+    {
+      "example_function": "charFunc",
+      "file": "llvm-store-b0cb9e971af5.mlir",
+      "functions": [
+        "charFunc",
+        "dateFunc",
+        "datetimeFunc",
+        "pagerWalFrames",
+        "pager_incr_changecounter",
+        "pager_write_pagelist",
+        "sqlite3VdbeMemTranslate",
+        "sqlite3_str_vappendf",
+        "unistrFunc"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<4xi8>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 12,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "f6b8a9ab46a5ec040b164265d42a87d1b9f78a97b09284229ebf817791265585"
+    },
+    {
+      "example_function": "sqlite3WalCheckpoint",
+      "file": "llvm-store-b4ecc9d0387b.mlir",
+      "functions": [
+        "sqlite3WalCheckpoint",
+        "whereLoopAddBtreeIndex"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<4xi16>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "6b73ee15650e79fb6361dcd277989b552cf595a6b18b53cb436f870b75a3935e"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-store-d296ec4cb662.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "#llvm.alias_scope",
+      "inputs": [
+        "vector<4xi8>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "cd423745a1f1878dc7a23e8325fea4a2c3bd022d87677d66f29de21bad1febea"
+    },
+    {
+      "example_function": "sqlite3WalCheckpoint",
+      "file": "llvm-store-d62a0064866a.mlir",
+      "functions": [
+        "sqlite3WalCheckpoint"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<8xi16>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "110d0368fba9b0f55731238db22817110e5d2e975c8fe9d14cc27389670becb9"
+    },
+    {
+      "example_function": "putVarint64",
+      "file": "llvm-store-ddc40dcec45b.mlir",
+      "functions": [
+        "putVarint64",
+        "vtabCallConstructor"
+      ],
+      "group": "llvm.store",
+      "inputs": [
+        "vector<16xi8>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 4,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "a6bbf34614a67a053c5b48c27de508b469b82c5a5af387172b2c7be4e43a5d4f"
+    },
+    {
+      "example_function": "sqlite3HexToBlob",
+      "file": "llvm-store-f5d2bbc5cc1f.mlir",
+      "functions": [
+        "sqlite3HexToBlob",
+        "valueFromExpr"
+      ],
+      "group": "#llvm.alias_scope",
+      "inputs": [
+        "vector<16xi8>",
+        "!llvm.ptr"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.store",
+      "result": "()",
+      "sha256": "6ab350e77f87fd43a17e89089821ab9b66c8161f935fe37f7e5a9056324f0bf7"
+    },
+    {
+      "example_function": "readSuperJournal",
+      "file": "llvm-sub-593c7a7fdaa7.mlir",
+      "functions": [
+        "readSuperJournal"
+      ],
+      "group": "llvm.sub",
+      "inputs": [
+        "vector<4xi32>",
+        "vector<4xi32>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.sub",
+      "result": "vector<4xi32>",
+      "sha256": "592a1bbd563778bd6b50231d1ce1bbd41ba85039ce3acdc4b98b623e068d544f"
+    },
+    {
+      "example_function": "constructAutomaticIndex",
+      "file": "llvm-trunc-09cd17b01a6a.mlir",
+      "functions": [
+        "constructAutomaticIndex"
+      ],
+      "group": "llvm.trunc",
+      "inputs": [
+        "vector<4xi64>"
+      ],
+      "occurrences": 14,
+      "operation": "llvm.trunc",
+      "result": "vector<4xi32>",
+      "sha256": "be39afa96be4c0b8ef57a147ec427daf6e8170953f8efb0ea890a43a25485477"
+    },
+    {
+      "example_function": "dateFunc",
+      "file": "llvm-trunc-378e1592e19f.mlir",
+      "functions": [
+        "dateFunc",
+        "datetimeFunc"
+      ],
+      "group": "llvm.trunc",
+      "inputs": [
+        "vector<4xi32>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.trunc",
+      "result": "vector<4xi8>",
+      "sha256": "78d1fcfaa54a24102262f5cf59cc5aecd8269712bf305b57cb94a90ec7d2b522"
+    },
+    {
+      "example_function": "dateFunc",
+      "file": "llvm-urem-01547661548b.mlir",
+      "functions": [
+        "dateFunc",
+        "datetimeFunc"
+      ],
+      "group": "llvm.urem",
+      "inputs": [
+        "vector<4xi32>",
+        "vector<4xi32>"
+      ],
+      "occurrences": 2,
+      "operation": "llvm.urem",
+      "result": "vector<4xi32>",
+      "sha256": "02c101538f2ca1f1eae34a69d8240f6379f9305452081368a0ccebba1a34cf80"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-xor-43f18227d1d9.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.xor",
+      "inputs": [
+        "vector<4xi16>",
+        "vector<4xi16>"
+      ],
+      "occurrences": 19,
+      "operation": "llvm.xor",
+      "result": "vector<4xi16>",
+      "sha256": "26473bfbe0180076ed0a46aa49d8c7c6789229cc4d4b213308603d31a22c82a7"
+    },
+    {
+      "example_function": "codeDeferredSeek",
+      "file": "llvm-xor-c850f5042ae8.mlir",
+      "functions": [
+        "codeDeferredSeek",
+        "exprTableRegister",
+        "fkLookupParent",
+        "resolveExprStep",
+        "sqlite3ComputeGeneratedColumns",
+        "sqlite3ExprCodeGetColumnOfTable",
+        "sqlite3FkCheck",
+        "sqlite3GenerateConstraintChecks",
+        "sqlite3GenerateRowDelete",
+        "sqlite3TableColumnToStorage",
+        "sqlite3Update",
+        "sqlite3UpsertDoUpdate"
+      ],
+      "group": "llvm.xor",
+      "inputs": [
+        "vector<8xi16>",
+        "vector<8xi16>"
+      ],
+      "occurrences": 38,
+      "operation": "llvm.xor",
+      "result": "vector<8xi16>",
+      "sha256": "b4a890c5d36bc3a5fd1fb2741c53fe8ffbeb8755ae3b2b6908caea341a508d83"
+    },
+    {
+      "example_function": "sqlite3ParseUri",
+      "file": "llvm-zext-218f9d3a0f8b.mlir",
+      "functions": [
+        "sqlite3ParseUri",
+        "sqlite3_str_vappendf"
+      ],
+      "group": "llvm.zext",
+      "inputs": [
+        "vector<2xi1>"
+      ],
+      "occurrences": 6,
+      "operation": "llvm.zext",
+      "result": "vector<2xi64>",
+      "sha256": "660be7834a098df8470a312f5c3e979fdc4488cdf744e25f29e22797301c9be7"
+    },
+    {
+      "example_function": "jsonHexToInt4",
+      "file": "llvm-zext-51828bba2d3f.mlir",
+      "functions": [
+        "jsonHexToInt4"
+      ],
+      "group": "llvm.zext",
+      "inputs": [
+        "vector<2xi8>"
+      ],
+      "occurrences": 1,
+      "operation": "llvm.zext",
+      "result": "vector<2xi16>",
+      "sha256": "9bf07cc6b756482929522848ab33255b58a096fa9828683b3248b558298ccc0d"
+    },
+    {
+      "example_function": "generateSortTail",
+      "file": "llvm-zext-f91dfa6adf8d.mlir",
+      "functions": [
+        "generateSortTail",
+        "sqlite3Insert",
+        "sqlite3Pragma",
+        "sqlite3_str_vappendf"
+      ],
+      "group": "llvm.zext",
+      "inputs": [
+        "vector<4xi1>"
+      ],
+      "occurrences": 8,
+      "operation": "llvm.zext",
+      "result": "vector<4xi32>",
+      "sha256": "4489f384b082588e74c64b562b24ad8a8d02dd0aa8b6309d82a105211eabfbc5"
+    }
+  ],
+  "clang_flags": [
+    "-O3"
+  ],
+  "format": 1,
+  "sqlite": {
+    "sha256": "87497ab605bedd0dbee27a209c1eeff8c89b229b13f921a7efdbb81a13f779fd",
+    "url": "https://sqlite.org/2026/sqlite-amalgamation-3530300.zip",
+    "version": "3530300"
+  },
+  "target": "x86_64-unknown-linux-gnu",
+  "toolchain": {
+    "clang": "clang version 23.1.0 (https://github.com/llvm/llvm-project ea7d852a70e8bdfaf601d6626a760f9771b2c4b4)",
+    "mlir-opt": "LLVM version 23.1.0",
+    "mlir-translate": "LLVM version 23.1.0"
+  }
+}
