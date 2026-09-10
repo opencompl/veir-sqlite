@@ -52,9 +52,9 @@ Nothing is blocked on an unregistered op, type or attribute.
 
 |  | value |
 |---|---|
-| veir | [`771cf57c7a3c954b889b61609ef51d8ccea7a629`](https://github.com/opencompl/veir/commit/771cf57c7a3c954b889b61609ef51d8ccea7a629) |
+| veir | [`61a95f536fe2d6ed0acb482d080fd138e5d0a609`](https://github.com/opencompl/veir/commit/61a95f536fe2d6ed0acb482d080fd138e5d0a609) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions b31991197ea30afe, globals a2fa311606b8e8a0` |
 | chunks built with | `clang version 23.1.0-rc3 (git@github.com:llvm/llvm-project.git 4e60bd7a63b0d1a8407efb1702b53faec44e2980) / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-10 02:56 UTC on Linux x86_64` |
+| scored | `2026-09-10 05:45 UTC on Linux x86_64` |
