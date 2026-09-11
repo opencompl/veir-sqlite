@@ -59,4 +59,4 @@ Nothing is blocked on an unregistered op, type or attribute.
 | corpus | `functions 9f402d0d52b72f2b, globals 6fb4213c3338e6fa` |
 | chunks built with | `Debian clang version 19.1.7 (3+b1) / x86_64-pc-linux-gnu` |
 | clang flags | `-O3 -fno-vectorize -fno-slp-vectorize` |
-| scored | `2026-09-11 21:23 UTC on Linux x86_64` |
+| scored | `2026-09-11 21:28 UTC on Linux x86_64` |
