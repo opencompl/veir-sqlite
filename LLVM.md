@@ -16,13 +16,13 @@ Symbol counts cover successfully compiled source files. Each definition in each 
 
 | Component / symbols | Imported chunks | Strict | Allow unregistered |
 |---|---:|---:|---:|
-| Demangle / functions | 555 | 267/555 | 268/555 |
-| Demangle / globals | 676 | 581/676 | 581/676 |
+| Demangle / functions | 555 | 267/555 | 553/555 |
+| Demangle / globals | 676 | 581/676 | 673/676 |
 
 | Mode | Passed | Rejected | Timed out |
 |---|---:|---:|---:|
 | strict | 848 | 383 | 0 |
-| permissive | 849 | 382 | 0 |
+| permissive | 1226 | 5 | 0 |
 
 ## What needs support
 
@@ -39,9 +39,9 @@ Ranked by the first strict diagnostic per chunk. Fixing one diagnostic may expos
 
 | Chunks | Outcome | First diagnostic | Example |
 |---:|---|---|---|
-| 378 | rejected | `closing delimiter '}' expected` | [example](llvm/corpus/chunks/Demangle/DLangDemangle/function-_ZN4llvm16itanium_demangle12OutputBufferlsESt17basic_string_view-594ef4e5b87dd8c6.mlir) |
 | 3 | rejected | `Error verifying input program: llvm.return: Expected llvm.return to be enclosed by llvm.func or llvm.mlir.global` | [example](llvm/corpus/chunks/Demangle/ItaniumDemangle/global-_ZN4llvm23ItaniumPartialDemanglerC1EOS0_-eb7915dcfc1fd4f0.mlir) |
 | 1 | rejected | `Error verifying input program: llvm.icmp: Expected operand 0 to have integer or pointer type` | [example](llvm/corpus/chunks/Demangle/MicrosoftDemangle/function-_ZL17guessCharByteSizePKhjm-5bc4c47f3ec5335d.mlir) |
+| 1 | rejected | `type expected` | [example](llvm/corpus/chunks/Demangle/ItaniumDemangle/function-_ZNK4llvm16itanium_demangle16FloatLiteralImplIeE9printLeftERNS0_-3e47391ac9005f0d.mlir) |
 
 </details>
 
@@ -57,8 +57,8 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 
 | | Value |
 |---|---|
-| veir | [89dc32aac930d462b9ae9e9aa4d75ca1ebfa867a](https://github.com/opencompl/veir/commit/89dc32aac930d462b9ae9e9aa4d75ca1ebfa867a) |
-| veir-opt SHA256 | `61428537542994d01f5bb949308a5d2277ae8e75389c226a2393433ae3a5b6fe` |
+| veir | [89b122296f2304112433d14cff8c3245578a563f](https://github.com/opencompl/veir/commit/89b122296f2304112433d14cff8c3245578a563f) |
+| veir-opt SHA256 | `2278d444ce4cfa622e713af4bad56b54639ab03839ddd1ae92df21f0f29f455e` |
 | LLVM source | [6a2d309c7d204730a9a35f3261f8448efeb6c5e3](https://github.com/llvm/llvm-project/commit/6a2d309c7d204730a9a35f3261f8448efeb6c5e3) |
 | Corpus target | `x86_64-pc-linux-gnu` |
 | Optimization | `-O3` |
@@ -66,4 +66,4 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 | MLIR import | LLVM version 24.0.0git |
 | Corpus manifest SHA256 | `742ecbc33d75d2b7564f3ad483a2b739d0343c89fc2bce12d445af50fa4b8754` |
 | Timeout | 30s per invocation |
-| Scored | 2026-09-11 16:50 UTC |
+| Scored | 2026-09-11 19:48 UTC |
