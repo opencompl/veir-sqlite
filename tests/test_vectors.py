@@ -81,7 +81,7 @@ class RoundTripTests(unittest.TestCase):
     def test_printed_output_must_reparse(self):
         success = subprocess.CompletedProcess([], 0, b"printed", b"")
         failure = subprocess.CompletedProcess([], 1, b"", b"stdin:1:1: error: bad printed output")
-        with patch("vectors.support.subprocess.run", side_effect=[success, failure]) as run:
+        with patch("tracking.subprocess.run", side_effect=[success, failure]) as run:
             verdict = support.roundtrip("veir-opt", Path("case.mlir"))
         self.assertEqual(verdict["status"], "rejected")
         self.assertEqual(verdict["diagnostic"], "printed output: bad printed output")
@@ -89,16 +89,16 @@ class RoundTripTests(unittest.TestCase):
 
     def test_optimizer_output_reparsed_without_reapplying_passes(self):
         success = subprocess.CompletedProcess([], 0, b"printed", b"")
-        with patch("vectors.support.subprocess.run", return_value=success) as run:
+        with patch("tracking.subprocess.run", return_value=success) as run:
             verdict = support.roundtrip("veir-opt", Path("case.mlir"), allow=True, optimize=True)
         self.assertEqual(verdict["status"], "passed")
         self.assertIn("-p=instcombine,dce,cse,dce", run.call_args_list[0].args[0])
         self.assertEqual(run.call_args_list[1].args[0], ["veir-opt", "--allow-unregistered-dialect"])
 
     def test_timeout_is_distinct_from_signal(self):
-        with patch("vectors.support.subprocess.run", side_effect=subprocess.TimeoutExpired([], 1)):
+        with patch("tracking.subprocess.run", side_effect=subprocess.TimeoutExpired([], 1)):
             self.assertEqual(support.roundtrip("veir-opt", Path("case"))["status"], "timed out")
-        with patch("vectors.support.subprocess.run", return_value=subprocess.CompletedProcess([], -1, b"", b"")):
+        with patch("tracking.subprocess.run", return_value=subprocess.CompletedProcess([], -1, b"", b"")):
             verdict = support.roundtrip("veir-opt", Path("case"))
         self.assertEqual(verdict["status"], "rejected")
         self.assertIn("-1", verdict["diagnostic"])
