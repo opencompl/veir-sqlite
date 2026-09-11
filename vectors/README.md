@@ -50,9 +50,10 @@ forms therefore requires updating the associated scalar-only verifier lemmas.
 Vector interpretation and constant evaluation require additional runtime
 support beyond this tracker.
 
-The `vectors` workflow polls VeIR main every ten minutes, refreshes this report
-when VeIR changes, and commits only `VECTORS.md`. Pushes to main and pull requests
-also validate the corpus and scorer. Pull requests do not publish generated
+The `corpora` workflow polls VeIR main every ten minutes and shares one VeIR build
+between this tracker and [the LLVM source tracker](../llvm/README.md). It refreshes
+and commits `VECTORS.md` and `LLVM.md` when VeIR changes. Pushes to main and pull
+requests also validate the corpus and scorer. Pull requests do not publish generated
 changes. Changes in compiler support are recorded as results, not CI failures;
 invalid tracking inputs or a failed VeIR build still fail CI.
 

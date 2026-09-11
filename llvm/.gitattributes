@@ -1,0 +1,3 @@
+corpus/chunks/** linguist-generated=true
+corpus/failures/** linguist-generated=true
+corpus/manifest.json linguist-generated=true

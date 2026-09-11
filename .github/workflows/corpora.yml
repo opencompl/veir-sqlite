@@ -1,0 +1,102 @@
+name: corpora
+
+on:
+  schedule:
+    - cron: "5,15,25,35,45,55 * * * *"
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: rescore even if VeIR main has not moved
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: corpora-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: veir-sqlite
+
+      - name: Validate tracking inputs
+        working-directory: veir-sqlite
+        run: |
+          python3 vectors/update.py --check
+          python3 llvm/update.py --check
+          python3 -m unittest discover -s tests
+
+      - name: Has VeIR moved?
+        id: veir
+        working-directory: veir-sqlite
+        env:
+          FORCE: ${{ github.event_name == 'push' || github.event_name == 'pull_request' || inputs.force == true }}
+        run: |
+          sha=$(git ls-remote https://github.com/opencompl/veir.git refs/heads/main | cut -f1)
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
+          vectors=$(grep '^| veir |' VECTORS.md | grep -oE '[0-9a-f]{40}' | head -1 || true)
+          llvm=$(grep '^| veir |' LLVM.md | grep -oE '[0-9a-f]{40}' | head -1 || true)
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          if [ "$sha" = "$vectors" ] && [ "$sha" = "$llvm" ] && [ "$FORCE" != true ]; then
+            echo "stale=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "stale=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.veir.outputs.stale == 'true'
+        with:
+          repository: opencompl/veir
+          ref: ${{ steps.veir.outputs.sha }}
+          path: veir
+
+      - name: Build veir-opt
+        if: steps.veir.outputs.stale == 'true'
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: veir
+          build-args: "veir-opt"
+          test: false
+
+      - name: Score vector and LLVM corpora
+        if: steps.veir.outputs.stale == 'true'
+        working-directory: veir-sqlite
+        run: |
+          python3 vectors/score.py --veir ../veir --json-out "$RUNNER_TEMP/vector-results.json"
+          python3 llvm/score.py --veir ../veir --json-out "$RUNNER_TEMP/llvm-results.json"
+          cat VECTORS.md >> "$GITHUB_STEP_SUMMARY"
+          cat LLVM.md >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: steps.veir.outputs.stale == 'true'
+        with:
+          name: corpus-results
+          path: |
+            ${{ runner.temp }}/vector-results.json
+            ${{ runner.temp }}/llvm-results.json
+
+      - name: Commit refreshed reports
+        if: steps.veir.outputs.stale == 'true' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        working-directory: veir-sqlite
+        env:
+          VEIR_SHA: ${{ steps.veir.outputs.sha }}
+        run: |
+          git add VECTORS.md LLVM.md
+          if git diff --cached --quiet -- VECTORS.md LLVM.md; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet -m "corpora: update support for veir ${VEIR_SHA:0:12}"
+          git pull --quiet --rebase origin main
+          git push --quiet origin HEAD:main

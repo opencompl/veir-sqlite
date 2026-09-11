@@ -1,5 +1,9 @@
 # veir-sqlite-leadership
 
+LLVM's own C++ sources are tracked in [LLVM.md](LLVM.md), starting with the
+complete Demangle library. See [the LLVM tracker](llvm/README.md) for its pinned
+source, scope and reproduction commands.
+
 Vectorized input is tracked separately in [VECTORS.md](VECTORS.md), using small
 SQLite-derived operation cases. See [the vector tracker](vectors/README.md)
 for its scope and reproduction commands.
