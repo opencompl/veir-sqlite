@@ -47,6 +47,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: veir-sqlite
+          # Queued schedules must see reports published by the preceding run.
+          # Other events retain checkout's default event revision.
+          ref: ${{ github.event_name == 'schedule' && github.ref || '' }}
 
       - name: Validate SQLite inputs and tests
         working-directory: veir-sqlite
