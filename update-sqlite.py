@@ -8,7 +8,8 @@ function and per defined global:
   sqlite3.c --clang--> .bc --llvm-extract--> one symbol
             --mlir-translate --import-llvm--> --mlir-opt --mlir-print-op-generic
 
-Corpora: O0 is clang -O0 followed by sroa (vcc's pipeline), O3 is clang -O3.
+Corpora: O0 is clang -O0 followed by sroa (vcc's pipeline), O3 is clang -O3
+with loop and SLP vectorization disabled.
 Boards: functions and globals are separate, because llvm-extract -func keeps
 only declarations of the globals a function touches, so an initializer is only
 ever visible on a board of its own.
@@ -46,15 +47,14 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
+from sqlite_corpus import (PIPELINES, SQLITE_VERSION, SQLITE_URL, SQLITE3_C_SHA256,
+                           board_digest, corpus_errors, validate)
+
 REPO = Path(__file__).resolve().parent
 CHUNKS = REPO / "chunks"
 SOURCE = REPO / "sqlite3.c"
 MANIFEST = REPO / "manifest.json"
 CACHE = REPO / ".cache"
-
-SQLITE_VERSION = "3530300"
-SQLITE_URL = f"https://sqlite.org/2026/sqlite-amalgamation-{SQLITE_VERSION}.zip"
-SQLITE3_C_SHA256 = "87497ab605bedd0dbee27a209c1eeff8c89b229b13f921a7efdbb81a13f779fd"
 
 CORPORA = ("O0", "O3")
 # board name, llvm-nm symbol types, llvm-extract flag.
@@ -191,7 +191,7 @@ def sha256(path: Path) -> str:
 # ---------------------------------------------------------------- chunks --
 
 def compile_module(src: Path, corpus: str, tools: dict[str, str]) -> Path:
-    """O0: clang -O0 + sroa, vcc's default pipeline. O3: clang -O3."""
+    """Compile with the exact pipeline recorded in the corpus manifest."""
     out = CACHE / corpus
     out.mkdir(parents=True, exist_ok=True)
     bc = out / "sqlite3.bc"
@@ -199,11 +199,11 @@ def compile_module(src: Path, corpus: str, tools: dict[str, str]) -> Path:
     cflags = sysroot_flags(tools["clang"])
     if corpus == "O0":
         raw = out / "sqlite3-raw.bc"
-        run([tools["clang"], "-O0", "-Xclang", "-disable-O0-optnone", "-c", "-emit-llvm",
+        run([tools["clang"], *PIPELINES[corpus]["clang"], "-c", "-emit-llvm",
              *cflags, str(src), "-o", str(raw)])
-        run([tools["opt"], "-passes=sroa", str(raw), "-o", str(bc)])
+        run([tools["opt"], *PIPELINES[corpus]["opt"], str(raw), "-o", str(bc)])
     else:
-        run([tools["clang"], "-o3", "-fno-vectorize", "-fno-slp-vectorize", "-c", "-emit-llvm", *cflags, str(src), "-o", str(bc)])
+        run([tools["clang"], *PIPELINES[corpus]["clang"], "-c", "-emit-llvm", *cflags, str(src), "-o", str(bc)])
     return bc
 
 
@@ -263,23 +263,14 @@ def build_board(bc: Path, corpus: str, board: str, kinds: tuple[str, ...], flag:
     return {"count": len(kept), "digest": board_digest(kept), "skipped": skipped}
 
 
-def board_digest(digests: dict[str, str]) -> str:
-    """Digest of a board: sorted names and contents, so any change to the set
-    or to a single chunk shows up as one changed field in the manifest."""
-    h = hashlib.sha256()
-    for name in sorted(digests):
-        h.update(name.encode())
-        h.update(digests[name].encode())
-    return h.hexdigest()[:16]
-
-
 # --------------------------------------------------------------- driver --
 
 def read_manifest() -> dict:
     return json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {}
 
 
-def staleness(previous: dict, identity: dict[str, str], src_sha: str) -> list[str]:
+def staleness(previous: dict, identity: dict[str, str], src_sha: str,
+              corpora=CORPORA) -> list[str]:
     """Why a refresh is needed, in the words the user has to act on."""
     if not previous:
         return ["no manifest: the corpus has never been generated"]
@@ -289,13 +280,7 @@ def staleness(previous: dict, identity: dict[str, str], src_sha: str) -> list[st
     for tool, version in identity.items():
         if (was := previous.get("toolchain", {}).get(tool)) != version:
             reasons.append(f"{tool}: {was!r} -> {version!r}")
-    for corpus in CORPORA:
-        for board, _, _ in BOARDS:
-            if corpus not in previous.get("corpora", {}) or \
-                    board not in previous["corpora"][corpus]:
-                reasons.append(f"{corpus}/{board} is missing from the manifest")
-            elif not (CHUNKS / corpus / board).is_dir():
-                reasons.append(f"{corpus}/{board} is missing from the working tree")
+    reasons.extend(corpus_errors(previous, REPO, corpora))
     return reasons
 
 
@@ -306,6 +291,8 @@ def parse_args():
     parser.add_argument("--check", action="store_true",
                         help="report whether the corpus is stale and exit 1 if it is; "
                              "writes nothing")
+    parser.add_argument("--verify", action="store_true",
+                        help="validate cached source, compiler flags, counts and hashes without LLVM tools")
     parser.add_argument("--force", action="store_true",
                         help="regenerate even when the manifest is already current")
     parser.add_argument("--corpus", action="append", choices=CORPORA, metavar="NAME",
@@ -316,18 +303,29 @@ def parse_args():
     parser.add_argument("--mlir-bindir", metavar="DIR",
                         help="mlir-translate/mlir-opt (default: PATH, then --llvm-bindir)")
     args = parser.parse_args()
-    args.jobs = args.jobs or os.cpu_count() or 4
+    args.jobs = args.jobs if args.jobs is not None else (os.cpu_count() or 4)
     args.corpus = args.corpus or list(CORPORA)
+    if args.jobs <= 0:
+        parser.error("--jobs must be positive")
+    if args.check and args.verify:
+        parser.error("choose --check or --verify")
     return args
 
 
 def main() -> int:
     args = parse_args()
+    if args.verify:
+        validate(REPO, args.corpus)
+        print("SQLite corpus validated: source, compiler pipelines, counts and hashes match.")
+        return 0
+    if args.check and (not SOURCE.is_file() or sha256(SOURCE) != SQLITE3_C_SHA256):
+        print("stale: sqlite3.c is missing or differs from the pinned source", file=sys.stderr)
+        return 1
     tools = find_tools(args.llvm_bindir, args.mlir_bindir)
     identity = toolchain_identity(tools)
     src = fetch_source()
     previous = read_manifest()
-    reasons = staleness(previous, identity, sha256(src))
+    reasons = staleness(previous, identity, sha256(src), args.corpus)
 
     if args.check:
         for reason in reasons:
@@ -341,15 +339,23 @@ def main() -> int:
     for reason in reasons:
         print(f"regenerating: {reason}", file=sys.stderr)
 
+    if previous and set(args.corpus) != set(CORPORA) and (
+            previous.get("toolchain") != identity or
+            previous.get("sqlite", {}).get("sha256") != sha256(src)):
+        raise SystemExit("source or toolchain changed: regenerate both corpora (omit --corpus)")
+
     corpora = dict(previous.get("corpora", {}))
+    pipelines = dict(previous.get("pipelines", {}))
     for corpus in args.corpus:
         bc = compile_module(src, corpus, tools)
         corpora[corpus] = {board: build_board(bc, corpus, board, kinds, flag,
                                               tools, args.jobs)
                            for board, kinds, flag in BOARDS}
+        pipelines[corpus] = PIPELINES[corpus]
     MANIFEST.write_text(json.dumps({
         "sqlite": {"version": SQLITE_VERSION, "url": SQLITE_URL, "sha256": sha256(src)},
         "toolchain": identity,
+        "pipelines": pipelines,
         "corpora": corpora,
     }, indent=2, sort_keys=True) + "\n")
     print(f"manifest written to {MANIFEST.relative_to(REPO)}", file=sys.stderr)
@@ -361,3 +367,6 @@ if __name__ == "__main__":
         sys.exit(main())
     except KeyboardInterrupt:
         sys.exit(130)
+    except (ValueError, OSError) as error:
+        print(f"error: {error}", file=sys.stderr)
+        sys.exit(1)

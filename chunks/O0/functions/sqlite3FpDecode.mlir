@@ -1,10 +1,10 @@
 "builtin.module"() ({
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 1 : i64, constant, dso_local, global_type = !llvm.array<2 x i8>, linkage = #llvm.linkage<external>, sym_name = ".str.52", unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 1 : i64, constant, dso_local, global_type = !llvm.array<2 x i8>, linkage = #llvm.linkage<external>, sym_name = ".str.44", tls_mode = 0 : i64, unnamed_addr = 2 : i64, visibility_ = 1 : i64}> ({
   }) : () -> ()
-  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 2 : i64, constant, dso_local, global_type = !llvm.struct<(array<201 x i8>, i8)>, linkage = #llvm.linkage<external>, sym_name = "sqlite3DigitPairs", unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
+  "llvm.mlir.global"() <{addr_space = 0 : i32, alignment = 2 : i64, constant, dso_local, global_type = !llvm.struct<(array<201 x i8>, i8)>, linkage = #llvm.linkage<external>, sym_name = "sqlite3DigitPairs", tls_mode = 0 : i64, unnamed_addr = 0 : i64, visibility_ = 1 : i64}> ({
   }) : () -> ()
-  "llvm.module_flags"() <{flags = [#llvm.mlir.module_flag<min, "PIC Level", 2 : i32>, #llvm.mlir.module_flag<max, "uwtable", 1 : i32>, #llvm.mlir.module_flag<max, "frame-pointer", 4 : i32>]}> : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<void (ptr, f64, i32, i32)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3FpDecode", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 1 : i64}> ({
+  "llvm.module_flags"() <{flags = [#llvm.mlir.module_flag<error, "wchar_size", 4 : i32>, #llvm.mlir.module_flag<min, "PIC Level", 2 : i32>, #llvm.mlir.module_flag<max, "PIE Level", 2 : i32>, #llvm.mlir.module_flag<max, "uwtable", 2 : i32>, #llvm.mlir.module_flag<max, "frame-pointer", 2 : i32>]}> : () -> ()
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<all>, function_type = !llvm.func<void (ptr, f64, i32, i32)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = [["min-legal-vector-width", "0"], ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "x86-64"]], sym_name = "sqlite3FpDecode", target_cpu = "x86-64", target_features = #llvm.target_features<["+cmov", "+cx8", "+fxsr", "+mmx", "+sse", "+sse2", "+x87"]>, tune_cpu = "generic", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<async>, visibility_ = 1 : i64}> ({
   ^bb0(%arg0: !llvm.ptr, %arg1: f64, %arg2: i32, %arg3: i32):
     %0 = "llvm.mlir.constant"() <{value = 1 : i32}> : () -> i32
     %1 = "llvm.mlir.constant"() <{value = 0 : i32}> : () -> i32
@@ -14,7 +14,7 @@
     %5 = "llvm.mlir.constant"() <{value = 4 : i32}> : () -> i32
     %6 = "llvm.mlir.constant"() <{value = 43 : i8}> : () -> i8
     %7 = "llvm.mlir.constant"() <{value = 2 : i32}> : () -> i32
-    %8 = "llvm.mlir.addressof"() <{global_name = @".str.52"}> : () -> !llvm.ptr
+    %8 = "llvm.mlir.addressof"() <{global_name = @".str.44"}> : () -> !llvm.ptr
     %9 = "llvm.mlir.constant"() <{value = 45 : i8}> : () -> i8
     %10 = "llvm.mlir.constant"() <{value = 52 : i64}> : () -> i64
     %11 = "llvm.mlir.constant"() <{value = 2047 : i64}> : () -> i64
@@ -52,12 +52,12 @@
     %43 = "llvm.alloca"(%0) <{alignment = 8 : i64, elem_type = i64}> : (i32) -> !llvm.ptr
     %44 = "llvm.alloca"(%0) <{alignment = 4 : i64, elem_type = i32}> : (i32) -> !llvm.ptr
     "llvm.store"(%1, %44) <{alignment = 4 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
-    %45 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 5>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %45 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 5>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%3, %45) <{alignment = 2 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
     %46 = "llvm.fcmp"(%arg1, %4) <{fastmathFlags = #llvm.fastmath<none>, predicate = 4 : i64}> : (f64, f64) -> i1
     "llvm.cond_br"(%46)[^bb1, ^bb2] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb1:  // pred: ^bb0
-    %47 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 4>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %47 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 4>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%9, %47) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
     %48 = "llvm.fneg"(%arg1) <{fastmathFlags = #llvm.fastmath<none>}> : (f64) -> f64
     "llvm.br"(%48)[^bb6] : (f64) -> ()
@@ -65,17 +65,17 @@
     %49 = "llvm.fcmp"(%arg1, %4) <{fastmathFlags = #llvm.fastmath<none>, predicate = 1 : i64}> : (f64, f64) -> i1
     "llvm.cond_br"(%49)[^bb3, ^bb4] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
   ^bb3:  // pred: ^bb2
-    %50 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 4>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %50 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 4>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%6, %50) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
-    %51 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 0>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %51 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 0>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%0, %51) <{alignment = 8 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
-    %52 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %52 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%0, %52) <{alignment = 4 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
-    %53 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 2>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %53 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 2>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%8, %53) <{alignment = 8 : i64, ordering = 0 : i64}> : (!llvm.ptr, !llvm.ptr) -> ()
     "llvm.br"()[^bb80] : () -> ()
   ^bb4:  // pred: ^bb2
-    %54 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 4>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %54 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 4>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%6, %54) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
     "llvm.br"()[^bb5] : () -> ()
   ^bb5:  // pred: ^bb4
@@ -94,15 +94,15 @@
     %63 = "llvm.zext"(%62) : (i1) -> i32
     %64 = "llvm.add"(%0, %63) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
     %65 = "llvm.trunc"(%64) <{overflowFlags = 0 : i32}> : (i32) -> i8
-    %66 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 5>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %66 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 5>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%65, %66) <{alignment = 2 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
-    %67 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 0>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %67 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 0>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%1, %67) <{alignment = 8 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
-    %68 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %68 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%1, %68) <{alignment = 4 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
-    %69 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 3>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %69 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 3>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %70 = "llvm.getelementptr"(%69, %20, %20) <{elem_type = !llvm.array<21 x i8>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, -2147483648>}> : (!llvm.ptr, i64, i64) -> !llvm.ptr
-    %71 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 2>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %71 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 2>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%70, %71) <{alignment = 8 : i64, ordering = 0 : i64}> : (!llvm.ptr, !llvm.ptr) -> ()
     "llvm.br"()[^bb80] : () -> ()
   ^bb8:  // pred: ^bb6
@@ -141,7 +141,7 @@
     "llvm.br"(%89)[^bb15] : (i32) -> ()
   ^bb15(%90: i32):  // 2 preds: ^bb13, ^bb14
     "llvm.call"(%86, %85, %90, %43, %44) <{CConv = #llvm.cconv<ccc>, TailCallKind = #llvm.tailcallkind<none>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], callee = @sqlite3Fp2Convert10, fastmathFlags = #llvm.fastmath<none>, op_bundle_sizes = array<i32>, operandSegmentSizes = array<i32: 5, 0>}> : (i64, i32, i32, !llvm.ptr, !llvm.ptr) -> ()
-    %91 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 3>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %91 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 3>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %92 = "llvm.getelementptr"(%91, %20, %20) <{elem_type = !llvm.array<21 x i8>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, -2147483648>}> : (!llvm.ptr, i64, i64) -> !llvm.ptr
     "llvm.br"(%21)[^bb16] : (i32) -> ()
   ^bb16(%93: i32):  // 2 preds: ^bb15, ^bb17
@@ -182,12 +182,12 @@
     %118 = "llvm.sub"(%21, %117) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
     %119 = "llvm.load"(%44) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %120 = "llvm.add"(%118, %119) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
-    %121 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %121 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%120, %121) <{alignment = 4 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
     %122 = "llvm.icmp"(%arg2, %1) <{predicate = 3 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%122, %118, %117, %arg2)[^bb21, ^bb25] <{operandSegmentSizes = array<i32: 1, 0, 3>}> : (i1, i32, i32, i32) -> ()
   ^bb21:  // pred: ^bb20
-    %123 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %123 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %124 = "llvm.load"(%123) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %125 = "llvm.sub"(%124, %arg2) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
     %126 = "llvm.icmp"(%125, %1) <{predicate = 0 : i64}> : (i32, i32) -> i1
@@ -205,7 +205,7 @@
     %134 = "llvm.getelementptr"(%92, %133) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     "llvm.store"(%26, %134) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
     %135 = "llvm.add"(%118, %0) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
-    %136 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %136 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %137 = "llvm.load"(%136) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %138 = "llvm.add"(%137, %0) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
     "llvm.store"(%138, %136) <{alignment = 4 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
@@ -306,7 +306,7 @@
   ^bb48(%196: i32):  // 2 preds: ^bb46, ^bb47
     "llvm.br"(%196)[^bb65] : (i32) -> ()
   ^bb49:  // 2 preds: ^bb31, ^bb32
-    %197 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %197 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %198 = "llvm.load"(%197) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %199 = "llvm.icmp"(%198, %142) <{predicate = 5 : i64}> : (i32, i32) -> i1
     "llvm.cond_br"(%199)[^bb53, ^bb50] <{operandSegmentSizes = array<i32: 1, 0, 0>}> : (i1) -> ()
@@ -416,7 +416,7 @@
     %266 = "llvm.getelementptr"(%265, %20) <{elem_type = i8, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i64) -> !llvm.ptr
     "llvm.store"(%38, %266) <{alignment = 1 : i64, ordering = 0 : i64}> : (i8, !llvm.ptr) -> ()
     %267 = "llvm.add"(%245, %0) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
-    %268 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %268 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 1>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %269 = "llvm.load"(%268) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %270 = "llvm.add"(%269, %0) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
     "llvm.store"(%270, %268) <{alignment = 4 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
@@ -444,18 +444,18 @@
     %285 = "llvm.add"(%278, %24) <{overflowFlags = 1 : i32}> : (i32, i32) -> i32
     "llvm.br"(%285)[^bb77] <{loop_annotation = #llvm.loop_annotation<mustProgress = true>}> : (i32) -> ()
   ^bb79:  // pred: ^bb77
-    %286 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 0>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %286 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 0>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%278, %286) <{alignment = 8 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
-    %287 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648, 2>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %287 = "llvm.getelementptr"(%arg0, %1) <{elem_type = !llvm.struct<"struct.FpDecode", (i32, i32, ptr, array<21 x i8>, i8, i8)>, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648, 2>}> : (!llvm.ptr, i32) -> !llvm.ptr
     "llvm.store"(%277, %287) <{alignment = 8 : i64, ordering = 0 : i64}> : (!llvm.ptr, !llvm.ptr) -> ()
     "llvm.br"()[^bb80] : () -> ()
   ^bb80:  // 3 preds: ^bb3, ^bb7, ^bb79
     "llvm.return"() : () -> ()
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<i32 (i64)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "countLeadingZeros", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 1 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<all>, function_type = !llvm.func<i32 (i64)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = [["min-legal-vector-width", "0"], ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "x86-64"]], sym_name = "countLeadingZeros", target_cpu = "x86-64", target_features = #llvm.target_features<["+cmov", "+cx8", "+fxsr", "+mmx", "+sse", "+sse2", "+x87"]>, tune_cpu = "generic", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<async>, visibility_ = 1 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<void (i64, i32, i32, ptr, ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3Fp2Convert10", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 1 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<all>, function_type = !llvm.func<void (i64, i32, i32, ptr, ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = [["min-legal-vector-width", "0"], ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "x86-64"]], sym_name = "sqlite3Fp2Convert10", target_cpu = "x86-64", target_features = #llvm.target_features<["+cmov", "+cx8", "+fxsr", "+mmx", "+sse", "+sse2", "+x87"]>, tune_cpu = "generic", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<async>, visibility_ = 1 : i64}> ({
   }) : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<f64 (i64, i32)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "sqlite3Fp10Convert2", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 1 : i64}> ({
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<all>, function_type = !llvm.func<f64 (i64, i32)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = [["min-legal-vector-width", "0"], ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "x86-64"]], sym_name = "sqlite3Fp10Convert2", target_cpu = "x86-64", target_features = #llvm.target_features<["+cmov", "+cx8", "+fxsr", "+mmx", "+sse", "+sse2", "+x87"]>, tune_cpu = "generic", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<async>, visibility_ = 1 : i64}> ({
   }) : () -> ()
-}) {dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<270> = dense<32> : vector<4xi64>, !llvm.ptr<271> = dense<32> : vector<4xi64>, !llvm.ptr<272> = dense<64> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.mangling_mode" = "o", "dlti.legal_int_widths" = array<i32: 32, 64>, "dlti.stack_alignment" = 128 : i64, "dlti.function_pointer_alignment" = #dlti.function_pointer_alignment<32, function_dependent = true>>, llvm.ident = "clang version 23.1.0-rc3 (git@github.com:llvm/llvm-project.git 4e60bd7a63b0d1a8407efb1702b53faec44e2980)", llvm.module_asm = [], llvm.target_triple = "arm64-apple-macosx14.0.0"} : () -> ()
+}) {dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<270> = dense<32> : vector<4xi64>, !llvm.ptr<271> = dense<32> : vector<4xi64>, !llvm.ptr<272> = dense<64> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, f80 = dense<128> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.mangling_mode" = "e", "dlti.legal_int_widths" = array<i32: 8, 16, 32, 64>, "dlti.stack_alignment" = 128 : i64>, llvm.ident = "Debian clang version 19.1.7 (3+b1)", llvm.module_asm = [], llvm.target_triple = "x86_64-pc-linux-gnu"} : () -> ()

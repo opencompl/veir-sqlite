@@ -15,14 +15,15 @@ name: leadership
 # immediately, and the workflow can be run by hand, with `force` to rescore an
 # unchanged veir.
 #
-# A drop in the standings is not a failure: the leaderboard records, it does
-# not gate. The diff of each commit is the record of what moved.
+# Every SQLite chunk must pass strict verification and reparsing. A regression
+# fails CI and uploads its report; LEADERSHIP.md retains the last passing run.
 
 on:
   schedule:
     - cron: "*/10 * * * *"
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
     inputs:
       force:
@@ -35,24 +36,32 @@ permissions:
 
 # Two runs at once would race on the push; queue instead.
 concurrency:
-  group: leadership
+  group: leadership-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: false
 
 jobs:
   score:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
           path: veir-sqlite
 
+      - name: Validate SQLite inputs and tests
+        working-directory: veir-sqlite
+        run: |
+          python3 update-sqlite.py --verify
+          python3 -m unittest discover -s tests -p 'test_sqlite.py'
+
       - name: Has veir moved?
         id: veir
         working-directory: veir-sqlite
         env:
-          FORCE: ${{ github.event_name == 'push' || inputs.force == true }}
+          FORCE: ${{ github.event_name == 'push' || github.event_name == 'pull_request' || inputs.force == true }}
         run: |
           sha=$(git ls-remote https://github.com/opencompl/veir.git refs/heads/main | cut -f1)
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
           # The Provenance row names the commit veir was scored at (linked,
           # possibly as tag-N-gCOMMIT); the 40-character hash is the commit.
           scored=$(grep '^| veir |' LEADERSHIP.md | grep -o '[0-9a-f]\{40\}' | head -1)
@@ -82,22 +91,44 @@ jobs:
           test: false
 
       - name: Score
+        id: score
         if: steps.veir.outputs.stale == 'true'
         working-directory: veir-sqlite
         run: |
-          ./make-leadership.py --veir ../veir --veir-opt ../veir/.lake/build/bin/veir-opt
-          cat LEADERSHIP.md >> "$GITHUB_STEP_SUMMARY"
+          ./make-leadership.py --veir ../veir --veir-opt ../veir/.lake/build/bin/veir-opt \
+            --require-supported --json-out "$RUNNER_TEMP/sqlite-results.json" \
+            --out "$RUNNER_TEMP/sqlite-report.md"
+
+      - name: Report result
+        if: ${{ !cancelled() && steps.score.outcome != 'skipped' }}
+        working-directory: veir-sqlite
+        run: |
+          if test -f "$RUNNER_TEMP/sqlite-report.md"; then
+            cat "$RUNNER_TEMP/sqlite-report.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() && steps.score.outcome != 'skipped' }}
+        with:
+          name: sqlite-results
+          path: |
+            ${{ runner.temp }}/sqlite-results.json
+            ${{ runner.temp }}/sqlite-report.md
 
       - name: Commit
-        if: steps.veir.outputs.stale == 'true'
+        if: steps.score.outcome == 'success' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         working-directory: veir-sqlite
         env:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp "$RUNNER_TEMP/sqlite-report.md" LEADERSHIP.md
           ./leadership-commit-message.py "$RUN_URL" > "$RUNNER_TEMP/message"
           git add LEADERSHIP.md
+          if git diff --cached --quiet -- LEADERSHIP.md; then
+            exit 0
+          fi
           git commit --quiet -F "$RUNNER_TEMP/message"
           git show --stat --format=%B HEAD
           # Someone may have pushed meanwhile; their commits do not touch this file.

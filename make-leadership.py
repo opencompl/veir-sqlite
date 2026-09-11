@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Score the cached O3 chunk corpus against veir and write the leadership file.
 
-Every chunk in chunks/O3 is put through veir-opt -- by default `lake exe
-veir-opt` run in the neighbouring veir checkout, so the leaderboard always
-reflects that working tree rather than some stale binary -- and lands in a
+Every chunk in chunks/O3 is put through veir-opt, then its printed output is
+parsed and verified again. The default builds veir-opt once in the neighbouring
+veir checkout. Every chunk lands in a
 tier, following Tools/sqlite-scoreboard in the veir repository:
 
   supported  veir-opt accepts it as is: every op, type and attribute
@@ -13,19 +13,15 @@ tier, following Tools/sqlite-scoreboard in the veir repository:
   failed     rejected even with the flag (the normalized error is the detail);
   timed out  its own outcome, never counted as a failure.
 
-The result is LEADERSHIP.md: where veir stands, and -- the point of the file --
-which single op or attribute would unlock the most sqlite3 if it were
-implemented next.
+The result is LEADERSHIP.md. With --require-supported, any chunk that stops
+passing strict verification and reparsing fails the run after writing its
+report. Corpus integrity is checked before and after scoring.
 
   ./make-leadership.py                        # score and write LEADERSHIP.md
   ./make-leadership.py --limit 50             # a quick smoke run
   ./make-leadership.py --veir-opt PATH        # skip lake (about 30x faster)
   ./make-leadership.py --veir DIR             # a veir checkout elsewhere
-
-`lake exe` re-resolves the workspace on every call, which costs about 0.5s a
-chunk against 0.02s for the binary; it parallelises, so a full run is minutes
-rather than seconds. Passing the built binary to --veir-opt skips that, at the
-cost of not noticing that the tree needs rebuilding.
+  ./make-leadership.py --require-supported    # regression test: every chunk must pass
 """
 
 from __future__ import annotations
@@ -33,6 +29,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import json
+import math
 import platform
 import re
 import subprocess
@@ -40,15 +37,17 @@ import sys
 import time
 from pathlib import Path
 
+from sqlite_corpus import validate
+from tracking import sha256
+
 REPO = Path(__file__).resolve().parent
-VEIR = REPO.parent                      # the veir checkout lake is driven from (--veir)
+VEIR = REPO.parent / "veir"
 CHUNKS = REPO / "chunks"
 MANIFEST = REPO / "manifest.json"
 DEFAULT_OUT = REPO / "LEADERSHIP.md"
 
 CORPUS = "O3"
 BOARDS = ("functions", "globals")
-LAKE_VEIR_OPT = ["lake", "exe", "veir-opt"]
 TIMEOUT = "timed out"
 TIERS = ("supported", "parsed", "failed", TIMEOUT)
 UNREGISTERED = re.compile(r"(op|attribute|type) '([^']+)' is not registered")
@@ -59,10 +58,15 @@ CAP = 40  # rows per table: a leaderboard is read, not scrolled
 
 def run_veir_opt(cmd: list[str], chunk: Path, timeout: float,
                  allow_unregistered: bool) -> tuple[int, str]:
-    """Run from the veir checkout: lake resolves its workspace from the cwd."""
-    argv = cmd + (["--allow-unregistered-dialect"] if allow_unregistered else []) + [str(chunk)]
+    """Require both the input and VeIR's printed output to parse and verify."""
+    argv = cmd + (["--allow-unregistered-dialect"] if allow_unregistered else [])
     try:
-        result = subprocess.run(argv, capture_output=True, timeout=timeout, cwd=VEIR)
+        result = subprocess.run(argv + [str(chunk)], capture_output=True, timeout=timeout, cwd=VEIR)
+        if result.returncode == 0:
+            result = subprocess.run(argv, input=result.stdout, capture_output=True,
+                                    timeout=timeout, cwd=VEIR)
+            if result.returncode:
+                return result.returncode, "printed output: " + result.stderr.decode("utf-8", "replace")
     except subprocess.TimeoutExpired:
         return -1, ""
     return result.returncode, result.stderr.decode("utf-8", "replace")
@@ -71,12 +75,13 @@ def run_veir_opt(cmd: list[str], chunk: Path, timeout: float,
 def normalize_error(stderr: str) -> str:
     """Error class: the first error line with positions and values stripped, so
     a thousand chunks failing the same way collapse into one row."""
+    prefix = "printed output: " if stderr.startswith("printed output: ") else ""
     msg = next((line.split("rror: ", 1)[1] for line in stderr.splitlines() if "rror: " in line),
                stderr.strip().splitlines()[-1] if stderr.strip() else "<no output>")
     msg = re.sub(r"\d+\.\d+(?:e[+-]?\d+)?", "<float>", msg)
     msg = re.sub(r"0x[0-9a-fA-F]+", "<hex>", msg)
     msg = re.sub(r'@("[^"]*"|\w+)', "<sym>", msg)
-    return re.sub(r'"[^"]*"', "<str>", msg)
+    return prefix + re.sub(r'"[^"]*"', "<str>", msg)
 
 
 def classify(cmd: list[str], chunk: Path, timeout: float) -> dict:
@@ -214,6 +219,7 @@ def provenance(veir_opt: list[str]) -> list[str]:
     sqlite = manifest.get("sqlite", {})
     rows = [["veir", link(cell(describe_veir()), veir_commit_url())],
             ["veir-opt", cell(" ".join(veir_opt))],
+            ["veir-opt SHA256", cell(sha256(Path(veir_opt[0])))],
             ["sqlite3", link(cell(sqlite.get("version", "?")), sqlite.get("url"))],
             ["corpus", cell(", ".join(
                 f"{b} {manifest.get('corpora', {}).get(CORPUS, {}).get(b, {}).get('digest', '?')}"
@@ -221,6 +227,7 @@ def provenance(veir_opt: list[str]) -> list[str]:
             ["chunks built with", cell(manifest.get("toolchain", {}).get("clang", "?")
                                        + " / " + manifest.get("toolchain", {})
                                        .get("target", "?"))],
+            ["clang flags", cell(" ".join(manifest["pipelines"][CORPUS]["clang"]))],
             ["scored", cell(time.strftime("%Y-%m-%d %H:%M %Z")
                             + f" on {platform.system()} {platform.machine()}")]]
     return table(["", "value"], rows)
@@ -250,9 +257,11 @@ def veir_commit_url() -> str | None:
 
 
 def render(boards: dict, veir_opt: list[str]) -> str:
-    out = ["# sqlite3 leadership", "",
-           f"How much of sqlite3, compiled -O3 and split one chunk per symbol, "
-           f"veir accepts today.", ""]
+    out = ["# sqlite3 regression check", "",
+           "SQLite compiled with `-O3 -fno-vectorize -fno-slp-vectorize`, split one "
+           "chunk per function or non-private global. Strict support requires parsing, "
+           "structural verification, printing and reparsing. CI requires every chunk "
+           "to pass strictly; these checks do not run SQLite's execution tests.", ""]
     out += standings(boards)
     out += ["## What to implement next", ""] + next_up(boards)
     out += ["## Detail", ""] + failures(boards) + by_size(boards)
@@ -270,6 +279,8 @@ def parse_args():
                              "- for stdout)")
     parser.add_argument("--json-out", type=Path, metavar="FILE",
                         help="also write the per-chunk verdicts as JSON")
+    parser.add_argument("--require-supported", action="store_true",
+                        help="exit 1 unless every function and global passes strict round-tripping")
     parser.add_argument("--veir-opt", metavar="PATH",
                         help="run this binary instead of `lake exe veir-opt`")
     parser.add_argument("--veir", type=Path, default=VEIR, metavar="DIR",
@@ -284,6 +295,14 @@ def parse_args():
                         help="parallel runs (default: CPUs)")
     args = parser.parse_args()
     args.board = args.board or list(BOARDS)
+    if args.limit is not None and args.limit <= 0:
+        parser.error("--limit must be positive")
+    if args.jobs is not None and args.jobs <= 0:
+        parser.error("--jobs must be positive")
+    if not math.isfinite(args.timeout) or args.timeout <= 0:
+        parser.error("--timeout must be finite and positive")
+    if args.require_supported and (args.limit is not None or set(args.board) != set(BOARDS)):
+        parser.error("--require-supported requires the full function and global corpus")
     return args
 
 
@@ -301,18 +320,30 @@ def resolve_veir_opt(override: str | None) -> list[str]:
                            capture_output=True, text=True)
     if build.returncode != 0:
         raise SystemExit(f"lake build veir-opt failed:\n{build.stderr or build.stdout}")
-    return LAKE_VEIR_OPT
+    return [str(VEIR / ".lake/build/bin/veir-opt")]
+
+
+def regression_exit_code(boards: dict) -> int:
+    return int(any(item["status"] != "supported"
+                   for board in boards.values() for item in board["items"].values()))
 
 
 def main() -> int:
     global VEIR
     args = parse_args()
     VEIR = args.veir.resolve()
+    validate(REPO, (CORPUS,))
+    manifest_hash = sha256(MANIFEST)
     veir_opt = resolve_veir_opt(args.veir_opt)
+    binary_hash = sha256(Path(veir_opt[0]))
     boards = {board: score_board(veir_opt, board, args) for board in args.board}
+    validate(REPO, (CORPUS,))
+    if sha256(MANIFEST) != manifest_hash or sha256(Path(veir_opt[0])) != binary_hash:
+        raise ValueError("binary or corpus changed during scoring; rerun with stable inputs")
     if args.json_out:
         args.json_out.write_text(json.dumps(
-            {"corpus": CORPUS, "veir": describe_veir(), "boards": boards},
+            {"corpus": CORPUS, "veir": describe_veir(), "boards": boards,
+             "manifest_sha256": manifest_hash, "binary_sha256": binary_hash},
             indent=2, sort_keys=True) + "\n")
         print(f"verdicts written to {args.json_out}", file=sys.stderr)
     markdown = render(boards, veir_opt)
@@ -321,7 +352,10 @@ def main() -> int:
     else:
         args.out.write_text(markdown)
         print(f"leadership written to {args.out}", file=sys.stderr)
-    return 0
+    status = regression_exit_code(boards) if args.require_supported else 0
+    if status:
+        print("SQLite regression: every chunk must pass strict verification and reparsing.", file=sys.stderr)
+    return status
 
 
 if __name__ == "__main__":
@@ -329,3 +363,6 @@ if __name__ == "__main__":
         sys.exit(main())
     except KeyboardInterrupt:
         sys.exit(130)
+    except (ValueError, OSError) as error:
+        print(f"error: {error}", file=sys.stderr)
+        sys.exit(1)

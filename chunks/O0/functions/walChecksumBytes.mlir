@@ -1,6 +1,6 @@
 "builtin.module"() ({
-  "llvm.module_flags"() <{flags = [#llvm.mlir.module_flag<min, "PIC Level", 2 : i32>, #llvm.mlir.module_flag<max, "uwtable", 1 : i32>, #llvm.mlir.module_flag<max, "frame-pointer", 4 : i32>]}> : () -> ()
-  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<"non-leaf-no-reserve">, function_type = !llvm.func<void (i32, ptr, i32, ptr, ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = ["ssp", ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "apple-m1"]], sym_name = "walChecksumBytes", target_cpu = "apple-m1", target_features = #llvm.target_features<["+aes", "+altnzcv", "+ccdp", "+ccidx", "+ccpp", "+complxnum", "+crc", "+dit", "+dotprod", "+flagm", "+fp-armv8", "+fp16fml", "+fptoint", "+fullfp16", "+jsconv", "+lse", "+neon", "+pauth", "+perfmon", "+predres", "+ras", "+rcpc", "+rdm", "+sb", "+sha2", "+sha3", "+specrestrict", "+ssbs", "+v8.1a", "+v8.2a", "+v8.3a", "+v8.4a", "+v8a"]>, tune_cpu = "apple-m5", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<sync>, visibility_ = 1 : i64}> ({
+  "llvm.module_flags"() <{flags = [#llvm.mlir.module_flag<error, "wchar_size", 4 : i32>, #llvm.mlir.module_flag<min, "PIC Level", 2 : i32>, #llvm.mlir.module_flag<max, "PIE Level", 2 : i32>, #llvm.mlir.module_flag<max, "uwtable", 2 : i32>, #llvm.mlir.module_flag<max, "frame-pointer", 2 : i32>]}> : () -> ()
+  "llvm.func"() <{CConv = #llvm.cconv<ccc>, arg_attrs = [{llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}, {llvm.noundef}], dso_local, frame_pointer = #llvm.framePointerKind<all>, function_type = !llvm.func<void (i32, ptr, i32, ptr, ptr)>, linkage = #llvm.linkage<external>, no_inline, no_unwind, passthrough = [["min-legal-vector-width", "0"], ["no-trapping-math", "true"], ["stack-protector-buffer-size", "8"], ["target-cpu", "x86-64"]], sym_name = "walChecksumBytes", target_cpu = "x86-64", target_features = #llvm.target_features<["+cmov", "+cx8", "+fxsr", "+mmx", "+sse", "+sse2", "+x87"]>, tune_cpu = "generic", unnamed_addr = 0 : i64, uwtable_kind = #llvm.uwtableKind<async>, visibility_ = 1 : i64}> ({
   ^bb0(%arg0: i32, %arg1: !llvm.ptr, %arg2: i32, %arg3: !llvm.ptr, %arg4: !llvm.ptr):
     %0 = "llvm.mlir.zero"() : () -> !llvm.ptr
     %1 = "llvm.mlir.constant"() <{value = 0 : i32}> : () -> i32
@@ -89,67 +89,67 @@
   ^bb9:  // pred: ^bb8
     "llvm.br"(%20, %arg1, %21)[^bb10] : (i32, !llvm.ptr, i32) -> ()
   ^bb10(%72: i32, %73: !llvm.ptr, %74: i32):  // 2 preds: ^bb9, ^bb11
-    %75 = "llvm.getelementptr"(%73, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %75 = "llvm.getelementptr"(%73, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %76 = "llvm.load"(%73) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %77 = "llvm.add"(%76, %72) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %78 = "llvm.add"(%74, %77) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %79 = "llvm.getelementptr"(%75, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %79 = "llvm.getelementptr"(%75, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %80 = "llvm.load"(%75) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %81 = "llvm.add"(%80, %78) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %82 = "llvm.add"(%72, %81) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %83 = "llvm.getelementptr"(%79, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %83 = "llvm.getelementptr"(%79, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %84 = "llvm.load"(%79) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %85 = "llvm.add"(%84, %82) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %86 = "llvm.add"(%78, %85) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %87 = "llvm.getelementptr"(%83, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %87 = "llvm.getelementptr"(%83, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %88 = "llvm.load"(%83) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %89 = "llvm.add"(%88, %86) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %90 = "llvm.add"(%82, %89) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %91 = "llvm.getelementptr"(%87, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %91 = "llvm.getelementptr"(%87, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %92 = "llvm.load"(%87) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %93 = "llvm.add"(%92, %90) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %94 = "llvm.add"(%86, %93) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %95 = "llvm.getelementptr"(%91, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %95 = "llvm.getelementptr"(%91, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %96 = "llvm.load"(%91) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %97 = "llvm.add"(%96, %94) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %98 = "llvm.add"(%90, %97) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %99 = "llvm.getelementptr"(%95, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %99 = "llvm.getelementptr"(%95, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %100 = "llvm.load"(%95) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %101 = "llvm.add"(%100, %98) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %102 = "llvm.add"(%94, %101) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %103 = "llvm.getelementptr"(%99, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %103 = "llvm.getelementptr"(%99, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %104 = "llvm.load"(%99) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %105 = "llvm.add"(%104, %102) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %106 = "llvm.add"(%98, %105) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %107 = "llvm.getelementptr"(%103, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %107 = "llvm.getelementptr"(%103, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %108 = "llvm.load"(%103) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %109 = "llvm.add"(%108, %106) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %110 = "llvm.add"(%102, %109) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %111 = "llvm.getelementptr"(%107, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %111 = "llvm.getelementptr"(%107, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %112 = "llvm.load"(%107) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %113 = "llvm.add"(%112, %110) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %114 = "llvm.add"(%106, %113) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %115 = "llvm.getelementptr"(%111, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %115 = "llvm.getelementptr"(%111, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %116 = "llvm.load"(%111) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %117 = "llvm.add"(%116, %114) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %118 = "llvm.add"(%110, %117) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %119 = "llvm.getelementptr"(%115, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %119 = "llvm.getelementptr"(%115, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %120 = "llvm.load"(%115) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %121 = "llvm.add"(%120, %118) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %122 = "llvm.add"(%114, %121) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %123 = "llvm.getelementptr"(%119, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %123 = "llvm.getelementptr"(%119, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %124 = "llvm.load"(%119) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %125 = "llvm.add"(%124, %122) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %126 = "llvm.add"(%118, %125) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %127 = "llvm.getelementptr"(%123, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %127 = "llvm.getelementptr"(%123, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %128 = "llvm.load"(%123) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %129 = "llvm.add"(%128, %126) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %130 = "llvm.add"(%122, %129) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %131 = "llvm.getelementptr"(%127, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %131 = "llvm.getelementptr"(%127, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %132 = "llvm.load"(%127) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %133 = "llvm.add"(%132, %130) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %134 = "llvm.add"(%126, %133) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %135 = "llvm.getelementptr"(%131, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %135 = "llvm.getelementptr"(%131, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %136 = "llvm.load"(%131) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %137 = "llvm.add"(%136, %134) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %138 = "llvm.add"(%130, %137) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
@@ -162,11 +162,11 @@
   ^bb13:  // pred: ^bb8
     "llvm.br"(%20, %arg1, %21)[^bb14] : (i32, !llvm.ptr, i32) -> ()
   ^bb14(%140: i32, %141: !llvm.ptr, %142: i32):  // 2 preds: ^bb13, ^bb15
-    %143 = "llvm.getelementptr"(%141, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %143 = "llvm.getelementptr"(%141, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %144 = "llvm.load"(%141) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %145 = "llvm.add"(%144, %140) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %146 = "llvm.add"(%142, %145) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
-    %147 = "llvm.getelementptr"(%143, %12) <{elem_type = i32, noWrapFlags = 7 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
+    %147 = "llvm.getelementptr"(%143, %12) <{elem_type = i32, noWrapFlags = 3 : i32, rawConstantIndices = array<i32: -2147483648>}> : (!llvm.ptr, i32) -> !llvm.ptr
     %148 = "llvm.load"(%143) <{alignment = 4 : i64, ordering = 0 : i64}> : (!llvm.ptr) -> i32
     %149 = "llvm.add"(%148, %146) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
     %150 = "llvm.add"(%140, %149) <{overflowFlags = 0 : i32}> : (i32, i32) -> i32
@@ -185,4 +185,4 @@
     "llvm.store"(%154, %157) <{alignment = 4 : i64, ordering = 0 : i64}> : (i32, !llvm.ptr) -> ()
     "llvm.return"() : () -> ()
   }) : () -> ()
-}) {dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<270> = dense<32> : vector<4xi64>, !llvm.ptr<271> = dense<32> : vector<4xi64>, !llvm.ptr<272> = dense<64> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.mangling_mode" = "o", "dlti.legal_int_widths" = array<i32: 32, 64>, "dlti.stack_alignment" = 128 : i64, "dlti.function_pointer_alignment" = #dlti.function_pointer_alignment<32, function_dependent = true>>, llvm.ident = "clang version 23.1.0-rc3 (git@github.com:llvm/llvm-project.git 4e60bd7a63b0d1a8407efb1702b53faec44e2980)", llvm.module_asm = [], llvm.target_triple = "arm64-apple-macosx14.0.0"} : () -> ()
+}) {dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<270> = dense<32> : vector<4xi64>, !llvm.ptr<271> = dense<32> : vector<4xi64>, !llvm.ptr<272> = dense<64> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, f80 = dense<128> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.mangling_mode" = "e", "dlti.legal_int_widths" = array<i32: 8, 16, 32, 64>, "dlti.stack_alignment" = 128 : i64>, llvm.ident = "Debian clang version 19.1.7 (3+b1)", llvm.module_asm = [], llvm.target_triple = "x86_64-pc-linux-gnu"} : () -> ()
