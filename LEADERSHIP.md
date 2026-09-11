@@ -1,11 +1,11 @@
-# sqlite3 leadership
+# sqlite3 regression check
 
-How much of sqlite3, compiled -O3 and split one chunk per symbol, veir accepts today.
+SQLite compiled with `-O3 -fno-vectorize -fno-slp-vectorize`, split one chunk per function or non-private global. Strict support requires parsing, structural verification, printing and reparsing. CI requires every chunk to pass strictly; these checks do not run SQLite's execution tests.
 
 | board | chunks | supported | parsed or better | failed |
 |---|---:|---|---|---|
-| functions | 1598 | 1598 (100.0%) | 1598 (100.0%) | 0 |
-| globals | 187 | 187 (100.0%) | 187 (100.0%) | 0 |
+| functions | 1573 | 1573 (100.0%) | 1573 (100.0%) | 0 |
+| globals | 185 | 185 (100.0%) | 185 (100.0%) | 0 |
 
 ## What to implement next
 
@@ -17,16 +17,16 @@ Nothing is blocked on an unregistered op, type or attribute.
 
 | size | parsed | total | rate |
 |---|---:|---:|---|
-| 4+ | 9 | 9 | 100.0% |
-| 8+ | 50 | 50 | 100.0% |
-| 16+ | 222 | 222 | 100.0% |
-| 32+ | 309 | 309 | 100.0% |
-| 64+ | 417 | 417 | 100.0% |
-| 128+ | 336 | 336 | 100.0% |
-| 256+ | 165 | 165 | 100.0% |
-| 512+ | 62 | 62 | 100.0% |
-| 1024+ | 17 | 17 | 100.0% |
-| 2048+ | 8 | 8 | 100.0% |
+| 4+ | 17 | 17 | 100.0% |
+| 8+ | 114 | 114 | 100.0% |
+| 16+ | 93 | 93 | 100.0% |
+| 32+ | 274 | 274 | 100.0% |
+| 64+ | 361 | 361 | 100.0% |
+| 128+ | 357 | 357 | 100.0% |
+| 256+ | 201 | 201 | 100.0% |
+| 512+ | 102 | 102 | 100.0% |
+| 1024+ | 38 | 38 | 100.0% |
+| 2048+ | 13 | 13 | 100.0% |
 | 4096+ | 2 | 2 | 100.0% |
 | 8192+ | 1 | 1 | 100.0% |
 
@@ -36,15 +36,15 @@ Nothing is blocked on an unregistered op, type or attribute.
 
 | size | parsed | total | rate |
 |---|---:|---:|---|
-| 4+ | 98 | 98 | 100.0% |
-| 8+ | 24 | 24 | 100.0% |
-| 16+ | 24 | 24 | 100.0% |
-| 32+ | 11 | 11 | 100.0% |
-| 64+ | 16 | 16 | 100.0% |
-| 128+ | 5 | 5 | 100.0% |
-| 256+ | 4 | 4 | 100.0% |
-| 512+ | 3 | 3 | 100.0% |
-| 1024+ | 2 | 2 | 100.0% |
+| 4+ | 105 | 105 | 100.0% |
+| 8+ | 21 | 21 | 100.0% |
+| 16+ | 16 | 16 | 100.0% |
+| 32+ | 16 | 16 | 100.0% |
+| 64+ | 13 | 13 | 100.0% |
+| 128+ | 6 | 6 | 100.0% |
+| 256+ | 3 | 3 | 100.0% |
+| 512+ | 2 | 2 | 100.0% |
+| 1024+ | 3 | 3 | 100.0% |
 
 </details>
 
@@ -52,9 +52,11 @@ Nothing is blocked on an unregistered op, type or attribute.
 
 |  | value |
 |---|---|
-| veir | [`89b122296f2304112433d14cff8c3245578a563f`](https://github.com/opencompl/veir/commit/89b122296f2304112433d14cff8c3245578a563f) |
-| veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
+| veir | [`89dc32aac930d462b9ae9e9aa4d75ca1ebfa867a`](https://github.com/opencompl/veir/commit/89dc32aac930d462b9ae9e9aa4d75ca1ebfa867a) |
+| veir-opt | `/home/user/code/veir/.worktrees/sqlite-o3-main/.lake/build/bin/veir-opt` |
+| veir-opt SHA256 | `574141001aaaf520f19b0f599de989bae75cbe4a25358d08b328e78de377ecde` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
-| corpus | `functions b31991197ea30afe, globals a2fa311606b8e8a0` |
-| chunks built with | `clang version 23.1.0-rc3 (git@github.com:llvm/llvm-project.git 4e60bd7a63b0d1a8407efb1702b53faec44e2980) / arm64-apple-darwin23.6.0` |
-| scored | `2026-09-11 19:47 UTC on Linux x86_64` |
+| corpus | `functions 9f402d0d52b72f2b, globals 6fb4213c3338e6fa` |
+| chunks built with | `Debian clang version 19.1.7 (3+b1) / x86_64-pc-linux-gnu` |
+| clang flags | `-O3 -fno-vectorize -fno-slp-vectorize` |
+| scored | `2026-09-11 19:50 BST on Linux x86_64` |

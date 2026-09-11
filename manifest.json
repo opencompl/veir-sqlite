@@ -2,27 +2,47 @@
   "corpora": {
     "O0": {
       "functions": {
-        "count": 2636,
-        "digest": "93ee40536ae31c57",
+        "count": 2603,
+        "digest": "af15a494cefff8ae",
         "skipped": []
       },
       "globals": {
-        "count": 226,
-        "digest": "aaa7bd2878936050",
+        "count": 215,
+        "digest": "ed8efa893641ef90",
         "skipped": []
       }
     },
     "O3": {
       "functions": {
-        "count": 2636,
-        "digest": "b31991197ea30afe",
+        "count": 1573,
+        "digest": "9f402d0d52b72f2b",
         "skipped": []
       },
       "globals": {
-        "count": 226,
-        "digest": "a2fa311606b8e8a0",
+        "count": 185,
+        "digest": "6fb4213c3338e6fa",
         "skipped": []
       }
+    }
+  },
+  "pipelines": {
+    "O0": {
+      "clang": [
+        "-O0",
+        "-Xclang",
+        "-disable-O0-optnone"
+      ],
+      "opt": [
+        "-passes=sroa"
+      ]
+    },
+    "O3": {
+      "clang": [
+        "-O3",
+        "-fno-vectorize",
+        "-fno-slp-vectorize"
+      ],
+      "opt": []
     }
   },
   "sqlite": {
@@ -31,12 +51,12 @@
     "version": "3530300"
   },
   "toolchain": {
-    "clang": "clang version 23.1.0-rc3 (git@github.com:llvm/llvm-project.git 4e60bd7a63b0d1a8407efb1702b53faec44e2980)",
-    "llvm-extract": "LLVM version 23.1.0-rc3",
-    "llvm-nm": "LLVM version 23.1.0-rc3",
-    "mlir-opt": "LLVM version 23.1.0-rc3",
-    "mlir-translate": "LLVM version 23.1.0-rc3",
-    "opt": "LLVM version 23.1.0-rc3",
-    "target": "arm64-apple-darwin23.6.0"
+    "clang": "Debian clang version 19.1.7 (3+b1)",
+    "llvm-extract": "Debian LLVM version 19.1.7",
+    "llvm-nm": "Debian LLVM version 19.1.7",
+    "mlir-opt": "LLVM version 24.0.0git",
+    "mlir-translate": "LLVM version 24.0.0git",
+    "opt": "Debian LLVM version 19.1.7",
+    "target": "x86_64-pc-linux-gnu"
   }
 }
