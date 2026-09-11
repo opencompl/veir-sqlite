@@ -72,11 +72,13 @@ python3 llvm/score.py --veir ../veir
 `clang`, `clang++`, `llvm-dis` and `llvm-extract` must have matching major versions.
 The two MLIR tools must also match each other. The MLIR reader may be newer than
 the compiler: the initial corpus uses Clang/LLVM 19.1.7 and
-MLIR 24.0.0git. Each tool's version and binary digest are recorded. New toolchain
-combinations must regenerate the entire corpus. LLVM revision, compiler,
-standard-library headers, target, CMake configuration and compilation flags can
-all change the inputs. Compare the manifest and corpus hashes before comparing
-scores across generations.
+MLIR 24.0.0git. [TOOLCHAIN.md](TOOLCHAIN.md) records the exact MLIR source
+revision, its build recipe and the host C++ header package versions for the
+initial corpus. Each tool's version and binary digest are recorded in the
+manifest. New toolchain combinations must regenerate the entire corpus. LLVM
+revision, compiler, standard-library headers, target, CMake configuration and
+compilation flags can all change the inputs. Compare the manifest and corpus
+hashes before comparing scores across generations.
 
 The generator replays the selected entries from `compile_commands.json` with
 `-O3 -c -emit-llvm`. It retains ABI, language, target and preprocessor flags and
@@ -115,6 +117,13 @@ definition, which LLVM requires. LLVM `ifunc` definitions are inventoried as
 globals; the current extractor has no selector for them, so they are recorded
 as extraction failures if encountered. They do not occur in the initial corpus.
 
+Dynamic-initializer lists such as `llvm.global_ctors` are also a known generator
+limitation. The current extraction does not retain their required constructor
+definitions, and the imported MLIR operation has no `sym_name` for the generic
+symbol-preservation check. Such inputs are recorded as generation failures;
+support for their dependencies and special MLIR representation is needed before
+adding components that contain them. They do not occur in Demangle.
+
 The report distinguishes source compilation, symbol import and VeIR acceptance.
 Unknown symbol counts from failed source compilations are never presented as
 zero missing functions. Blocker counts group the first observed diagnostic;
@@ -133,4 +142,5 @@ Linked dependencies and separate object-library targets must be listed explicitl
 if they are to be tracked too.
 
 Commit the configuration, the whole corpus directory and the refreshed report
-together. LLVM-derived files are covered by [LLVM's license](LICENSE.TXT).
+together. Update [TOOLCHAIN.md](TOOLCHAIN.md) to describe the environment used for
+regeneration. LLVM-derived files are covered by [LLVM's license](LICENSE.TXT).
