@@ -33,12 +33,8 @@ on:
 permissions:
   contents: write
 
-# Both trackers push to main; serialize their full read/score/publish cycle.
-# PRs and non-main runs have separate groups because they do not publish.
-concurrency:
-  group: ${{ github.ref == 'refs/heads/main' && 'report-updates-main' || format('{0}-{1}', github.workflow, github.ref) }}
-  cancel-in-progress: false
-  queue: max
+# Runs may score concurrently. publish-reports.py checks fresh main and retries
+# rejected pushes, preserving newer reports and changes to tracking inputs.
 
 jobs:
   score:
@@ -48,7 +44,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: veir-sqlite
-          # Read current main after acquiring the shared concurrency group.
+          # Delayed events should start from current main.
           # PRs and non-main runs retain checkout's default event revision.
           ref: ${{ github.ref == 'refs/heads/main' && github.ref || '' }}
 
@@ -57,6 +53,7 @@ jobs:
         run: |
           python3 update-sqlite.py --verify
           python3 -m unittest discover -s tests -p 'test_sqlite.py'
+          python3 -m unittest discover -s tests -p 'test_publish.py'
 
       - name: Has veir moved?
         id: veir
@@ -99,16 +96,17 @@ jobs:
         if: steps.veir.outputs.stale == 'true'
         working-directory: veir-sqlite
         run: |
+          mkdir -p "$RUNNER_TEMP/reports"
           ./make-leadership.py --veir ../veir --veir-opt ../veir/.lake/build/bin/veir-opt \
             --require-supported --json-out "$RUNNER_TEMP/sqlite-results.json" \
-            --out "$RUNNER_TEMP/sqlite-report.md"
+            --out "$RUNNER_TEMP/reports/LEADERSHIP.md"
 
       - name: Report result
         if: ${{ !cancelled() && steps.score.outcome != 'skipped' }}
         working-directory: veir-sqlite
         run: |
-          if test -f "$RUNNER_TEMP/sqlite-report.md"; then
-            cat "$RUNNER_TEMP/sqlite-report.md" >> "$GITHUB_STEP_SUMMARY"
+          if test -f "$RUNNER_TEMP/reports/LEADERSHIP.md"; then
+            cat "$RUNNER_TEMP/reports/LEADERSHIP.md" >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - uses: actions/upload-artifact@v4
@@ -117,9 +115,9 @@ jobs:
           name: sqlite-results
           path: |
             ${{ runner.temp }}/sqlite-results.json
-            ${{ runner.temp }}/sqlite-report.md
+            ${{ runner.temp }}/reports/LEADERSHIP.md
 
-      - name: Commit
+      - name: Publish reports
         if: steps.score.outcome == 'success' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         working-directory: veir-sqlite
         env:
@@ -127,14 +125,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          cp "$RUNNER_TEMP/sqlite-report.md" LEADERSHIP.md
-          ./leadership-commit-message.py "$RUN_URL" > "$RUNNER_TEMP/message"
-          git add LEADERSHIP.md
-          if git diff --cached --quiet -- LEADERSHIP.md; then
-            exit 0
-          fi
-          git commit --quiet -F "$RUNNER_TEMP/message"
-          git show --stat --format=%B HEAD
-          # Someone may have pushed meanwhile; their commits do not touch this file.
-          git pull --quiet --rebase origin main
-          git push --quiet origin HEAD:main
+          python3 publish-reports.py leadership --veir ../veir \
+            --reports-dir "$RUNNER_TEMP/reports" --run-url "$RUN_URL"

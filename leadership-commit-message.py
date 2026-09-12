@@ -4,16 +4,17 @@
 Compares the working-tree LEADERSHIP.md with the committed one (HEAD) and
 prints, for `git commit -F`, a subject with the change in each board's
 standings and a body with the numbers, the blockers that appeared or cleared,
-and where the run happened.
+and where the run happened. The publisher uses --base and --report to compare
+completed scoring output against the latest main on each push attempt.
 
   ./leadership-commit-message.py [RUN_URL]
 """
 
 from __future__ import annotations
 
+import argparse
 import re
 import subprocess
-import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent
@@ -54,10 +55,15 @@ def short(describe: str) -> str:
 
 
 def main() -> None:
-    run_url = sys.argv[1] if len(sys.argv) > 1 else ""
-    new = LEADERSHIP.read_text()
-    old = subprocess.run(["git", "show", "HEAD:" + LEADERSHIP.name], cwd=REPO,
-                         capture_output=True, text=True).stdout
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("run_url", nargs="?", default="")
+    parser.add_argument("--base", default="HEAD", help="commit to compare the report against")
+    parser.add_argument("--report", type=Path, default=LEADERSHIP)
+    args = parser.parse_args()
+    run_url = args.run_url
+    new = args.report.read_text()
+    old = subprocess.check_output(["git", "show", f"{args.base}:{LEADERSHIP.name}"],
+                                  cwd=REPO, text=True)
     before, after = standings(old), standings(new)
 
     changes, body = [], []

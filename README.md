@@ -68,6 +68,21 @@ retains the last passing run. Pull requests and pushes to main also run the
 check. Pull requests never publish reports. The workflow can be run by hand
 from the Actions tab, with `force` to rescore an unchanged VeIR.
 
+The tracker workflows can score concurrently. Publication reads the latest main
+and compares reports in VeIR commit order: an older or divergent VeIR revision
+cannot replace a newer report, and duplicate runs keep the first published
+result. A manual rescore can still refresh an unchanged report. If any tracked
+file other than the four generated reports changed during scoring, publication
+skips those results so the next run can score the updated inputs. Completed
+reports and JSON diagnostics remain in the workflow artifacts.
+
+`publish-reports.py` creates a commit on the latest main and makes a normal push.
+If another writer wins the race, it refreshes main and repeats the input,
+revision and baseline checks, including the SQLite commit message, for up to
+five push attempts. Persistent push errors fail CI. No workflow lock is needed.
+SQLite's requirement that every O3 chunk pass is checked during scoring; it is
+independent of the report used to describe changes in the publication commit.
+
 CI validates the pinned source, compiler pipelines, complete chunk counts and
 content hashes before scoring. Deleted or modified chunks, unrecorded compiler
 flags and extraction failures cannot silently reduce the regression corpus.
