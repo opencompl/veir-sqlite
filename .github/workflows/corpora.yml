@@ -16,9 +16,12 @@ on:
 permissions:
   contents: write
 
+# Both trackers push to main; serialize their full read/score/publish cycle.
+# PRs and non-main runs have separate groups because they do not publish.
 concurrency:
-  group: corpora-${{ github.event.pull_request.number || github.ref }}
+  group: ${{ github.ref == 'refs/heads/main' && 'report-updates-main' || format('{0}-{1}', github.workflow, github.ref) }}
   cancel-in-progress: false
+  queue: max
 
 jobs:
   score:
@@ -28,9 +31,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: veir-sqlite
-          # Queued schedules must see reports published by the preceding run.
-          # Other events retain checkout's default event revision.
-          ref: ${{ github.event_name == 'schedule' && github.ref || '' }}
+          # Read current main after acquiring the shared concurrency group.
+          # PRs and non-main runs retain checkout's default event revision.
+          ref: ${{ github.ref == 'refs/heads/main' && github.ref || '' }}
 
       - name: Validate tracking inputs
         working-directory: veir-sqlite
