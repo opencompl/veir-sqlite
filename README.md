@@ -59,7 +59,7 @@ Only O3 is scored. O0 remains available for comparison.
 ## Keeping it current
 
 The `leadership` workflow (`.github/workflows/leadership.yml`) polls veir's
-main every ten minutes. If it has moved since the commit named in the Provenance
+main every five minutes. If it has moved since the commit named in the Provenance
 table, the workflow builds `veir-opt` at the new commit, rescores and commits
 `LEADERSHIP.md` as `github-actions[bot]`, with the change in the standings in
 the subject and the blockers that cleared or appeared in the body. A regression
