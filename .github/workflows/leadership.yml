@@ -3,14 +3,13 @@ name: leadership
 # Keeps LEADERSHIP.md current with veir's main branch.
 #
 # GitHub Actions cannot subscribe to another repository, so this polls: every
-# ten minutes it compares veir's main with the commit LEADERSHIP.md was last
+# five minutes it compares veir's main with the commit LEADERSHIP.md was last
 # scored against (the `veir` row of its Provenance table) and stops there, in
 # seconds, if nothing moved. A public repository's minutes are free and the
 # cron floor is five; scheduled runs are low priority for GitHub and can start
-# late under load, so "ten minutes" means "usually within the hour". If veir
-# did move, it checks veir out at that commit, builds veir-opt, scores the
-# committed O3 corpus and commits the new LEADERSHIP.md to main as
-# github-actions[bot]. That push is made with GITHUB_TOKEN, so it triggers no
+# late under load. If veir did move, it checks veir out at that commit, builds
+# veir-opt, scores the committed O3 corpus and commits the new LEADERSHIP.md to
+# main as github-actions[bot]. That push is made with GITHUB_TOKEN, so it triggers no
 # workflow: no loop. A push to main here (new corpus, new scorer) rescores
 # immediately, and the workflow can be run by hand, with `force` to rescore an
 # unchanged veir.
@@ -20,7 +19,7 @@ name: leadership
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/5 * * * *"
   push:
     branches: [main]
   pull_request:

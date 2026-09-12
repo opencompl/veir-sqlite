@@ -44,11 +44,11 @@ separate outcomes. No VeIR optimization passes or native LLVM tools are executed
 as part of scoring. These checks do not establish execution correctness or a
 passing LLVM test suite.
 
-The `corpora` workflow validates the corpus and tests on pull requests, pushes to
-main and its ten-minute schedule. It uses one VeIR build to update `LLVM.md`,
-`LLVM_VECTORIZED.md` and `VECTORS.md`. Pull requests produce reports and JSON artifacts without
-publishing commits. Changes in support are report data; broken tracking inputs
-or a failed VeIR build fail CI.
+The `corpora` workflow validates the corpus and tests on pull requests and pushes
+to main, and polls VeIR main every five minutes. It uses one VeIR build to update
+`LLVM.md`, `LLVM_VECTORIZED.md` and `VECTORS.md`. Pull requests produce reports and
+JSON artifacts without publishing commits. Changes in support are report data;
+broken tracking inputs or a failed VeIR build fail CI.
 
 ## Regenerate
 
