@@ -6,7 +6,7 @@ Small operation cases extracted from the pinned SQLite compiled with ordinary `-
 
 | Mode | Cases passing |
 |---|---:|
-| Strict round-trip | 54/147 |
+| Strict round-trip | 68/147 |
 | Allow unregistered constructs | 95/147 |
 | Allow unregistered + `instcombine,dce,cse,dce` | 95/147 |
 
@@ -16,7 +16,6 @@ Each row links to a representative case. Function counts describe where the case
 
 | Operation or metadata | Cases | Strict | Allow unregistered | With optimizations | SQLite functions |
 |---|---:|---:|---:|---:|---:|
-| [llvm.insertelement](vectors/cases/llvm-insertelement-09da3c8b2f4d.mlir) | 14 | 0/14 | 14/14 | 14/14 | 52 |
 | [llvm.add](vectors/cases/llvm-add-09bdb1a9888a.mlir) | 9 | 0/9 | 0/9 | 0/9 | 32 |
 | [llvm.and](vectors/cases/llvm-and-009320073f42.mlir) | 8 | 0/8 | 0/8 | 0/8 | 25 |
 | [llvm.intr.vector.reduce.add](vectors/cases/llvm-intr-vector-reduce-add-05e628a5258f.mlir) | 4 | 0/4 | 4/4 | 4/4 | 20 |
@@ -44,6 +43,7 @@ Each row links to a representative case. Function counts describe where the case
 | Operation or metadata | Cases | Strict | Allow unregistered | With optimizations | SQLite functions |
 |---|---:|---:|---:|---:|---:|
 | [llvm.store](vectors/cases/llvm-store-122b9c6edddd.mlir) | 10 | 10/10 | 10/10 | 10/10 | 59 |
+| [llvm.insertelement](vectors/cases/llvm-insertelement-09da3c8b2f4d.mlir) | 14 | 14/14 | 14/14 | 14/14 | 52 |
 | [llvm.mlir.constant](vectors/cases/llvm-mlir-constant-36868f78a19d.mlir) | 12 | 12/12 | 12/12 | 12/12 | 43 |
 | [llvm.mlir.undef](vectors/cases/llvm-mlir-undef-7f07cf7a0e81.mlir) | 5 | 5/5 | 5/5 | 5/5 | 40 |
 | [llvm.mlir.poison](vectors/cases/llvm-mlir-poison-09d4d535aee5.mlir) | 11 | 11/11 | 11/11 | 11/11 | 35 |
@@ -61,7 +61,6 @@ Each row links to a representative case. Function counts describe where the case
 - **llvm.and:** `Error verifying input program: llvm.and: Expected operand 0 to have integer type`
 - **llvm.extractelement:** `op 'llvm.extractelement' is not registered. Consider using --allow-unregistered-dialect.`
 - **llvm.icmp:** `Error verifying input program: llvm.icmp: Expected operand 0 to have integer or pointer type`
-- **llvm.insertelement:** `op 'llvm.insertelement' is not registered. Consider using --allow-unregistered-dialect.`
 - **llvm.intr.smin:** `Error verifying input program: llvm.intr.smin: Expected operand 0 to have integer type`
 - **llvm.intr.umax:** `Error verifying input program: llvm.intr.umax: Expected operand 0 to have integer type`
 - **llvm.intr.vector.reduce.add:** `op 'llvm.intr.vector.reduce.add' is not registered. Consider using --allow-unregistered-dialect.`
@@ -88,12 +87,12 @@ See [the vector tracker](vectors/README.md) for regeneration and scoring command
 
 | | Value |
 |---|---|
-| veir | [8d143b1be3599b3fc28f524953bcd8be717f1d4a](https://github.com/opencompl/veir/commit/8d143b1be3599b3fc28f524953bcd8be717f1d4a) |
-| veir-opt SHA256 | `ac24ba7b6aced849384afc645de41308f9c0cf00e945b87b4e3a57c1d69cfdf6` |
+| veir | [be56a3154b882bf03097023192d8c2994e7a3a2f](https://github.com/opencompl/veir/commit/be56a3154b882bf03097023192d8c2994e7a3a2f) |
+| veir-opt SHA256 | `844316c41fc69122444ec4d52e1411cb54a4fe773649581939aba3b2c7c7d6b2` |
 | SQLite | 3530300 |
 | SQLite SHA256 | `87497ab605bedd0dbee27a209c1eeff8c89b229b13f921a7efdbb81a13f779fd` |
 | Corpus target | `x86_64-unknown-linux-gnu` |
 | Clang flags | `-O3` |
 | Clang | clang version 23.1.0 (https://github.com/llvm/llvm-project ea7d852a70e8bdfaf601d6626a760f9771b2c4b4) |
 | Cases manifest SHA256 | `400712c0e4f7b914f7900ddddae1e0bff03f93a31b23bc997e9937b93fd0e937` |
-| Scored | 2026-09-13 22:17 UTC |
+| Scored | 2026-09-14 13:06 UTC |
