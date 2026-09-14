@@ -19,12 +19,12 @@ Symbol counts cover successfully compiled source files. Each definition in each 
 | Component / symbols | Imported chunks | Strict | Allow unregistered |
 |---|---:|---:|---:|
 | Demangle / functions | 555 | 552/555 | 553/555 |
-| Demangle / globals | 676 | 673/676 | 673/676 |
+| Demangle / globals | 676 | 676/676 | 676/676 |
 
 | Mode | Passed | Rejected | Timed out |
 |---|---:|---:|---:|
-| strict | 1225 | 6 | 0 |
-| permissive | 1226 | 5 | 0 |
+| strict | 1228 | 3 | 0 |
+| permissive | 1229 | 2 | 0 |
 
 ## What needs support
 
@@ -32,7 +32,6 @@ Ranked by the first strict diagnostic per chunk. Fixing one diagnostic may expos
 
 | Chunks | Outcome | First diagnostic | Example |
 |---:|---|---|---|
-| 3 | rejected | `unregistered op llvm.mlir.alias` | [example](llvm/vectorized/chunks/Demangle/ItaniumDemangle/global-_ZN4llvm23ItaniumPartialDemanglerC1EOS0_-eb7915dcfc1fd4f0.mlir) |
 | 1 | rejected | `type expected` | [example](llvm/vectorized/chunks/Demangle/ItaniumDemangle/function-_ZNK4llvm16itanium_demangle16FloatLiteralImplIeE9printLeftERNS0_-3e47391ac9005f0d.mlir) |
 | 1 | rejected | `unregistered op llvm.intr.umul.with.overflow` | [example](llvm/vectorized/chunks/Demangle/RustDemangle/function-_ZN12_GLOBAL__N_19Demangler15printIdentifierENS_10IdentifierE-a4a76a7a899283a7.mlir) |
 | 1 | rejected | `unregistered op llvm.intr.vector.reduce.add` | [example](llvm/vectorized/chunks/Demangle/MicrosoftDemangle/function-_ZL17guessCharByteSizePKhjm-5bc4c47f3ec5335d.mlir) |
@@ -41,7 +40,6 @@ Ranked by the first strict diagnostic per chunk. Fixing one diagnostic may expos
 
 | Chunks | Outcome | First diagnostic | Example |
 |---:|---|---|---|
-| 3 | rejected | `Error verifying input program: llvm.return: Expected llvm.return to be enclosed by llvm.func or llvm.mlir.global` | [example](llvm/vectorized/chunks/Demangle/ItaniumDemangle/global-_ZN4llvm23ItaniumPartialDemanglerC1EOS0_-eb7915dcfc1fd4f0.mlir) |
 | 1 | rejected | `Error verifying input program: llvm.icmp: Expected operand 0 to have integer or pointer type` | [example](llvm/vectorized/chunks/Demangle/MicrosoftDemangle/function-_ZL17guessCharByteSizePKhjm-5bc4c47f3ec5335d.mlir) |
 | 1 | rejected | `type expected` | [example](llvm/vectorized/chunks/Demangle/ItaniumDemangle/function-_ZNK4llvm16itanium_demangle16FloatLiteralImplIeE9printLeftERNS0_-3e47391ac9005f0d.mlir) |
 
@@ -59,8 +57,8 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 
 | | Value |
 |---|---|
-| veir | [c1b0a7b53989560c351016485a87b428ac239149](https://github.com/opencompl/veir/commit/c1b0a7b53989560c351016485a87b428ac239149) |
-| veir-opt SHA256 | `844316c41fc69122444ec4d52e1411cb54a4fe773649581939aba3b2c7c7d6b2` |
+| veir | [67bfe3c11d0f7dee0eb80a1b330460ebbd67e8a8](https://github.com/opencompl/veir/commit/67bfe3c11d0f7dee0eb80a1b330460ebbd67e8a8) |
+| veir-opt SHA256 | `b0e347bea061b2bf416662ba85e1c786241684e73554ccbeac8993ad107f896b` |
 | LLVM source | [6a2d309c7d204730a9a35f3261f8448efeb6c5e3](https://github.com/llvm/llvm-project/commit/6a2d309c7d204730a9a35f3261f8448efeb6c5e3) |
 | Corpus target | `x86_64-pc-linux-gnu` |
 | Optimization | `-O3` |
@@ -68,4 +66,4 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 | MLIR import | LLVM version 24.0.0git |
 | Corpus manifest SHA256 | `742ecbc33d75d2b7564f3ad483a2b739d0343c89fc2bce12d445af50fa4b8754` |
 | Timeout | 30s per invocation |
-| Scored | 2026-09-14 13:59 UTC |
+| Scored | 2026-09-14 16:32 UTC |
