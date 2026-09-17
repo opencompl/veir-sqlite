@@ -18,13 +18,13 @@ Symbol counts cover successfully compiled source files. Each definition in each 
 
 | Component / symbols | Imported chunks | Strict | Allow unregistered |
 |---|---:|---:|---:|
-| Demangle / functions | 555 | 552/555 | 553/555 |
+| Demangle / functions | 555 | 553/555 | 554/555 |
 | Demangle / globals | 676 | 676/676 | 676/676 |
 
 | Mode | Passed | Rejected | Timed out |
 |---|---:|---:|---:|
-| strict | 1228 | 3 | 0 |
-| permissive | 1229 | 2 | 0 |
+| strict | 1229 | 2 | 0 |
+| permissive | 1230 | 1 | 0 |
 
 ## What needs support
 
@@ -32,7 +32,6 @@ Ranked by the first strict diagnostic per chunk. Fixing one diagnostic may expos
 
 | Chunks | Outcome | First diagnostic | Example |
 |---:|---|---|---|
-| 1 | rejected | `type expected` | [example](llvm/vectorized/chunks/Demangle/ItaniumDemangle/function-_ZNK4llvm16itanium_demangle16FloatLiteralImplIeE9printLeftERNS0_-3e47391ac9005f0d.mlir) |
 | 1 | rejected | `unregistered op llvm.intr.umul.with.overflow` | [example](llvm/vectorized/chunks/Demangle/RustDemangle/function-_ZN12_GLOBAL__N_19Demangler15printIdentifierENS_10IdentifierE-a4a76a7a899283a7.mlir) |
 | 1 | rejected | `unregistered op llvm.intr.vector.reduce.add` | [example](llvm/vectorized/chunks/Demangle/MicrosoftDemangle/function-_ZL17guessCharByteSizePKhjm-5bc4c47f3ec5335d.mlir) |
 
@@ -41,7 +40,6 @@ Ranked by the first strict diagnostic per chunk. Fixing one diagnostic may expos
 | Chunks | Outcome | First diagnostic | Example |
 |---:|---|---|---|
 | 1 | rejected | `Error verifying input program: llvm.icmp: Expected operand 0 to have integer or pointer type` | [example](llvm/vectorized/chunks/Demangle/MicrosoftDemangle/function-_ZL17guessCharByteSizePKhjm-5bc4c47f3ec5335d.mlir) |
-| 1 | rejected | `type expected` | [example](llvm/vectorized/chunks/Demangle/ItaniumDemangle/function-_ZNK4llvm16itanium_demangle16FloatLiteralImplIeE9printLeftERNS0_-3e47391ac9005f0d.mlir) |
 
 </details>
 
@@ -57,8 +55,8 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 
 | | Value |
 |---|---|
-| veir | [5d6e42e8ff76c5bcd8b22df26be31f3cc6dfc65e](https://github.com/opencompl/veir/commit/5d6e42e8ff76c5bcd8b22df26be31f3cc6dfc65e) |
-| veir-opt SHA256 | `ebbafccf4c5148d6fa09ff140d60fe769b231a8b5f6dd8da88c8d7c715c525b8` |
+| veir | [9120821e2029f5b41a3a436c9a878b9217f65988](https://github.com/opencompl/veir/commit/9120821e2029f5b41a3a436c9a878b9217f65988) |
+| veir-opt SHA256 | `dfeea0492cd2c7bf85d0accc85c68a033fe429099ef068cdf4d9b93fab3dab34` |
 | LLVM source | [6a2d309c7d204730a9a35f3261f8448efeb6c5e3](https://github.com/llvm/llvm-project/commit/6a2d309c7d204730a9a35f3261f8448efeb6c5e3) |
 | Corpus target | `x86_64-pc-linux-gnu` |
 | Optimization | `-O3` |
@@ -66,4 +64,4 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 | MLIR import | LLVM version 24.0.0git |
 | Corpus manifest SHA256 | `742ecbc33d75d2b7564f3ad483a2b739d0343c89fc2bce12d445af50fa4b8754` |
 | Timeout | 30s per invocation |
-| Scored | 2026-09-17 04:28 UTC |
+| Scored | 2026-09-17 04:55 UTC |
