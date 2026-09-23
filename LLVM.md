@@ -52,8 +52,8 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 
 | | Value |
 |---|---|
-| veir | [25d476ccf0c67fa55693001374a29c0a4dfa02aa](https://github.com/opencompl/veir/commit/25d476ccf0c67fa55693001374a29c0a4dfa02aa) |
-| veir-opt SHA256 | `5a6ce954b7d48f74522f555b082032eff934b8c5ca698a4aa288606fef753ca5` |
+| veir | [e07af2a40244f289458c284935078dfe18c5399a](https://github.com/opencompl/veir/commit/e07af2a40244f289458c284935078dfe18c5399a) |
+| veir-opt SHA256 | `d01f30a17dbb718d7262f891754552833edc3f15d6f759956136988fb4849458` |
 | LLVM source | [6a2d309c7d204730a9a35f3261f8448efeb6c5e3](https://github.com/llvm/llvm-project/commit/6a2d309c7d204730a9a35f3261f8448efeb6c5e3) |
 | Corpus target | `x86_64-pc-linux-gnu` |
 | Optimization | `-O3 -fno-vectorize -fno-slp-vectorize` |
@@ -61,4 +61,4 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 | MLIR import | LLVM version 24.0.0git |
 | Corpus manifest SHA256 | `88fb4d8258f3b694a06bc90aecae6e274728ddcbee315817767a313e339933a8` |
 | Timeout | 30s per invocation |
-| Scored | 2026-09-23 16:55 UTC |
+| Scored | 2026-09-23 17:09 UTC |
