@@ -52,11 +52,11 @@ Nothing is blocked on an unregistered op, type or attribute.
 
 |  | value |
 |---|---|
-| veir | [`ccdf2bb95f91799f54eaf4680576f290d94275f1`](https://github.com/opencompl/veir/commit/ccdf2bb95f91799f54eaf4680576f290d94275f1) |
+| veir | [`34469eb3cb09274480a62d559efe090751cb954e`](https://github.com/opencompl/veir/commit/34469eb3cb09274480a62d559efe090751cb954e) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
 | veir-opt SHA256 | `0046f0e1fb9c9cade0d36e1c69c3e5c8dbfac94911a8387b52813509b7fcdefd` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 9f402d0d52b72f2b, globals 6fb4213c3338e6fa` |
 | chunks built with | `Debian clang version 19.1.7 (3+b1) / x86_64-pc-linux-gnu` |
 | clang flags | `-O3 -fno-vectorize -fno-slp-vectorize` |
-| scored | `2026-10-11 23:41 UTC on Linux x86_64` |
+| scored | `2026-10-11 23:46 UTC on Linux x86_64` |
