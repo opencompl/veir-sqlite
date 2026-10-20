@@ -55,7 +55,7 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 
 | | Value |
 |---|---|
-| veir | [7fc0546b9a0a5f66fa3a02cf7d8553f412e2cc04](https://github.com/opencompl/veir/commit/7fc0546b9a0a5f66fa3a02cf7d8553f412e2cc04) |
+| veir | [675f93d28dfc5d650ba58a45448552091fb3b5e5](https://github.com/opencompl/veir/commit/675f93d28dfc5d650ba58a45448552091fb3b5e5) |
 | veir-opt SHA256 | `259be624790057ed704e248223f470ece13cd18f2b6335c3531c3db7343330b7` |
 | LLVM source | [6a2d309c7d204730a9a35f3261f8448efeb6c5e3](https://github.com/llvm/llvm-project/commit/6a2d309c7d204730a9a35f3261f8448efeb6c5e3) |
 | Corpus target | `x86_64-pc-linux-gnu` |
@@ -64,4 +64,4 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 | MLIR import | LLVM version 24.0.0git |
 | Corpus manifest SHA256 | `742ecbc33d75d2b7564f3ad483a2b739d0343c89fc2bce12d445af50fa4b8754` |
 | Timeout | 30s per invocation |
-| Scored | 2026-10-20 14:51 UTC |
+| Scored | 2026-10-20 16:00 UTC |
