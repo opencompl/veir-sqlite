@@ -18,21 +18,19 @@ Symbol counts cover successfully compiled source files. Each definition in each 
 
 | Component / symbols | Imported chunks | Strict | Allow unregistered |
 |---|---:|---:|---:|
-| Demangle / functions | 555 | 554/555 | 555/555 |
+| Demangle / functions | 555 | 555/555 | 555/555 |
 | Demangle / globals | 676 | 676/676 | 676/676 |
 
 | Mode | Passed | Rejected | Timed out |
 |---|---:|---:|---:|
-| strict | 1230 | 1 | 0 |
+| strict | 1231 | 0 | 0 |
 | permissive | 1231 | 0 | 0 |
 
 ## What needs support
 
 Ranked by the first strict diagnostic per chunk. Fixing one diagnostic may expose another. Counts describe observed failures, not predicted coverage gains.
 
-| Chunks | Outcome | First diagnostic | Example |
-|---:|---|---|---|
-| 1 | rejected | `unregistered op llvm.intr.umul.with.overflow` | [example](llvm/corpus/chunks/Demangle/RustDemangle/function-_ZN12_GLOBAL__N_19Demangler15printIdentifierENS_10IdentifierE-a4a76a7a899283a7.mlir) |
+All imported chunks pass the strict round-trip.
 
 <details><summary>Failures with unregistered constructs allowed</summary>
 
@@ -52,8 +50,8 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 
 | | Value |
 |---|---|
-| veir | [dda82d7f074083a53f12e9c4aefaf730909e8757](https://github.com/opencompl/veir/commit/dda82d7f074083a53f12e9c4aefaf730909e8757) |
-| veir-opt SHA256 | `6578fe581427657f9f871eabefd891889d5f1dc8f20ba8978e58cf54ddb60d03` |
+| veir | [5320ab2134e58cf72b1f8590a8435b7b7930dd92](https://github.com/opencompl/veir/commit/5320ab2134e58cf72b1f8590a8435b7b7930dd92) |
+| veir-opt SHA256 | `8c1f2791ba16cfa5732a29dbc85d1b04e5267880d51b42110484c941c6fc6a11` |
 | LLVM source | [6a2d309c7d204730a9a35f3261f8448efeb6c5e3](https://github.com/llvm/llvm-project/commit/6a2d309c7d204730a9a35f3261f8448efeb6c5e3) |
 | Corpus target | `x86_64-pc-linux-gnu` |
 | Optimization | `-O3 -fno-vectorize -fno-slp-vectorize` |
@@ -61,4 +59,4 @@ See [the LLVM tracker](llvm/README.md) for the selected libraries, build configu
 | MLIR import | LLVM version 24.0.0git |
 | Corpus manifest SHA256 | `88fb4d8258f3b694a06bc90aecae6e274728ddcbee315817767a313e339933a8` |
 | Timeout | 30s per invocation |
-| Scored | 2026-10-24 22:31 UTC |
+| Scored | 2026-10-25 03:26 UTC |
