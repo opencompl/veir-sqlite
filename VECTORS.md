@@ -87,12 +87,12 @@ See [the vector tracker](vectors/README.md) for regeneration and scoring command
 
 | | Value |
 |---|---|
-| veir | [d562bf414226abb2e34f7788867e3811a3d04b45](https://github.com/opencompl/veir/commit/d562bf414226abb2e34f7788867e3811a3d04b45) |
-| veir-opt SHA256 | `87d11620aac4dd2556d012d1d6364fce73d74bf3d5b541c983eb8edb240d93f4` |
+| veir | [1dda75d302f765b23c9227f6db8ebad929f6eccf](https://github.com/opencompl/veir/commit/1dda75d302f765b23c9227f6db8ebad929f6eccf) |
+| veir-opt SHA256 | `a5b7747ca46a21448e1e5f3d2fd174255d4123ad79cc9ef39e96fc3c18b2ad8b` |
 | SQLite | 3530300 |
 | SQLite SHA256 | `87497ab605bedd0dbee27a209c1eeff8c89b229b13f921a7efdbb81a13f779fd` |
 | Corpus target | `x86_64-unknown-linux-gnu` |
 | Clang flags | `-O3` |
 | Clang | clang version 23.1.0 (https://github.com/llvm/llvm-project ea7d852a70e8bdfaf601d6626a760f9771b2c4b4) |
 | Cases manifest SHA256 | `400712c0e4f7b914f7900ddddae1e0bff03f93a31b23bc997e9937b93fd0e937` |
-| Scored | 2026-10-28 18:53 UTC |
+| Scored | 2026-10-28 19:16 UTC |
