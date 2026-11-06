@@ -52,11 +52,11 @@ Nothing is blocked on an unregistered op, type or attribute.
 
 |  | value |
 |---|---|
-| veir | [`0f11f0269deae8fe44dc553735ab7654ccf650d7`](https://github.com/opencompl/veir/commit/0f11f0269deae8fe44dc553735ab7654ccf650d7) |
+| veir | [`c5771e01696a40f8104768146f28fbf3c11b85d5`](https://github.com/opencompl/veir/commit/c5771e01696a40f8104768146f28fbf3c11b85d5) |
 | veir-opt | `/home/runner/work/veir-sqlite/veir-sqlite/veir/.lake/build/bin/veir-opt` |
-| veir-opt SHA256 | `c43a0f6e38c7de7a8bdff3a096b5e57a899299ed09ce988fde00ba98aeeaed4f` |
+| veir-opt SHA256 | `e7ca2a0e6f7bda3f5f8071a290741ee743cfabe64481050728d36181afd79e07` |
 | sqlite3 | [`3530300`](https://sqlite.org/2026/sqlite-amalgamation-3530300.zip) |
 | corpus | `functions 9f402d0d52b72f2b, globals 6fb4213c3338e6fa` |
 | chunks built with | `Debian clang version 19.1.7 (3+b1) / x86_64-pc-linux-gnu` |
 | clang flags | `-O3 -fno-vectorize -fno-slp-vectorize` |
-| scored | `2026-11-06 02:20 UTC on Linux x86_64` |
+| scored | `2026-11-06 15:15 UTC on Linux x86_64` |
